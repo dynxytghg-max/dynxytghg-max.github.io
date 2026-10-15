@@ -3,7 +3,7 @@
   "launcher": {
     "version": "2.1.0",
     "file": "downloads/BambuBay-Launcher-2.1.0.zip",
-    "size": "13,8 MB"
+    "size": "13,9 MB"
   },
   "mod": {
     "version": "2.0.0",
@@ -12,6 +12,13 @@
     "size": "10,5 MB"
   },
   "items": [
+    {
+      "date": "2026-10-15",
+      "tag": "Design",
+      "title": "Launcher: Live-Neuigkeiten",
+      "text": "Die Startseite des Launchers zeigt jetzt automatisch die neuesten Features von dieser Seite, auch offline aus dem Zwischenspeicher. Dazu neue An/Aus-Schalter mit Haken und Kreuz in Mods, Profilen und Einstellungen.",
+      "image": "assets/launcher-play.webp"
+    },
     {
       "date": "2026-10-15",
       "tag": "Design",
