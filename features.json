@@ -1,10 +1,10 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "2.2.0",
-    "file": "downloads/BambuBay-Launcher-2.2.0.zip",
-    "size": "14,0 MB",
-    "notes": "Der Launcher aktualisiert sich ab jetzt von selbst. Neue Mod-Versionen kommen automatisch."
+    "version": "3.0.0",
+    "file": "downloads/BambuBay-Launcher-3.0.0.zip",
+    "size": "14,1 MB",
+    "notes": "Launcher 3.0: 3D-Emotes auf der Startseite, Skin-Bibliothek, Mod-Filter und Mod-Updates."
   },
   "mod": {
     "version": "2.1.0",
@@ -15,6 +15,13 @@
     "sha1": "6fb341064127d07ffd6172dbd83558c1b92dc0e0"
   },
   "items": [
+    {
+      "date": "2026-10-16",
+      "tag": "Design",
+      "title": "Launcher 3.0",
+      "text": "Deine Figur macht jetzt echte BambuBay-Emotes in 3D (abschaltbar, pausiert im Hintergrund). Neue Skin-Bibliothek: Skins speichern, mit einem Klick anlegen, per Spielername, Link oder Datei hinzufügen. Mods mit Filtern für Spielversion, Kategorie, Loader und Umgebung, dazu Mod-Updates mit einem Klick.",
+      "image": "assets/launcher-play.webp"
+    },
     {
       "date": "2026-10-16",
       "tag": "Neu",

@@ -1,11 +1,11 @@
 {
-  "version": "2.2.0",
-  "notes": "Der Launcher aktualisiert sich ab jetzt von selbst. Neue Mod-Versionen kommen automatisch.",
-  "pub_date": "2026-10-15T21:56:01Z",
+  "version": "3.0.0",
+  "notes": "Launcher 3.0: 3D-Emotes auf der Startseite, Skin-Bibliothek, Mod-Filter und Mod-Updates.",
+  "pub_date": "2026-10-15T22:50:07Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTFyQ3NoRWxKVlZZS3gyY25kWjdJSmFJVzQvN2puRFJSYUUxRThTa2VFNlhSRXRTbkFZU3hpNzN0WlQzeHAxWXpScm9lSTdCa3VvZVljTzFVam1FZWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTAxMzYxCWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMi4yLjBfeDY0LXNldHVwLmV4ZQphbkxIU3BSejZMaVZMRFRhcENYdjNwYVlEdUFWZWJrSDhXdDRHajFQL3lHSWUwOGszZ2dWSEcybTY3WWxzbTBtaFdBaUdlQThLbXJjM3hFYnB1OHpBUT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-2.2.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXljSVBaaFh4RmFYTnFZRm9GVE0wdndvWkxJbjgzeUUwYVdsRUFIWkNyVzlzWTRHMXZ0UFkvb3Vkd3F6Rk1PZkJqdTU0WGk0emVmSzBiV3o1US9lM2d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTA0NjA3CWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMy4wLjBfeDY0LXNldHVwLmV4ZQorMUpTeXpQeUU4b3pTRWRzVXZJaFIwMmZscXJkRGR2bTFScnpxR2ZlUUJCWDZIdFdxL3BRUENia0FhTGdXbTdWcndZbmI1S1ZHQkZ4blovcXpMYzJCUT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-3.0.0-setup.exe"
     }
   }
 }
