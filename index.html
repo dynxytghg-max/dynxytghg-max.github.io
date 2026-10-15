@@ -575,7 +575,8 @@ footer p + p { margin-top: 8px; }
   function renderNews(data) {
     const box = $("#news");
     box.innerHTML = "";
-    for (const it of data.items || []) {
+    // Die sechs neuesten (zwei volle Reihen)
+    for (const it of (data.items || []).slice(0, 6)) {
       const card = document.createElement("article"); card.className = "news-card";
       const pic = document.createElement("div"); pic.className = "pic";
       if (it.image) { const im = new Image(); im.src = it.image; im.alt = ""; pic.append(im); }
