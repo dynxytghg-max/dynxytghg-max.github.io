@@ -1,0 +1,58 @@
+name: Fehler melden
+description: Etwas funktioniert nicht oder das Spiel stürzt ab
+title: "[Fehler] "
+labels: ["fehler"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du hilfst, BambuBay besser zu machen! Schau bitte kurz, ob es den Fehler schon gibt.
+        **Keine privaten Daten posten:** Logs können deinen Windows-Benutzernamen enthalten.
+  - type: textarea
+    id: what
+    attributes:
+      label: Was ist passiert?
+      description: Was hast du gemacht, was ist passiert und was hast du erwartet?
+      placeholder: "Ich habe im Kosmetik-Menü die Krone angelegt, danach ..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: So kann man es nachmachen
+      placeholder: |
+        1. Rechte Shift drücken
+        2. Auf "Kosmetik" klicken
+        3. ...
+  - type: dropdown
+    id: part
+    attributes:
+      label: Wo tritt der Fehler auf?
+      options:
+        - Mod (im Spiel)
+        - Launcher
+        - Webseite
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Mod-Version (steht im Mod-Menü unten) oder Launcher-Version
+      placeholder: "Mod 2.0.0 / Launcher 2.1.0"
+  - type: textarea
+    id: mods
+    attributes:
+      label: Andere Mods
+      description: Welche anderen Mods hast du installiert? (z. B. Sodium, 3D Skin Layers)
+  - type: textarea
+    id: log
+    attributes:
+      label: Log oder Crash-Report
+      description: Inhalt von logs/latest.log oder der Datei aus crash-reports/ (oder als Datei anhängen)
+      render: text
+  - type: textarea
+    id: shots
+    attributes:
+      label: Screenshots oder Videos
+      description: Hier hineinziehen

@@ -1,0 +1,33 @@
+name: Idee vorschlagen
+description: Neues Modul, Cosmetic, Emote oder eine Verbesserung
+title: "[Idee] "
+labels: ["idee"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Deine Idee
+      description: Was soll es geben und wie soll es funktionieren?
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Art
+      options:
+        - Modul
+        - Cosmetic
+        - Emote
+        - Bambu+
+        - BambuGram
+        - Launcher
+        - Sonstiges
+  - type: textarea
+    id: why
+    attributes:
+      label: Warum wäre das gut?
+  - type: textarea
+    id: shots
+    attributes:
+      label: Bilder oder Beispiele
+      description: Skizzen, Screenshots oder Links zu ähnlichen Sachen

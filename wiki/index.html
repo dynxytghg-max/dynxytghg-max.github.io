@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BambuBay Wiki</title>
+<meta name="description" content="Anleitung für den BambuBay Client: Installation, Tasten, alle Module, Cosmetics, Emotes, Bambu+, BambuGram und Hilfe bei Problemen.">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Wiki im Stil der Startseite: nächtlicher Bambuswald, links Inhaltsverzeichnis, rechts Text. */
+:root {
+  color-scheme: dark;
+  --night: #050d09;
+  --forest: #0a1710;
+  --moss: #11241a;
+  --line: rgba(160, 230, 190, .12);
+  --line-strong: rgba(160, 230, 190, .24);
+  --leaf: #4ade80;
+  --leaf-deep: #15803d;
+  --sun: #facc15;
+  --text: #e9f5ee;
+  --muted: #9bb5a6;
+  --dim: #64806f;
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { margin: 0; background: var(--night); color: var(--text); font: 400 16px/1.65 var(--font-body); overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background: radial-gradient(900px 500px at 85% -10%, rgba(74, 222, 128, .10), transparent 60%),
+              radial-gradient(700px 500px at -10% 30%, rgba(21, 128, 61, .10), transparent 60%); }
+a { color: var(--leaf); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.2; }
+code, kbd { font-family: var(--font-mono); font-size: .86em; }
+code { background: var(--moss); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; overflow-wrap: anywhere; }
+kbd { display: inline-block; min-width: 1.9em; text-align: center; padding: 1px 7px; border-radius: 6px; background: var(--moss);
+  border: 1px solid var(--line-strong); border-bottom-width: 3px; color: var(--text); }
+
+.nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(5, 13, 9, .78); border-bottom: 1px solid var(--line); }
+.nav .in { max-width: 1180px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font: 700 20px var(--font-pixel); }
+.brand img { width: 30px; height: 30px; }
+.brand b { color: var(--leaf); font-weight: 700; }
+.brand small { font: 600 12px var(--font-body); color: var(--dim); letter-spacing: .08em; text-transform: uppercase; margin-left: 4px; }
+.nav .links { margin-left: auto; display: flex; gap: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px;
+  color: var(--text); border: 1px solid var(--line-strong); background: var(--forest); }
+.btn:hover { border-color: var(--leaf); }
+.btn-leaf { background: var(--leaf); color: #052e16; border-color: var(--leaf); }
+.btn-leaf:hover { background: #6ee7a0; }
+
+.layout { max-width: 1180px; margin: 0 auto; padding: 32px 20px 80px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; }
+.toc { position: sticky; top: 84px; align-self: start; max-height: calc(100vh - 100px); overflow: auto; padding-right: 6px; }
+.toc p { font: 600 12px var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin: 0 0 10px; }
+.toc a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 15px; border-left: 2px solid transparent; }
+.toc a:hover { color: var(--text); background: var(--forest); }
+.toc a.on { color: var(--leaf); border-left-color: var(--leaf); background: rgba(74, 222, 128, .06); }
+
+.hero { padding: 8px 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--leaf); letter-spacing: .06em; text-transform: uppercase; }
+.hero h1 { font: 700 clamp(34px, 5vw, 52px) var(--font-pixel); margin: 10px 0 12px; }
+.hero p { color: var(--muted); max-width: 62ch; font-size: 18px; }
+.search { margin-top: 20px; position: relative; max-width: 460px; }
+.search input { width: 100%; padding: 12px 14px 12px 40px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--forest);
+  color: var(--text); font: inherit; }
+.search input:focus { outline: none; border-color: var(--leaf); box-shadow: 0 0 0 3px rgba(74, 222, 128, .15); }
+.search svg { position: absolute; left: 13px; top: 50%; translate: 0 -50%; color: var(--dim); }
+.search .hint { font-size: 13px; color: var(--dim); margin-top: 6px; min-height: 1.4em; }
+
+section.doc { padding: 36px 0 8px; }
+section.doc + section.doc { border-top: 1px solid var(--line); }
+section.doc h2 { font: 700 28px var(--font-pixel); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+section.doc h2 .n { font: 700 13px var(--font-mono); color: var(--leaf); background: rgba(74, 222, 128, .1); border: 1px solid rgba(74, 222, 128, .3);
+  padding: 3px 8px; border-radius: 999px; }
+section.doc h3 { font-size: 18px; margin: 24px 0 8px; }
+section.doc p { margin: 0 0 12px; color: #cfe3d7; max-width: 75ch; }
+section.doc ul, section.doc ol { margin: 0 0 14px; padding-left: 22px; color: #cfe3d7; max-width: 75ch; }
+section.doc li { margin: 4px 0; }
+section.doc li::marker { color: var(--leaf); }
+.shot { margin: 18px 0 22px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line-strong); box-shadow: 0 20px 60px rgba(0, 0, 0, .45); }
+.shot figcaption { padding: 10px 14px; font-size: 14px; color: var(--muted); background: var(--forest); border-top: 1px solid var(--line); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: 16px 0 20px; }
+.card { padding: 16px; border-radius: 14px; background: var(--forest); border: 1px solid var(--line); }
+.card h4 { margin: 0 0 6px; font-size: 16px; }
+.card p { margin: 0; font-size: 14px; color: var(--muted); }
+.card .tag { display: inline-block; font: 700 11px var(--font-mono); letter-spacing: .08em; color: var(--leaf); margin-bottom: 8px; }
+
+.table-wrap { overflow-x: auto; margin: 14px 0 20px; border: 1px solid var(--line); border-radius: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+th { background: var(--forest); color: var(--muted); font-weight: 600; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { white-space: nowrap; font-weight: 600; }
+
+.note { display: flex; gap: 12px; padding: 14px 16px; border-radius: 12px; margin: 14px 0 18px; background: rgba(74, 222, 128, .06);
+  border: 1px solid rgba(74, 222, 128, .25); color: #cfe3d7; max-width: 75ch; }
+.note.warn { background: rgba(250, 204, 21, .06); border-color: rgba(250, 204, 21, .3); }
+.note b { color: var(--text); }
+.note svg { flex: none; margin-top: 3px; color: var(--leaf); }
+.note.warn svg { color: var(--sun); }
+
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--forest); margin: 8px 0; max-width: 75ch; }
+summary { cursor: pointer; padding: 12px 16px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--leaf); font: 700 18px var(--font-mono); line-height: 1; }
+details[open] summary::after { content: "–"; }
+details > div { padding: 0 16px 14px; color: var(--muted); }
+details > div p { color: var(--muted); }
+
+mark { background: rgba(74, 222, 128, .28); color: var(--text); border-radius: 3px; }
+.hidden { display: none !important; }
+footer { border-top: 1px solid var(--line); color: var(--dim); font-size: 14px; }
+footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; gap: 0; padding-top: 20px; }
+  .toc { position: static; max-height: none; display: flex; gap: 6px; overflow-x: auto; padding-bottom: 10px; margin: 0 -16px 8px; padding-inline: 16px; }
+  .toc p { display: none; }
+  .toc a { white-space: nowrap; border: 1px solid var(--line); border-left-width: 1px; }
+  .toc a.on { border-color: var(--leaf); }
+  .nav .links .btn:not(.btn-leaf) { display: none; }
+  .layout, .nav .in, footer .in { padding-inline: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="in">
+    <a class="brand" href="../"><img src="../assets/logo.png" alt=""><span>Bambu<b>Bay</b></span><small>Wiki</small></a>
+    <nav class="links" aria-label="Seiten">
+      <a class="btn" href="https://github.com/dynxytghg-max/dynxytghg-max.github.io/issues">Fehler melden</a>
+      <a class="btn btn-leaf" href="../#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Inhalt">
+    <p>Inhalt</p>
+    <a href="#installation">Installation</a>
+    <a href="#bedienung">Bedienung &amp; Tasten</a>
+    <a href="#module">Module</a>
+    <a href="#hud">HUD-Editor</a>
+    <a href="#cosmetics">Cosmetics</a>
+    <a href="#emotes">Emotes</a>
+    <a href="#bambuplus">Bambu+</a>
+    <a href="#bambugram">BambuGram</a>
+    <a href="#freunde">Freunde</a>
+    <a href="#musik">Musik-Overlay</a>
+    <a href="#leistung">Mehr FPS</a>
+    <a href="#datenschutz">Online &amp; Datenschutz</a>
+    <a href="#probleme">Probleme lösen</a>
+    <a href="#melden">Fehler melden</a>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <span class="eyebrow">Minecraft 1.21.11 · Fabric</span>
+      <h1>BambuBay Wiki</h1>
+      <p>Alles, was du über den BambuBay Client wissen musst: installieren, bedienen, alle Module, Cosmetics, Emotes und was du tun kannst, wenn etwas nicht klappt.</p>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Im Wiki suchen, z. B. Zoom, Umhang, Emote …" aria-label="Im Wiki suchen" autocomplete="off">
+        <div class="hint" id="hint" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <section class="doc" id="installation">
+      <h2><span class="n">01</span>Installation</h2>
+      <h3>Mit dem BambuBay Launcher (empfohlen)</h3>
+      <ol>
+        <li>Lade den Launcher auf der <a href="../#download">Startseite</a> herunter und entpacke die ZIP.</li>
+        <li>Starte das Setup. Warnt Windows SmartScreen, klicke auf „Weitere Informationen“ und dann „Trotzdem ausführen“ (der Installer ist nicht signiert).</li>
+        <li>Melde dich im Launcher mit deinem Microsoft-Konto an und klicke auf <b>Spielen</b>.</li>
+      </ol>
+      <p>Der Launcher lädt Minecraft, Fabric, Fabric API und die BambuBay-Mod automatisch und hält alles aktuell. Dazu kommt auf Wunsch ein Leistungspaket (siehe <a href="#leistung">Mehr FPS</a>).</p>
+      <h3>Nur die Mod (Modrinth, Prism, CurseForge-App …)</h3>
+      <ol>
+        <li>Installiere <b>Fabric Loader</b> (0.18.3 oder neuer) für Minecraft <b>1.21.11</b>.</li>
+        <li>Lege <b>Fabric API</b> und die <code>BambuBayClient-….jar</code> in den Ordner <code>mods</code> deines Profils.</li>
+        <li>Starte das Spiel. Die <kbd>Rechte Shift</kbd>-Taste öffnet das BambuBay-Menü.</li>
+      </ol>
+      <div class="note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span><b>Voraussetzungen:</b> Java 21 (bringt der Launcher selbst mit), Minecraft Java Edition 1.21.11. Die Mod läuft nur auf dem Client; Server brauchen nichts zu installieren.</span></div>
+    </section>
+
+    <section class="doc" id="bedienung">
+      <h2><span class="n">02</span>Bedienung &amp; Tasten</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Taste</th><th>Was passiert</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>Rechte Shift</kbd></td><td>Vormenü: Mod-Menü, HUD-Editor, Kosmetik, Bambu+, BambuGram, Freunde und Optionen</td></tr>
+          <tr><td><kbd>B</kbd> halten</td><td>Emote-Rad: auf ein Emote zeigen und loslassen. Mausrad blättert.</td></tr>
+          <tr><td><kbd>C</kbd> halten</td><td>Zoom (Mausrad ändert die Stärke)</td></tr>
+          <tr><td><kbd>Links-Alt</kbd> halten</td><td>Schnellansicht: Kamera frei drehen, ohne die Laufrichtung zu ändern</td></tr>
+          <tr><td><kbd>F2</kbd></td><td>Screenshot; danach fragt der Chat, ob du ihn im BambuGram teilen willst</td></tr>
+          <tr><td><code>/bambugram</code></td><td>öffnet BambuGram direkt</td></tr>
+        </tbody>
+      </table></div>
+      <p>Alle Tasten änderst du unter <i>Optionen → Steuerung → BambuBay</i>.</p>
+      <h3>Das Mod-Menü</h3>
+      <ul>
+        <li><b>Klick auf eine Karte</b> oder den Schalter schaltet ein Modul an oder aus. Aktive Module sind grün hervorgehoben.</li>
+        <li><b>Zahnrad oder Rechtsklick</b> öffnet die Einstellungen des Moduls, mit Vorschau bei HUD-Elementen.</li>
+        <li><b>Einfach lostippen</b> zum Suchen. Die Suche verzeiht Tippfehler, versteht englische Begriffe (<i>brightness</i>, <i>coords</i>) und findet Module auch über ihre Einstellungen. <kbd>Enter</kbd> öffnet den ersten Treffer.</li>
+        <li>Die Menügröße stellst du unter <i>Optionen → Menügröße</i> ein (Klein, Normal, Groß, Wie Minecraft).</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-new-menu.webp" alt="Das BambuBay Mod-Menü mit Modul-Karten und Schaltern" loading="lazy" width="1280" height="720"><figcaption>Das Mod-Menü: Karten mit Schalter, Zahnrad für Einstellungen, Suche oben.</figcaption></figure>
+      <p>Alle Einstellungen liegen in <code>config/bambubay/config.json</code>. Ist die Datei kaputt, sichert die Mod sie als <code>.broken</code> und startet mit Standardwerten.</p>
+    </section>
+
+    <section class="doc" id="module">
+      <h2><span class="n">03</span>Module</h2>
+      <p>78 Module in sieben Kategorien. Keines verschafft einen unfairen Vorteil: Es gibt keine Reichweiten-, Auto-Klick-, X-Ray- oder Durch-Wände-Funktionen.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Kategorie</th><th>Module</th></tr></thead>
+        <tbody>
+          <tr><td>HUD</td><td>FPS, CPS, Ping, TPS, Uhr, Minecraft-Uhr, Blickrichtung, Blickinfo, Inventar, Musik-Overlay, Tempo, Koordinaten, Kompass, Biom, Keystrokes, Rüstung, Tränke, Zielanzeige, Item-Zähler, Combo, Reichweite, Server, Spieler online, Sitzung, RAM, Lichtlevel, Tageszähler</td></tr>
+          <tr><td>Optik</td><td>Fullbright, Nachtsicht ohne Flackern, Hand ausblenden, Low Fire, Zeit ändern, klares Wetter, Scoreboard, Bossleiste, Titel-Größe, Overlays (Kürbis, Frost, Portal, Totem-Animation …), Block-Umrandung</td></tr>
+          <tr><td>PvP</td><td>Crosshair mit Pixel-Editor, Treffer-Partikel, Treffer-Sound, Kill-Effekt, kein Schadens-Wackeln, festes Sichtfeld, Toggle Sprint, Item-Ansicht, Abklingzeiten, Bogen-Spannung, Sättigung, Kills, Totem-Zähler, Leben-Warnung, Treffer-Richtung, Rüstungs-Warnung, Hitboxen, Schnellansicht, Ping in Zahlen</td></tr>
+          <tr><td>Chat</td><td>Chat-Verbesserungen (Uhrzeit, doppelte zusammenfassen), Auto-GG, Erwähnungen, Namensschutz, Wortfilter</td></tr>
+          <tr><td>Komfort</td><td>Zoom, Auto-Reconnect, Trennen bestätigen, Auto-Respawn, Todespunkt, Haltbarkeit im Tooltip</td></tr>
+          <tr><td>Leistung</td><td>Entity-Culling, Blockentity-Culling, Partikel-Limit, Hintergrund-FPS, kein Menü-Blur, keine Wolken</td></tr>
+          <tr><td>Client</td><td>Einstellungen, Emotes, Kosmetik, Bambu+</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Neu in 2.0</h3>
+      <div class="cards">
+        <div class="card"><span class="tag">HUD</span><h4>Blickinfo</h4><p>Zeigt den Block oder das Wesen, auf das du schaust, mit Leben bei Mobs.</p></div>
+        <div class="card"><span class="tag">HUD</span><h4>Inventar</h4><p>Dein Inventar als kleines Raster im Bild.</p></div>
+        <div class="card"><span class="tag">OPTIK</span><h4>Nachtsicht ohne Flackern</h4><p>Kein Blinken mehr, wenn der Nachtsicht-Trank ausläuft.</p></div>
+        <div class="card"><span class="tag">OPTIK</span><h4>Hand ausblenden</h4><p>Nur die leere Hand oder Hand und Items, praktisch für Screenshots.</p></div>
+      </div>
+    </section>
+
+    <section class="doc" id="hud">
+      <h2><span class="n">04</span>HUD-Editor</h2>
+      <ul>
+        <li>Öffnen über das Vormenü (<kbd>Rechte Shift</kbd> → HUD-Editor).</li>
+        <li>Elemente mit der Maus ziehen, mit dem <b>Mausrad</b> die Größe ändern.</li>
+        <li>Elemente, die du nicht verschoben hast, stapeln sich links automatisch, ohne sich zu überlappen.</li>
+        <li>Unter <i>Aussehen</i> hat jedes Element: Ecken abrunden, Deckkraft des Hintergrunds und einen Farbstreifen links.</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-hud-editor.webp" alt="HUD-Editor mit verschiebbaren Anzeigen" loading="lazy" width="1280" height="720"><figcaption>Der HUD-Editor.</figcaption></figure>
+    </section>
+
+    <section class="doc" id="cosmetics">
+      <h2><span class="n">05</span>Cosmetics</h2>
+      <p>41 Cosmetics: Hüte, Mützen, Bandanas in 11 Farben, Kronen, Flügel, ein Panda-Begleiter und animierte HD-Umhänge. Öffnen über <kbd>Rechte Shift</kbd> → Kosmetik.</p>
+      <ul>
+        <li><b>Klick</b> auf eine Karte legt an oder ab. <b>Darüberfahren</b> zeigt das Cosmetic zur Probe an deiner Figur (mit der Maus drehbar).</li>
+        <li>Farbvarianten wählst du über die Punkte unter der Figur.</li>
+        <li><b>Suche und Filter:</b> einfach tippen; Chips oben filtern nach Art, „Angelegt“ zeigt nur, was du trägst.</li>
+        <li>Hüte und Bandanas sitzen <b>über dem Helm</b> und über 3D-Skin-Layers, Flügel und Begleiter über dem Brustpanzer. Einstellbar im Modul „Kosmetik“ unter „Über 3D-Skin-Layer legen“.</li>
+        <li><b>Andere sehen sie:</b> Alle Spieler mit BambuBay auf demselben Server sehen deine Cosmetics, auch in LAN-Welten.</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-armor-cosmetics.webp" alt="Bandana und Hut über einem Diamanthelm" loading="lazy" width="1280" height="720"><figcaption>Cosmetics über der Rüstung.</figcaption></figure>
+      <h3>Eigene Umhänge</h3>
+      <ol>
+        <li>Lege ein Bild in <code>config/bambubay/capes/</code> (PNG, JPG oder animiertes GIF).</li>
+        <li>Klicke im Kosmetik-Menü auf <b>Neu laden</b>.</li>
+      </ol>
+      <p>Erkannt werden komplette Umhang-Texturen (64×32-Aufteilung), nur der Umhang-Teil (22×17) oder ein normales Bild, das zugeschnitten wird. Eigene Umhänge siehst nur du.</p>
+    </section>
+
+    <section class="doc" id="emotes">
+      <h2><span class="n">06</span>Emotes</h2>
+      <ul>
+        <li><b>Emote-Rad:</b> <kbd>B</kbd> halten, auf ein Emote zeigen, loslassen. Das Mausrad blättert durch alle Emotes.</li>
+        <li><b>26 Emotes</b>, darunter Winken, Tanzen, Floss, Salto, Liegestütze, Schlafen und Dab. Cosmetics bewegen sich mit.</li>
+        <li>Was im Rad liegt, legst du im Kosmetik-Menü im Reiter Emotes fest (Rechtsklick auf eine Karte).</li>
+        <li>Laufen, Springen oder Angreifen beendet ein Emote. Die Kamera schaut dabei von vorne.</li>
+        <li>Andere BambuBay-Spieler auf demselben Server sehen dein Emote nach etwa 0,15 Sekunden.</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-emote-wheel.webp" alt="Das Emote-Rad" loading="lazy" width="1280" height="720"><figcaption>Das Emote-Rad auf Taste B.</figcaption></figure>
+      <h3>Eigene Emotes aus Blockbench</h3>
+      <p>Lege eine <code>*.animation.json</code> (GeckoLib-Animation mit den Knochen <code>bipedHead</code>, <code>bipedBody</code>, <code>bipedRightArm</code> …) in <code>config/bambubay/emotes/</code> und klicke im Kosmetik-Menü auf <b>Neu laden</b>. Molang, Keyframes (linear, catmullrom) und alle Loop-Modi werden unterstützt. Andere sehen eigene Emotes nur, wenn sie dieselbe Datei haben.</p>
+    </section>
+
+    <section class="doc" id="bambuplus">
+      <h2><span class="n">07</span>Bambu+</h2>
+      <p>Animierte Stile für dein Namensschild und deinen Namen in der Tab-Liste. Öffnen über das Vormenü (Stern) oder die linke Leiste im Mod-Menü.</p>
+      <ul>
+        <li><b>19 Effekte:</b> Regenbogen, Verlauf, Metallisch, Schimmer, Feuer, Chromatisch, Pulsieren, Leuchten, Tippen, Glitzer, Eis, Gift, Gold, Galaxie, Sunset, Ocean, Sakura, Matrix und Neon.</li>
+        <li><b>Farben &amp; Tempo:</b> zwei Farbpaletten, Tempo-Regler, Fett und fertige Farbpaare.</li>
+        <li><b>Zusatz-Schild:</b> eine zweite Zeile mit eigenem Text (bis 16 Zeichen) über oder unter dem Namen.</li>
+        <li>Links siehst du deine Figur mit Namensschild als Live-Vorschau.</li>
+        <li>Andere BambuBay-Spieler sehen deinen Stil. „Stile anderer Spieler zeigen“ schaltet das für dich ab.</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-plus-nametags.webp" alt="Spieler mit farbig animierten Namensschildern" loading="lazy" width="1280" height="720"><figcaption>Bambu+ Namens-Stile im Spiel.</figcaption></figure>
+    </section>
+
+    <section class="doc" id="bambugram">
+      <h2><span class="n">08</span>BambuGram</h2>
+      <p>Screenshots direkt aus dem Spiel teilen. Öffnen über das Vormenü (Kamera), die linke Leiste im Mod-Menü oder <code>/bambugram</code>.</p>
+      <ul>
+        <li><b>Feed:</b> Reiter Freunde, Entdecken und Meine, sortiert nach Neu oder Top.</li>
+        <li><b>Beiträge:</b> Like (auch per Doppelklick aufs Bild), Dislike und Kommentare. Klick auf den Namen öffnet das Profil.</li>
+        <li><b>Hochladen:</b> Nach <kbd>F2</kbd> fragt der Chat „Teilen?“. Oder links einen der letzten 60 Screenshots wählen, Bildtext (bis 150 Zeichen) schreiben und auf Wunsch den Servernamen zeigen.</li>
+        <li><b>Löschen und Melden:</b> Eigene Beiträge und Kommentare kannst du löschen (zweimal klicken), fremde Beiträge melden. Nach 3 Meldungen wird ein Beitrag ausgeblendet.</li>
+        <li>Grenzen gegen Spam: 15 Beiträge pro Tag, 20 Sekunden zwischen zwei Beiträgen.</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-gram-feed.webp" alt="Der BambuGram-Feed mit Beiträgen" loading="lazy" width="1280" height="720"><figcaption>Der BambuGram-Feed.</figcaption></figure>
+    </section>
+
+    <section class="doc" id="freunde">
+      <h2><span class="n">09</span>Freunde</h2>
+      <ul>
+        <li>Öffnen über <kbd>Rechte Shift</kbd> → Freunde.</li>
+        <li>Freund hinzufügen: Minecraft-Namen ins Feld tippen und senden. Eingehende Anfragen sind gelb umrandet.</li>
+        <li>Online-Freunde haben einen grünen Ring und zeigen, auf welchem Server sie spielen.</li>
+        <li>Spieler mit BambuBay haben das BambuBay-Symbol neben dem Namen (abschaltbar unter <i>Optionen → BambuBay-Symbol neben Namen</i>).</li>
+      </ul>
+      <figure class="shot"><img src="../assets/game-friends-visible.webp" alt="Zwei Spieler mit BambuBay-Symbol und Cosmetics" loading="lazy" width="1280" height="720"><figcaption>Andere BambuBay-Spieler mit Symbol, Cosmetics und Bambu+.</figcaption></figure>
+    </section>
+
+    <section class="doc" id="musik">
+      <h2><span class="n">10</span>Musik-Overlay</h2>
+      <p>Zeigt oben im Bild das laufende Lied mit Cover, Titel, Künstler und Fortschritt. Funktioniert mit Spotify, Apple Music, YouTube im Browser, Amazon Music, SoundCloud, Tidal, Cider und anderen Playern.</p>
+      <ul>
+        <li>Layout Normal, Kompakt oder Minimal; Albumfarbe als Hintergrund; ausblenden, wenn pausiert.</li>
+        <li>Nur unter Windows. Ein kleines Skript liest die Windows-Medienanzeige (dieselbe wie im Lautstärke-Popup). Es steuert nichts, braucht keine Anmeldung, schickt nichts ins Internet und läuft nur, solange das Modul an ist.</li>
+      </ul>
+    </section>
+
+    <section class="doc" id="leistung">
+      <h2><span class="n">11</span>Mehr FPS</h2>
+      <p>Die Leistungs-Module greifen sofort, ohne Chunks neu zu laden. Der Launcher installiert dazu auf Wunsch ein Leistungspaket: Sodium, Lithium, FerriteCore, EntityCulling, ImmediatelyFast und MoreCulling.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Aufbau</th><th>Ø FPS</th><th>Schwächste 5 %</th></tr></thead>
+        <tbody>
+          <tr><td>Nur Fabric API</td><td>150</td><td>93</td></tr>
+          <tr><td>Mit BambuBay-Mod</td><td>153</td><td>110</td></tr>
+          <tr><td>Mit Mod und Leistungspaket</td><td><b>276</b> (+84 %)</td><td><b>227</b></td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:14px;color:var(--dim)">Gemessen in einer Dschungel-Welt, Sichtweite 16, 1280×720, 40 Sekunden Kameradrehung.</p>
+    </section>
+
+    <section class="doc" id="datenschutz">
+      <h2><span class="n">12</span>Online-Funktionen &amp; Datenschutz</h2>
+      <p>Freunde, BambuGram und das Anzeigen von Cosmetics, Bambu+, Emotes und Symbol bei anderen Spielern laufen über den BambuBay-Server. Dafür schickt die Mod:</p>
+      <ul>
+        <li>deine Minecraft-UUID und deinen Namen (Anmeldung über Mojangs Sitzungsprüfung, dein Passwort oder Token verlässt nie deinen PC),</li>
+        <li>den Namen des Servers, auf dem du spielst, und die UUIDs der Spieler in der Tab-Liste (damit nur Spieler auf demselben Server deine Cosmetics und Emotes sehen),</li>
+        <li>deine gewählten Cosmetics, deinen Bambu+-Stil und gespielte Emotes,</li>
+        <li>Bilder und Texte, die du selbst im BambuGram hochlädst. Bilder werden neu gespeichert, dabei fallen alle Metadaten weg.</li>
+      </ul>
+      <p>Es gibt keine Werbung, kein Tracking und keine Weitergabe an Dritte. Alle Module funktionieren auch ohne Verbindung zum Server.</p>
+    </section>
+
+    <section class="doc" id="probleme">
+      <h2><span class="n">13</span>Probleme lösen</h2>
+      <details><summary>Das Spiel stürzt beim Start ab</summary><div>
+        <p>Prüfe, ob Fabric Loader 0.18.3+ und Fabric API für 1.21.11 installiert sind und nur eine BambuBay-Jar im mods-Ordner liegt. Schick uns sonst die Datei <code>logs/latest.log</code> (siehe <a href="#melden">Fehler melden</a>).</p></div></details>
+      <details><summary>Ich sehe die Cosmetics meiner Freunde nicht</summary><div>
+        <p>Beide brauchen die aktuelle Mod-Version und müssen auf demselben Server oder in derselben LAN-Welt sein. Öffne das Freunde-Menü: Steht dort „Offline“, klicke auf „Erneut verbinden“.</p></div></details>
+      <details><summary>Bandana oder Hut verschwindet unter dem Helm</summary><div>
+        <p>Stelle im Modul „Kosmetik“ die Option „Über 3D-Skin-Layer legen“ auf „Immer“.</p></div></details>
+      <details><summary>Das Musik-Overlay zeigt nichts</summary><div>
+        <p>Das Overlay braucht Windows 10 oder 11 und einen Player, der in der Windows-Medienanzeige erscheint. Prüfe in den Modul-Einstellungen, ob die Quelle (z. B. Spotify) eingeschaltet ist.</p></div></details>
+      <details><summary>Windows warnt beim Installer</summary><div>
+        <p>Der Installer ist nicht digital signiert. Klicke auf „Weitere Informationen“ und dann „Trotzdem ausführen“.</p></div></details>
+      <details><summary>Wie setze ich alle Einstellungen zurück?</summary><div>
+        <p>Spiel schließen und <code>config/bambubay/config.json</code> löschen. Beim nächsten Start legt die Mod sie mit Standardwerten neu an.</p></div></details>
+    </section>
+
+    <section class="doc" id="melden">
+      <h2><span class="n">14</span>Fehler melden &amp; Ideen</h2>
+      <p>Fehler und Wünsche sammeln wir im <a href="https://github.com/dynxytghg-max/dynxytghg-max.github.io/issues">Issue-Tracker auf GitHub</a>. Du brauchst dafür ein kostenloses GitHub-Konto.</p>
+      <ol>
+        <li>Schau kurz nach, ob es den Fehler schon gibt.</li>
+        <li>Klicke auf <b>New issue</b> und wähle „Fehler melden“ oder „Idee vorschlagen“.</li>
+        <li>Beschreibe, was du gemacht hast, was passiert ist und was du erwartet hast. Hänge bei Abstürzen <code>logs/latest.log</code> oder den Crash-Report aus <code>crash-reports/</code> an.</li>
+      </ol>
+      <div class="note warn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
+        <span><b>Keine privaten Daten posten:</b> Logs können deinen Windows-Benutzernamen enthalten. Schau sie vor dem Hochladen kurz durch.</span></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="in">
+    <span>Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt oder mit ihnen verbunden.</span>
+    <span>Cosmetic-Modelle: miguelgoesimoes, VoxelBear, barkangel (CC BY 4.0) · Symbole: Lucide (ISC)</span>
+  </div>
+</footer>
+
+<script>
+// Inhaltsverzeichnis: aktiven Abschnitt markieren
+const links = [...document.querySelectorAll(".toc a")];
+const sections = links.map(a => document.querySelector(a.getAttribute("href")));
+const spy = new IntersectionObserver(entries => {
+  for (const e of entries) {
+    if (!e.isIntersecting) continue;
+    links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+  }
+}, { rootMargin: "-30% 0px -60% 0px" });
+sections.forEach(s => s && spy.observe(s));
+
+// Suche: blendet Abschnitte ohne Treffer aus und markiert die Fundstellen
+const q = document.getElementById("q"), hint = document.getElementById("hint");
+const fold = s => s.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
+function clearMarks() {
+  document.querySelectorAll("main mark").forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+  document.querySelectorAll("main section").forEach(s => s.normalize());
+}
+function markIn(root, needle) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const hits = [];
+  for (let n; (n = walker.nextNode());) {
+    const i = n.data.toLowerCase().indexOf(needle);
+    if (i >= 0) hits.push([n, i]);
+  }
+  for (const [n, i] of hits) {
+    const mid = n.splitText(i); mid.splitText(needle.length);
+    const m = document.createElement("mark"); m.textContent = mid.data; mid.replaceWith(m);
+  }
+}
+q.addEventListener("input", () => {
+  clearMarks();
+  const term = q.value.trim();
+  let shown = 0;
+  sections.forEach((s, i) => {
+    const hit = !term || fold(s.textContent).includes(fold(term));
+    s.classList.toggle("hidden", !hit);
+    links[i].classList.toggle("hidden", !hit);
+    if (hit) shown++;
+    if (hit && term.length >= 2) {
+      s.querySelectorAll("details").forEach(d => { if (d.textContent.toLowerCase().includes(term.toLowerCase())) d.open = true; });
+      markIn(s, term.toLowerCase());
+    }
+  });
+  hint.textContent = !term ? "" : shown ? `${shown} Abschnitt${shown === 1 ? "" : "e"} gefunden` : "Nichts gefunden. Versuch ein anderes Wort.";
+});
+</script>
+</body>
+</html>
