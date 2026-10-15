@@ -14,6 +14,20 @@
   "items": [
     {
       "date": "2026-10-15",
+      "tag": "Design",
+      "title": "Neues Mod-Menü",
+      "text": "Neue An/Aus-Schalter, größere Modul-Karten, schönere Einstellungen mit runden Reglern. Dazu ein neues Freunde-Menü, Suche im Kosmetik-Menü und 5 neue Bambu+-Effekte.",
+      "image": "assets/game-new-menu.webp"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Neu",
+      "title": "4 neue Module",
+      "text": "Blickinfo (Block oder Wesen, auf das du schaust), Inventar-HUD, Nachtsicht ohne Flackern und Hand ausblenden.",
+      "image": ""
+    },
+    {
+      "date": "2026-10-15",
       "tag": "Fix",
       "title": "Freunde sehen alles",
       "text": "Cosmetics, BambuBay-Symbol, Bambu+ und Emotes von anderen Spielern mit der Mod kommen jetzt überall an: in LAN-Welten, im eigenen Einzelspieler-Host und auf Servern mit verschiedenen Adressen.",
