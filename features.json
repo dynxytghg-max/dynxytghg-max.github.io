@@ -15,6 +15,13 @@
     {
       "date": "2026-10-15",
       "tag": "Neu",
+      "title": "Die BambuBay-Webseite",
+      "text": "Launcher und Mod jetzt direkt hier herunterladen. Jedes neue Feature erscheint automatisch auf dieser Seite. Dazu ein Fix: Emotes fragen den Server nicht mehr ohne Pause ab.",
+      "image": "assets/launcher-play.webp"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Neu",
       "title": "BambuGram",
       "text": "Screenshots direkt aus dem Spiel teilen. Liken, disliken, kommentieren, Profile ansehen. Nach F2 fragt der Chat, ob du teilen willst.",
       "image": "assets/game-gram-feed.webp"
