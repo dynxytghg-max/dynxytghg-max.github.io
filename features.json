@@ -1,10 +1,10 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "3.0.0",
-    "file": "downloads/BambuBay-Launcher-3.0.0.zip",
+    "version": "3.0.1",
+    "file": "downloads/BambuBay-Launcher-3.0.1.zip",
     "size": "14,1 MB",
-    "notes": "Launcher 3.0: 3D-Emotes auf der Startseite, Skin-Bibliothek, Mod-Filter und Mod-Updates."
+    "notes": "Launcher 3.0: 3D-Emotes, Skin-Bibliothek, Mod-Filter und Mod-Updates. 3.0.1: Tastenkürzel (Strg+1 bis 6) und Server-Suche."
   },
   "mod": {
     "version": "2.1.0",
