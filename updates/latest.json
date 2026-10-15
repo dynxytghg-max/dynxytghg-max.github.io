@@ -1,0 +1,11 @@
+{
+  "version": "2.2.0",
+  "notes": "Der Launcher aktualisiert sich ab jetzt von selbst. Neue Mod-Versionen kommen automatisch.",
+  "pub_date": "2026-10-15T21:56:01Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTFyQ3NoRWxKVlZZS3gyY25kWjdJSmFJVzQvN2puRFJSYUUxRThTa2VFNlhSRXRTbkFZU3hpNzN0WlQzeHAxWXpScm9lSTdCa3VvZVljTzFVam1FZWdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTAxMzYxCWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMi4yLjBfeDY0LXNldHVwLmV4ZQphbkxIU3BSejZMaVZMRFRhcENYdjNwYVlEdUFWZWJrSDhXdDRHajFQL3lHSWUwOGszZ2dWSEcybTY3WWxzbTBtaFdBaUdlQThLbXJjM3hFYnB1OHpBUT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-2.2.0-setup.exe"
+    }
+  }
+}

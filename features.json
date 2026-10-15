@@ -1,17 +1,27 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "2.1.0",
-    "file": "downloads/BambuBay-Launcher-2.1.0.zip",
-    "size": "13,9 MB"
+    "version": "2.2.0",
+    "file": "downloads/BambuBay-Launcher-2.2.0.zip",
+    "size": "14,0 MB",
+    "notes": "Der Launcher aktualisiert sich ab jetzt von selbst. Neue Mod-Versionen kommen automatisch."
   },
   "mod": {
     "version": "2.1.0",
     "minecraft": "1.21.11",
     "file": "downloads/BambuBay-Mod-2.1.0.zip",
-    "size": "10,5 MB"
+    "size": "10,5 MB",
+    "jar": "downloads/BambuBayClient-2.1.0.jar",
+    "sha1": "6fb341064127d07ffd6172dbd83558c1b92dc0e0"
   },
   "items": [
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Launcher 2.2.0: Auto-Update",
+      "text": "Der Launcher aktualisiert sich ab jetzt beim Start von selbst, und neue Mod-Versionen kommen automatisch ohne neuen Installer. Wer Launcher 2.1.0 hat, lädt 2.2.0 einmal hier herunter, danach nie wieder.",
+      "image": "assets/launcher-play.webp"
+    },
     {
       "date": "2026-10-15",
       "tag": "Neu",
