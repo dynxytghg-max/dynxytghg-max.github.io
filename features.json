@@ -14,6 +14,27 @@
   "items": [
     {
       "date": "2026-10-15",
+      "tag": "Fix",
+      "title": "Freunde sehen alles",
+      "text": "Cosmetics, BambuBay-Symbol, Bambu+ und Emotes von anderen Spielern mit der Mod kommen jetzt überall an: in LAN-Welten, im eigenen Einzelspieler-Host und auf Servern mit verschiedenen Adressen.",
+      "image": "assets/game-friends-visible.webp"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Cosmetics",
+      "title": "Über Rüstung und 3D-Skin-Layers",
+      "text": "Bandanas, Hüte und Mützen sitzen jetzt über dem Helm und über 3D-Haaren, Flügel und Begleiter über dem Brustpanzer.",
+      "image": "assets/game-armor-cosmetics.webp"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Neu",
+      "title": "Bessere Modul-Suche",
+      "text": "Findet Module auch bei Tippfehlern, mit englischen Wörtern (brightness, coords) und über Einstellungen. Beste Treffer zuerst, Enter öffnet den ersten.",
+      "image": "assets/game-module-search.webp"
+    },
+    {
+      "date": "2026-10-15",
       "tag": "Neu",
       "title": "Die BambuBay-Webseite",
       "text": "Launcher und Mod jetzt direkt hier herunterladen. Jedes neue Feature erscheint automatisch auf dieser Seite. Dazu ein Fix: Emotes fragen den Server nicht mehr ohne Pause ab.",
