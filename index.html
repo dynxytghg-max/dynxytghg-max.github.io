@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="assets/logo.png">
+</head>
+<body>
+<title>BambuBay Client</title>
+<meta name="description" content="BambuBay: Launcher und Mod für Minecraft 1.21.11 mit Cosmetics, Emotes, BambuGram und Bambu+.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: nächtlicher Bambuswald. Links Text, rechts schwebendes 3D-Gerät; darunter Abschnitte
+   auf einer schmalen Mittelspalte, Bilder in Fenster-Rahmen mit Tiefe. Eine Farbe: Bambusgrün. */
+:root {
+  color-scheme: dark;
+  --night: #050d09;        /* Seitengrund */
+  --forest: #0a1710;       /* Flächen */
+  --moss: #11241a;         /* gehobene Flächen */
+  --line: rgba(160, 230, 190, .12);
+  --line-strong: rgba(160, 230, 190, .24);
+  --leaf: #4ade80;         /* Akzent, wie im Launcher */
+  --leaf-deep: #15803d;
+  --sun: #facc15;          /* nur fürs "Neu"-Etikett */
+  --text: #e9f5ee;
+  --muted: #9bb5a6;
+  --dim: #64806f;
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
+  --radius: 14px;
+  --wrap: 1180px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--text);
+  font: 400 16px/1.6 var(--font-body);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
+.pixel { font-family: var(--font-pixel); letter-spacing: .01em; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+/* ---------- Kopfleiste ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: rgba(5, 13, 9, .72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { width: 30px; height: 30px; image-rendering: pixelated; }
+.brand span { font: 700 21px/1 var(--font-pixel); }
+.brand b { color: var(--leaf); font-weight: 700; }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 15px; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { margin-left: auto; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  border: 0; cursor: pointer; text-decoration: none;
+  border-radius: 10px; padding: 11px 18px; font-weight: 600; font-size: 15px;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-leaf {
+  background: var(--leaf); color: #04220f;
+  box-shadow: 0 4px 0 var(--leaf-deep), 0 10px 30px rgba(74, 222, 128, .25);
+}
+.btn-leaf:hover { transform: translateY(-1px); background: #6ee7a0; }
+.btn-leaf:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--leaf-deep); }
+.btn-ghost { background: transparent; border: 1px solid var(--line-strong); color: var(--text); }
+.btn-ghost:hover { border-color: var(--leaf); }
+.btn-big { padding: 16px 26px; font-size: 17px; border-radius: 12px; }
+
+/* ---------- Start ---------- */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  /* Lichtschein durch das Blätterdach */
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 50% at 72% 42%, rgba(74, 222, 128, .16), transparent 70%),
+    radial-gradient(40% 40% at 15% 10%, rgba(163, 230, 53, .07), transparent 70%),
+    linear-gradient(180deg, #071a10 0%, var(--night) 85%);
+  pointer-events: none;
+}
+.hero .wrap {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+  gap: 24px; align-items: center; padding-block: 72px 56px;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 13px/1 var(--font-mono); color: var(--leaf);
+  text-transform: uppercase; letter-spacing: .08em;
+  padding: 7px 11px; border: 1px solid rgba(74, 222, 128, .3); border-radius: 999px;
+  background: rgba(74, 222, 128, .07);
+}
+.eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 10px var(--leaf); }
+.hero h1 { font: 700 clamp(36px, 4.4vw, 60px)/1.04 var(--font-pixel); margin-top: 22px; }
+.hero h1 em { font-style: normal; color: var(--leaf); display: block; }
+.hero .lead { color: var(--muted); font-size: 18px; max-width: 34ch; margin-top: 20px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; margin-top: 30px; }
+.hero-actions .sub { font-size: 14px; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; background: none; border: 0; padding: 0; }
+.hero-meta { margin-top: 18px; font: 500 13px/1.4 var(--font-mono); color: var(--dim); }
+.stage { position: relative; aspect-ratio: 1.25; width: 100%; min-width: 0; }
+.stage canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  /* weiche Ränder statt harter Kante */
+  -webkit-mask-image: radial-gradient(75% 70% at 52% 50%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(75% 70% at 52% 50%, #000 55%, transparent 100%);
+}
+.stage .fallback {
+  position: absolute; inset: 12% 4% auto 6%;
+  border-radius: 12px; border: 1px solid var(--line-strong);
+  transform: perspective(1200px) rotateY(-16deg) rotateX(6deg);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, .6), 0 0 60px rgba(74, 222, 128, .15);
+}
+.stage.gl .fallback { display: none; }
+.drag-hint { position: absolute; bottom: 4px; right: 8px; font: 500 12px var(--font-mono); color: var(--dim); }
+
+/* ---------- Zahlen ---------- */
+.stats { border-block: 1px solid var(--line); background: rgba(10, 23, 16, .6); }
+.stats .wrap { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 44px; padding-block: 26px; }
+.stat { display: flex; align-items: baseline; gap: 10px; color: var(--muted); }
+.stat b { font: 700 30px/1 var(--font-pixel); color: var(--text); font-variant-numeric: tabular-nums; }
+
+/* ---------- Abschnitte ---------- */
+section.block { padding-block: 96px 24px; }
+.head { text-align: center; display: grid; gap: 14px; justify-items: center; }
+.head h2 { font: 700 clamp(32px, 4.6vw, 52px)/1.05 var(--font-pixel); }
+.head h2 em { font-style: normal; color: var(--leaf); }
+.head p { color: var(--muted); max-width: 58ch; }
+
+.tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; margin: 34px auto 0; border-bottom: 1px solid var(--line); width: fit-content; max-width: 100%; }
+.tab {
+  background: none; border: 0; cursor: pointer; padding: 10px 14px 12px;
+  color: var(--muted); font-weight: 500; font-size: 15px; position: relative;
+}
+.tab:hover { color: var(--text); }
+.tab[aria-selected="true"] { color: var(--text); }
+.tab[aria-selected="true"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px; background: var(--leaf); border-radius: 2px; }
+
+.feature { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: 44px; align-items: center; margin-top: 48px; }
+.feature-text { display: grid; gap: 16px; min-width: 0; }
+.feature-text h3 { font: 700 30px/1.1 var(--font-pixel); }
+.feature-text p { color: var(--muted); }
+.feature-text ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.feature-text li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; color: var(--text); font-size: 15px; }
+.feature-text li::before { content: ""; width: 8px; height: 8px; margin-top: 8px; background: var(--leaf); box-shadow: 2px 2px 0 var(--leaf-deep); }
+.feature-key { font: 500 13px var(--font-mono); color: var(--dim); }
+.feature-key kbd { font: 700 12px var(--font-mono); color: var(--text); border: 1px solid var(--line-strong); border-bottom-width: 3px; border-radius: 6px; padding: 1px 6px; }
+
+/* Fenster-Rahmen mit Tiefe */
+.shot { position: relative; min-width: 0; perspective: 1600px; }
+.frame {
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line-strong); background: #000;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .4), 0 0 70px rgba(74, 222, 128, .08);
+  transform: rotateY(-7deg) rotateX(3deg);
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.frame img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.inset {
+  position: absolute; width: 42%; right: -3%; bottom: -10%;
+  border-radius: 10px; overflow: hidden; border: 1px solid var(--line-strong);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, .7);
+  transform: translateZ(60px) rotateY(-7deg);
+}
+.inset img { aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* Musik-Overlay als Nachbau (wie im Spiel, mit Beispiel-Lied) */
+.music-mock {
+  position: absolute; top: 4%; left: 50%; transform: translateX(-50%);
+  display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; align-items: center;
+  width: min(300px, 70%); padding: 8px 12px 8px 8px; border-radius: 6px;
+  background: rgba(26, 32, 30, .82); border-left: 3px solid #b8d8c4;
+  font-family: var(--font-pixel); color: #fff;
+}
+.music-mock .cover { width: 52px; height: 52px; border-radius: 3px; background: linear-gradient(135deg, #1f5d38, #4ade80 60%, #d9f99d); display: grid; place-items: center; }
+.music-mock .cover img { width: 34px; image-rendering: pixelated; }
+.music-mock b { display: block; font-size: 15px; }
+.music-mock span { color: #b6c7bd; font-size: 13px; }
+.music-mock .bar { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #b6c7bd; margin-top: 3px; }
+.music-mock .bar i { flex: 1; height: 3px; background: rgba(255, 255, 255, .25); position: relative; }
+.music-mock .bar i::after { content: ""; position: absolute; inset: 0 61% 0 0; background: #b8f0cd; }
+
+/* ---------- Launcher zum Ausprobieren ---------- */
+.try { display: grid; grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); gap: 40px; align-items: center; margin-top: 52px; }
+.try-list { display: grid; gap: 4px; min-width: 0; }
+.try-item {
+  text-align: left; cursor: pointer; background: none; border: 0; border-left: 2px solid var(--line);
+  padding: 12px 18px; display: grid; gap: 4px;
+}
+.try-item b { font-weight: 600; color: var(--muted); }
+.try-item span { font-size: 14px; color: var(--dim); display: none; }
+.try-item[aria-selected="true"] { border-left-color: var(--leaf); background: linear-gradient(90deg, rgba(74, 222, 128, .09), transparent); }
+.try-item[aria-selected="true"] b { color: var(--text); }
+.try-item[aria-selected="true"] span { display: block; color: var(--muted); }
+.device-wrap { perspective: 1800px; min-width: 0; }
+.device {
+  border-radius: 16px; padding: 8px; background: linear-gradient(160deg, #183526, #0b1711);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 50px 90px rgba(0, 0, 0, .6), 0 0 90px rgba(74, 222, 128, .12), inset 0 1px 0 rgba(255, 255, 255, .08);
+  transform: rotateY(-9deg) rotateX(4deg);
+  transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+}
+.device img { border-radius: 10px; aspect-ratio: 1280 / 800; width: 100%; object-fit: cover; }
+
+/* ---------- Neu im Client ---------- */
+.news { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 18px; margin-top: 48px; }
+.news-card {
+  display: grid; grid-template-rows: auto 1fr; min-width: 0;
+  background: linear-gradient(180deg, var(--moss), var(--forest));
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.news-card .pic { aspect-ratio: 16 / 9; background: #061009; overflow: hidden; }
+.news-card .pic img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.news-card:hover .pic img { transform: scale(1.04); }
+.news-card .pic.empty { display: grid; place-items: center; font: 700 44px var(--font-pixel); color: rgba(74, 222, 128, .35); background: radial-gradient(circle at 50% 60%, rgba(74, 222, 128, .14), #061009 70%); }
+.news-card .body { padding: 18px 20px 20px; display: grid; gap: 8px; align-content: start; }
+.news-card .meta { display: flex; align-items: center; gap: 10px; font: 500 12px var(--font-mono); color: var(--dim); }
+.tag { font: 700 11px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; padding: 4px 7px; border-radius: 5px; color: var(--leaf); background: rgba(74, 222, 128, .1); border: 1px solid rgba(74, 222, 128, .3); }
+.tag.neu { color: var(--sun); background: rgba(250, 204, 21, .1); border-color: rgba(250, 204, 21, .35); }
+.news-card h3 { font: 700 21px/1.2 var(--font-pixel); }
+.news-card p { color: var(--muted); font-size: 15px; }
+.news-note { text-align: center; color: var(--dim); font: 500 13px var(--font-mono); margin-top: 22px; }
+
+/* ---------- Download ---------- */
+.get { margin-top: 48px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 18px; }
+.get-card {
+  border-radius: 18px; border: 1px solid var(--line); padding: 28px; display: grid; gap: 14px; align-content: start; min-width: 0;
+  background: var(--forest);
+}
+.get-card.main {
+  border-color: rgba(74, 222, 128, .4);
+  background: radial-gradient(120% 120% at 0% 0%, rgba(74, 222, 128, .16), transparent 55%), var(--moss);
+}
+.get-card h3 { font: 700 26px/1.1 var(--font-pixel); }
+.get-card p { color: var(--muted); }
+.get-card .file { font: 500 13px var(--font-mono); color: var(--dim); }
+.get-card ol { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; font-size: 15px; }
+.get-status { min-height: 1.4em; font-size: 14px; color: var(--leaf); }
+.get-status.err { color: #fca5a5; }
+.req { text-align: center; margin-top: 18px; color: var(--dim); font-size: 14px; }
+
+/* ---------- Fußzeile ---------- */
+footer { border-top: 1px solid var(--line); margin-top: 110px; padding-block: 40px 56px; color: var(--dim); font-size: 14px; }
+footer .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; }
+footer h4 { margin: 0 0 8px; color: var(--muted); font: 600 13px var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
+footer p + p { margin-top: 8px; }
+
+@media (max-width: 900px) {
+  .hero .wrap, .feature, .try, .get, footer .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero .wrap { padding-block: 40px 30px; }
+  .nav-links { display: none; }
+  .frame, .device { transform: none; }
+  .inset { right: 2%; bottom: -8%; }
+  .try-item span { display: block; }
+}
+@media (max-width: 520px) {
+  .hero h1 { font-size: 32px; overflow-wrap: anywhere; }
+  .head h2 { font-size: 28px; }
+  .stats .wrap { gap: 10px 24px; }
+  .nav .wrap { gap: 12px; }
+  .brand span { font-size: 18px; }
+  .nav-cta { padding: 9px 12px; }
+  .stat b { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="BambuBay Startseite"><img src="assets/logo.png" alt=""><span>Bambu<b>Bay</b></span></a>
+    <nav class="nav-links" aria-label="Abschnitte">
+      <a href="#features">Features</a>
+      <a href="#launcher">Launcher</a>
+      <a href="#neu">Neu</a>
+      <a href="#download">Download</a>
+    </nav>
+    <a class="btn btn-leaf nav-cta" href="#download">Download</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><i></i>Minecraft 1.21.11 · Fabric</span>
+        <h1>Der Minecraft-Client <em>aus dem Bambuswald.</em></h1>
+        <p class="lead">Launcher und Mod in einem: mehr FPS, Cosmetics, Emotes, Freunde und BambuGram. Kostenlos für alle.</p>
+        <div class="hero-actions">
+          <a class="btn btn-leaf btn-big" href="downloads/BambuBay-Launcher-2.1.0.zip" data-download="launcher">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Für Windows herunterladen
+          </a>
+          <a class="sub" href="#download">Nur die Mod</a>
+        </div>
+        <p class="hero-meta" id="hero-meta">Launcher 2.1.0 · Mod 2.0.0 · aktualisiert am 15.10.2026</p>
+      </div>
+      <div class="stage" id="stage">
+        <img class="fallback" src="assets/launcher-play.webp" alt="Der BambuBay Launcher: Spielen-Ansicht mit großem Spielen-Knopf, Neuigkeiten und Servern">
+        <canvas id="scene" aria-hidden="true"></canvas>
+        <span class="drag-hint" id="drag-hint" hidden>Maus bewegen zum Drehen</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>70+</b>Module</div>
+      <div class="stat"><b>41</b>Cosmetics in 70 Varianten</div>
+      <div class="stat"><b>26</b>Emotes</div>
+      <div class="stat"><b>15</b>Namens-Effekte</div>
+    </div>
+  </div>
+
+  <section class="block" id="features">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="pixel">Alles im Client. <em>Ohne Extra-Mods.</em></h2>
+        <p>Alles, was andere BambuBay-Spieler betrifft, sehen sie auch: Cosmetics, Emotes, Namens-Stile und deine Beiträge.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Features" id="feature-tabs"></div>
+      <div id="feature-panel" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <section class="block" id="launcher">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="pixel">Der Launcher. <em>Schau rein.</em></h2>
+        <p>Ein Klick auf Spielen: Minecraft, Fabric, die BambuBay-Mod und das Leistungspaket werden automatisch eingerichtet.</p>
+      </div>
+      <div class="try">
+        <div class="try-list" role="tablist" aria-label="Launcher-Ansichten" id="try-list"></div>
+        <div class="device-wrap"><div class="device" id="device"><img id="device-img" src="assets/launcher-play.webp" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="neu">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="pixel">Neu im <em>Client.</em></h2>
+        <p>Jedes neue Feature landet hier, sobald es fertig ist.</p>
+      </div>
+      <div class="news" id="news"></div>
+      <p class="news-note" id="news-note"></p>
+    </div>
+  </section>
+
+  <section class="block" id="download">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="pixel">Jetzt <em>loslegen.</em></h2>
+        <p>Am einfachsten mit dem Launcher. Wer schon einen anderen Launcher nutzt, nimmt nur die Mod.</p>
+      </div>
+      <div class="get">
+        <div class="get-card main">
+          <h3>BambuBay Launcher</h3>
+          <p>Für Windows. Installiert Minecraft 1.21.11, Fabric und die Mod, hält alles aktuell und startet mit einem Klick.</p>
+          <ol>
+            <li>ZIP herunterladen und entpacken.</li>
+            <li>Setup starten und installieren.</li>
+            <li>Mit deinem Microsoft-Konto anmelden, Spielen klicken.</li>
+          </ol>
+          <div><a class="btn btn-leaf btn-big" href="downloads/BambuBay-Launcher-2.1.0.zip" data-download="launcher">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Launcher herunterladen</a></div>
+          <p class="file" data-file="launcher">BambuBay-Launcher-2.1.0.zip · 13,8 MB</p>
+          <p class="get-status" data-status="launcher" role="status"></p>
+        </div>
+        <div class="get-card">
+          <h3>Nur die Mod</h3>
+          <p>Für Prism, Modrinth und andere Launcher. Braucht Fabric Loader und Fabric API für Minecraft 1.21.11.</p>
+          <ol>
+            <li>ZIP entpacken.</li>
+            <li>Die .jar in den Ordner „mods“ legen.</li>
+            <li>Im Spiel öffnet Rechte Shift das Menü.</li>
+          </ol>
+          <div><a class="btn btn-ghost" href="downloads/BambuBay-Mod-2.0.0.zip" data-download="mod">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            Mod herunterladen</a></div>
+          <p class="file" data-file="mod">BambuBay-Mod-2.0.0.zip · 10,5 MB</p>
+          <p class="get-status" data-status="mod" role="status"></p>
+        </div>
+      </div>
+      <p class="req">Du brauchst Minecraft: Java Edition. Windows SmartScreen kann vor dem unsignierten Setup warnen: „Weitere Informationen“, dann „Trotzdem ausführen“.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top"><img src="assets/logo.png" alt=""><span>Bambu<b>Bay</b></span></a>
+      <p style="margin-top:12px">Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt oder mit ihnen verbunden.</p>
+    </div>
+    <div>
+      <h4>Danke an</h4>
+      <p>Bandana-Form: „Badlion Minecraft Client Bandana“ von miguelgoesimoes. Hüte: „Minecraft Hats Mini-pack 1, 2 und 4“ von VoxelBear und „Pirate Hat (Minecraft Item)“ von barkangel. Alle auf Sketchfab, Lizenz CC BY 4.0.</p>
+      <p>Einige Umhänge stammen von night.design und werden mit Erlaubnis genutzt. Symbole im Client: Lucide (ISC-Lizenz).</p>
+    </div>
+  </div>
+</footer>
+
+<script type="application/json" id="features-fallback">
+{"updated":"2026-10-15","launcher":{"version":"2.1.0","file":"downloads/BambuBay-Launcher-2.1.0.zip","size":"13,8 MB"},"mod":{"version":"2.0.0","minecraft":"1.21.11","file":"downloads/BambuBay-Mod-2.0.0.zip","size":"10,5 MB"},"items":[{"date":"2026-10-15","tag":"Neu","title":"BambuGram","text":"Screenshots direkt aus dem Spiel teilen. Liken, disliken, kommentieren, Profile ansehen. Nach F2 fragt der Chat, ob du teilen willst.","image":"assets/game-gram-feed.webp"},{"date":"2026-10-15","tag":"Design","title":"Neues Bambu+-Menü","text":"Deine Figur mit Namensschild als Live-Vorschau, Farbpaletten, Tempo-Regler, fertige Farbpaare und das Zusatz-Schild zum Eintippen.","image":"assets/game-plus-menu.webp"},{"date":"2026-10-15","tag":"Neu","title":"Musik-Overlay","text":"Cover, Titel und Fortschritt des laufenden Lieds oben im Bild. Spotify, Apple Music, YouTube, Amazon Music, SoundCloud, Tidal und Cider.","image":"assets/game-cosmetics-front.webp","mock":"music"},{"date":"2026-10-15","tag":"Neu","title":"Bambu+ Namens-Stile","text":"15 animierte Effekte für dein Namensschild und die Tab-Liste, dazu ein zweites Schild mit eigenem Text. Andere BambuBay-Spieler sehen beides.","image":"assets/game-plus-nametags.webp"},{"date":"","tag":"Cosmetics","title":"Bandanas und 13 neue Hüte","text":"Bandanas in 11 Farben (auch UwU), Piratenhut, Zauberhüte und mehr. Alle 41 Cosmetics sieht jeder mit BambuBay.","image":"assets/game-cosmetics.webp"},{"date":"","tag":"Emotes","title":"26 Emotes","text":"Salto, Liegestütze, Schlafen und viele mehr. Emote-Rad auf Taste B, Cosmetics bewegen sich mit.","image":"assets/game-emote-salto.webp"}],"downloadBase":""}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (s, el = document) => el.querySelector(s);
+
+  // ------------------------------------------------------------ Features
+  const FEATURES = [
+    {
+      id: "gram", name: "BambuGram",
+      title: "BambuGram",
+      text: "Dein Insta im Spiel. Screenshot mit F2 machen, im Chat auf Teilen klicken, fertig. Alle BambuBay-Spieler sehen ihn im Feed.",
+      points: ["Liken (auch per Doppelklick), disliken, kommentieren", "Reiter Freunde, Entdecken und Meine, sortiert nach Neu oder Top", "Profile mit Beiträgen, Likes und Kommentaren", "Hinweis im Spiel, wenn jemand deinen Beitrag mag"],
+      key: "Öffnen: Vormenü → Kamera oder /bambugram",
+      img: "assets/game-gram-feed.webp", inset: "assets/game-gram-post.webp",
+      alt: "BambuGram-Feed im Spiel mit einem Screenshot, Likes und Kommentaren"
+    },
+    {
+      id: "plus", name: "Bambu+",
+      title: "Bambu+ Namens-Stile",
+      text: "15 animierte Effekte für deinen Namen über dem Kopf und in der Tab-Liste: Regenbogen, Feuer, Galaxie, Gold und mehr.",
+      points: ["Live-Vorschau mit deiner Figur", "Eigene Farben, Tempo und Fett", "Zusatz-Schild mit eigenem Text über oder unter dem Namen", "Andere BambuBay-Spieler sehen deinen Stil"],
+      key: "Öffnen: Vormenü → Stern",
+      img: "assets/game-plus-nametags.webp", inset: "assets/game-plus-menu.webp",
+      alt: "Zwei Spieler mit animierten Namensschildern und Zusatz-Schild"
+    },
+    {
+      id: "cos", name: "Cosmetics",
+      title: "41 Cosmetics",
+      text: "Hüte, Tier-Mützen, Bandanas, Flügel, HD-Umhänge mit Animation und ein Panda als Begleiter. Eigene Umhänge legst du einfach in einen Ordner.",
+      points: ["70 Varianten, viele davon leuchten im Dunkeln", "3D-Drachenflügel, Engels-, Phönix- und Feenflügel", "Funktionieren auch mit Wavy Capes und in anderen Launchern", "Probieren an der eigenen Figur, mit der Maus drehbar"],
+      key: "Öffnen: Vormenü → Kosmetik",
+      img: "assets/game-cosmetics.webp", inset: "assets/game-cosmetics-front.webp",
+      alt: "Kosmetik-Menü mit Hüten und Mützen, links die eigene Figur mit Flügeln"
+    },
+    {
+      id: "emo", name: "Emotes",
+      title: "26 Emotes",
+      text: "Winken, tanzen, Salto, Liegestütze oder einschlafen. Freunde mit BambuBay sehen jedes Emote live, und deine Cosmetics bewegen sich mit.",
+      points: ["Emote-Rad auf Taste B", "Eigene Emotes aus Blockbench laden", "Ganzkörper-Animationen wie bei den Großen"],
+      key: "Taste: <kbd>B</kbd>",
+      img: "assets/game-emote-wheel.webp", inset: "assets/game-emote-salto.webp",
+      alt: "Emote-Rad mit acht Emotes in der Spielwelt"
+    },
+    {
+      id: "music", name: "Musik-Overlay",
+      title: "Musik-Overlay",
+      text: "Cover, Titel, Künstler und Fortschritt des laufenden Lieds oben im Bild. Ohne Login und ohne dass etwas ins Internet geht.",
+      points: ["Spotify, Apple Music, YouTube, Amazon Music, SoundCloud, Tidal, Cider", "Layouts Normal, Kompakt und Minimal", "Albumfarbe als Hintergrund, Lauftext bei langen Titeln", "Blendet sich aus, wenn die Musik pausiert"],
+      key: "Mod-Menü → HUD → Musik-Overlay",
+      img: "assets/game-cosmetics-front.webp", inset: "", music: true,
+      alt: "Spielszene mit dem Musik-Overlay oben in der Mitte"
+    },
+    {
+      id: "hud", name: "HUD & Module",
+      title: "70+ Module",
+      text: "FPS, Keystrokes, Rüstung, Zielanzeige, Zoom, Fullbright, Crosshair-Editor und vieles mehr. Alles frei verschiebbar im HUD-Editor.",
+      points: ["Leistungspaket: im Test 321 statt 150 FPS", "Glas-Design, Größe und Farben einstellbar", "Keine unfairen Vorteile: keine Reichweite, kein Auto-Klicker"],
+      key: "Taste: <kbd>Rechte Shift</kbd>",
+      img: "assets/game-mod-menu.webp", inset: "assets/game-hud-editor.webp",
+      alt: "Mod-Menü mit Modulen wie FPS, CPS, Ping und Koordinaten"
+    }
+  ];
+
+  // Nachbau des Musik-Overlays mit Beispiel-Lied
+  function musicMock() {
+    const m = document.createElement("div"); m.className = "music-mock";
+    m.innerHTML = '<div class="cover"><img src="assets/logo.png" alt=""></div><div><b>Bambu Beats</b><span>BambuBay</span><div class="bar">1:12<i></i>3:05</div></div>';
+    return m;
+  }
+  const tabs = $("#feature-tabs"), panel = $("#feature-panel");
+  function showFeature(f) {
+    for (const b of tabs.children) b.setAttribute("aria-selected", String(b.dataset.id === f.id));
+    panel.innerHTML = "";
+    const wrap = document.createElement("div");
+    wrap.className = "feature";
+    const text = document.createElement("div");
+    text.className = "feature-text";
+    const h = document.createElement("h3"); h.textContent = f.title;
+    const p = document.createElement("p"); p.textContent = f.text;
+    const ul = document.createElement("ul");
+    for (const pt of f.points) { const li = document.createElement("li"); li.textContent = pt; ul.append(li); }
+    const key = document.createElement("p"); key.className = "feature-key"; key.innerHTML = f.key;
+    text.append(h, p, ul, key);
+    const shot = document.createElement("div"); shot.className = "shot";
+    const frame = document.createElement("div"); frame.className = "frame";
+    const img = new Image(); img.src = f.img; img.alt = f.alt; img.loading = "lazy";
+    frame.append(img);
+    if (f.music) frame.append(musicMock());
+    shot.append(frame);
+    if (f.inset) {
+      const ins = document.createElement("div"); ins.className = "inset";
+      const i2 = new Image(); i2.src = f.inset; i2.alt = ""; i2.loading = "lazy"; ins.append(i2);
+      shot.append(ins);
+    }
+    tilt(shot, frame, -7, 3);
+    wrap.append(text, shot);
+    panel.append(wrap);
+  }
+  FEATURES.forEach((f, i) => {
+    const b = document.createElement("button");
+    b.className = "tab"; b.role = "tab"; b.dataset.id = f.id; b.textContent = f.name;
+    b.addEventListener("click", () => showFeature(f));
+    tabs.append(b);
+  });
+  showFeature(FEATURES[0]);
+
+  // Rahmen neigen sich leicht zur Maus
+  function tilt(area, el, baseY, baseX) {
+    if (reduce || matchMedia("(max-width: 900px)").matches) return;
+    area.addEventListener("pointermove", (e) => {
+      const r = area.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      el.style.transform = `rotateY(${baseY + x * 10}deg) rotateX(${baseX - y * 8}deg)`;
+    });
+    area.addEventListener("pointerleave", () => { el.style.transform = ""; });
+  }
+
+  // ------------------------------------------------------------ Launcher
+  const VIEWS = [
+    { id: "play", name: "Spielen", text: "Großer Spielen-Knopf, Neuigkeiten und Server mit einem Klick beitreten." },
+    { id: "profiles", name: "Profile", text: "Jede Version mit eigenen Mods, Einstellungen und Welten. Wechseln mit einem Klick." },
+    { id: "mods", name: "Mods", text: "Mods, Shader und Ressourcenpakete von Modrinth installieren und an- oder ausschalten." },
+    { id: "servers", name: "Server", text: "Server starten und direkt verbinden, mit Spielerzahl live." },
+    { id: "settings", name: "Einstellungen", text: "Akzentfarbe, eigener Hintergrund, Arbeitsspeicher und Verhalten beim Spielen." }
+  ];
+  const list = $("#try-list"), dimg = $("#device-img");
+  function showView(v) {
+    for (const b of list.children) b.setAttribute("aria-selected", String(b.dataset.id === v.id));
+    dimg.src = `assets/launcher-${v.id}.webp`;
+    dimg.alt = `BambuBay Launcher, Ansicht ${v.name}`;
+  }
+  for (const v of VIEWS) {
+    const b = document.createElement("button");
+    b.className = "try-item"; b.role = "tab"; b.dataset.id = v.id;
+    b.innerHTML = `<b></b><span></span>`;
+    b.querySelector("b").textContent = v.name;
+    b.querySelector("span").textContent = v.text;
+    b.addEventListener("click", () => showView(v));
+    list.append(b);
+  }
+  showView(VIEWS[0]);
+  tilt($(".device-wrap"), $("#device"), -9, 4);
+  // Bilder vorladen, damit der Wechsel sofort geht
+  VIEWS.forEach((v) => { const i = new Image(); i.src = `assets/launcher-${v.id}.webp`; });
+
+  // ------------------------------------------------------------ Neu im Client
+  const fmt = (d) => d ? new Date(d + "T12:00:00").toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" }) : "";
+  function renderNews(data) {
+    const box = $("#news");
+    box.innerHTML = "";
+    for (const it of data.items || []) {
+      const card = document.createElement("article"); card.className = "news-card";
+      const pic = document.createElement("div"); pic.className = "pic";
+      if (it.image) { const im = new Image(); im.src = it.image; im.alt = ""; pic.append(im); }
+      if (it.mock === "music") { pic.style.position = "relative"; pic.append(musicMock()); }
+      else { pic.classList.add("empty"); pic.textContent = it.title.slice(0, 1); }
+      const body = document.createElement("div"); body.className = "body";
+      const meta = document.createElement("div"); meta.className = "meta";
+      const tag = document.createElement("span"); tag.className = "tag" + (it.tag === "Neu" ? " neu" : ""); tag.textContent = it.tag;
+      meta.append(tag);
+      if (it.date) { const d = document.createElement("span"); d.textContent = fmt(it.date); meta.append(d); }
+      const h = document.createElement("h3"); h.textContent = it.title;
+      const p = document.createElement("p"); p.textContent = it.text;
+      body.append(meta, h, p);
+      card.append(pic, body);
+      box.append(card);
+    }
+    if (data.updated) $("#news-note").textContent = `Stand: ${fmt(data.updated)} · Launcher ${data.launcher?.version} · Mod ${data.mod?.version} für Minecraft ${data.mod?.minecraft}`;
+    if (data.launcher && data.mod) {
+      $("#hero-meta").textContent = `Launcher ${data.launcher.version} · Mod ${data.mod.version} · aktualisiert am ${fmt(data.updated)}`;
+      for (const kind of ["launcher", "mod"]) {
+        const info = data[kind];
+        document.querySelectorAll(`[data-download="${kind}"]`).forEach((a) => a.setAttribute("href", info.file));
+        const f = document.querySelector(`[data-file="${kind}"]`);
+        if (f) f.textContent = `${info.file.split("/").pop()} · ${info.size}`;
+      }
+    }
+  }
+  let fallback = {};
+  try { fallback = JSON.parse($("#features-fallback").textContent); } catch (e) { fallback = { items: [] }; }
+  fetch("features.json", { cache: "no-cache" })
+    .then((r) => r.ok ? r.json() : Promise.reject(r.status))
+    .then((d) => { renderNews(d); wireDownloads(d); })
+    .catch(() => { renderNews(fallback); wireDownloads(fallback); });
+
+  // ------------------------------------------------------------ Downloads
+  // Auf der eigenen Webseite (dist/) sind die Downloads normale Links neben der Seite. In der
+  // claude.ai-Vorschau liegen die Dateien nicht bei der Seite: dann auf die öffentliche Seite
+  // (downloadBase in features.json) verweisen.
+  const inPreview = !!(window.claude && typeof window.claude.use === "function");
+  function wireDownloads(data) {
+    if (!inPreview) return;
+    const base = (data && data.downloadBase) || "";
+    document.querySelectorAll("[data-download]").forEach((a) => {
+      const kind = a.dataset.download;
+      const status = document.querySelector(`[data-status="${kind}"]`);
+      if (base) {
+        a.href = base.replace(/\/?$/, "/") + (data[kind] ? data[kind].file : a.getAttribute("href"));
+        a.target = "_blank";
+        a.rel = "noopener";
+      } else {
+        a.href = "#download";
+        if (status) status.textContent = "Der Download kommt auf die öffentliche BambuBay-Seite und ist dort gleich verfügbar.";
+      }
+    });
+  }
+
+  // ------------------------------------------------------------ 3D: Launcher im Bambuswald
+  const stage = $("#stage"), canvas = $("#scene");
+  if (!window.THREE) return;
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+  } catch (e) { return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x050d09, 9, 24);
+  const camera = new THREE.PerspectiveCamera(32, 1.25, 0.1, 100);
+  camera.position.set(0, 0.2, 11);
+
+  scene.add(new THREE.AmbientLight(0xcfe9d8, 0.9));
+  const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(-4, 5, 8); scene.add(key);
+  const rim = new THREE.PointLight(0x4ade80, 30, 14); rim.position.set(2.5, 1.5, -2.5); scene.add(rim);
+
+  const loader = new THREE.TextureLoader();
+  const tex = (url) => { const t = loader.load(url, () => stage.classList.add("gl")); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t; };
+
+  function roundedRect(w, h, r) {
+    const s = new THREE.Shape();
+    s.moveTo(-w / 2 + r, -h / 2);
+    s.lineTo(w / 2 - r, -h / 2); s.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
+    s.lineTo(w / 2, h / 2 - r); s.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2);
+    s.lineTo(-w / 2 + r, h / 2); s.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
+    s.lineTo(-w / 2, -h / 2 + r); s.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
+    return s;
+  }
+  // Ein Bildschirm: abgerundetes Gehäuse mit Bild vorne
+  function device(url, w, aspect, depth) {
+    const h = w / aspect, pad = 0.12;
+    const g = new THREE.Group();
+    const geo = new THREE.ExtrudeGeometry(roundedRect(w + pad * 2, h + pad * 2, 0.2), { depth, bevelEnabled: true, bevelSize: 0.03, bevelThickness: 0.03, bevelSegments: 3, curveSegments: 8 });
+    geo.translate(0, 0, -depth / 2);
+    const shell = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0x10271b, metalness: 0.55, roughness: 0.35 }));
+    const screen = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex(url), toneMapped: false }));
+    screen.position.z = depth / 2 + 0.032;
+    // Leuchtkante
+    const edge = new THREE.Mesh(new THREE.PlaneGeometry(w + 0.06, h + 0.06), new THREE.MeshBasicMaterial({ color: 0x4ade80, transparent: true, opacity: 0.18 }));
+    edge.position.z = depth / 2 + 0.031;
+    g.add(shell, edge, screen);
+    return g;
+  }
+  const main = device("assets/launcher-play.webp", 5.2, 1.6, 0.22);
+  main.rotation.set(0.06, -0.38, 0.02);
+  scene.add(main);
+  const side = device("assets/game-gram-feed.webp", 2.2, 16 / 9, 0.14);
+  side.position.set(-2.15, -1.45, 1.4);
+  side.rotation.set(0.05, 0.42, -0.04);
+  scene.add(side);
+
+  // Lichtschein hinter dem Launcher
+  const glowCanvas = document.createElement("canvas"); glowCanvas.width = glowCanvas.height = 256;
+  const gctx = glowCanvas.getContext("2d");
+  const grad = gctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+  grad.addColorStop(0, "rgba(74,222,128,0.55)"); grad.addColorStop(1, "rgba(74,222,128,0)");
+  gctx.fillStyle = grad; gctx.fillRect(0, 0, 256, 256);
+  const glow = new THREE.Mesh(new THREE.PlaneGeometry(11, 8), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(glowCanvas), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  glow.position.set(0.4, 0.2, -2.2);
+  scene.add(glow);
+
+  // Bambus aus Blöcken: Segmente, Knoten, ein paar Blätter
+  const greens = [0x2f7d46, 0x3a9152, 0x27683b, 0x4a9e5c];
+  const bamboo = [];
+  const leafGeo = new THREE.PlaneGeometry(0.7, 0.16);
+  function stalk(x, z, height, i) {
+    const g = new THREE.Group();
+    const segH = 0.85;
+    const mat = new THREE.MeshStandardMaterial({ color: greens[i % greens.length], roughness: 0.8 });
+    const node = new THREE.MeshStandardMaterial({ color: 0x1f5130, roughness: 0.9 });
+    const leaf = new THREE.MeshStandardMaterial({ color: 0x3fae5f, roughness: 0.9, side: THREE.DoubleSide });
+    for (let y = 0; y < height; y += segH) {
+      const seg = new THREE.Mesh(new THREE.BoxGeometry(0.26, segH - 0.05, 0.26), mat); seg.position.y = y + segH / 2; g.add(seg);
+      const n = new THREE.Mesh(new THREE.BoxGeometry(0.31, 0.07, 0.31), node); n.position.y = y; g.add(n);
+      if ((y / segH + i) % 3 === 1) {
+        const l = new THREE.Mesh(leafGeo, leaf);
+        const dir = (i + y) % 2 ? 1 : -1;
+        l.position.set(dir * 0.42, y + 0.05, 0); l.rotation.set(0.3, 0, dir * -0.45); g.add(l);
+      }
+    }
+    g.position.set(x, -5.5, z);
+    g.userData.phase = i * 1.7;
+    scene.add(g);
+    bamboo.push(g);
+  }
+  const spots = [[-7.6, -4.5], [-6.1, -7.5], [-4.6, -3.6], [-3.2, -9], [-1.6, -6.4], [1.2, -8.2], [3.1, -5.2], [4.6, -8.8], [6.2, -3.9], [7.8, -6.6], [9.2, -4.4], [-9.5, -6], [0, -11], [5.6, -11.5]];
+  spots.forEach(([x, z], i) => stalk(x, z, 13 + (i % 4) * 1.5, i));
+
+  // Fallende Blätter
+  const leaves = [];
+  const leafMat = new THREE.MeshBasicMaterial({ color: 0x5fd17f, side: THREE.DoubleSide, transparent: true, opacity: 0.75 });
+  for (let i = 0; i < 26; i++) {
+    const l = new THREE.Mesh(new THREE.PlaneGeometry(0.22, 0.07), leafMat);
+    l.position.set((Math.random() - 0.5) * 16, Math.random() * 10 - 5, -1 - Math.random() * 6);
+    l.userData = { v: 0.004 + Math.random() * 0.008, s: Math.random() * 6, r: (Math.random() - 0.5) * 0.04 };
+    scene.add(l);
+    leaves.push(l);
+  }
+
+  function resize() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(stage);
+  resize();
+
+  let mx = 0, my = 0;
+  addEventListener("pointermove", (e) => {
+    mx = e.clientX / innerWidth - 0.5;
+    my = e.clientY / innerHeight - 0.5;
+  }, { passive: true });
+  if (!reduce) $("#drag-hint").hidden = false;
+
+  const clock = new THREE.Clock();
+  let visible = true;
+  new IntersectionObserver(([en]) => { visible = en.isIntersecting; }).observe(stage);
+  function frame() {
+    const t = clock.getElapsedTime();
+    if (visible) {
+      main.rotation.y += ((-0.38 + mx * 0.5) - main.rotation.y) * 0.05;
+      main.rotation.x += ((0.06 + my * 0.25) - main.rotation.x) * 0.05;
+      main.position.y = Math.sin(t * 0.9) * 0.1;
+      side.position.y = -1.45 + Math.sin(t * 0.9 + 1.4) * 0.08;
+      side.rotation.y += ((0.42 + mx * 0.35) - side.rotation.y) * 0.05;
+      for (const b of bamboo) b.rotation.z = Math.sin(t * 0.5 + b.userData.phase) * 0.012;
+      for (const l of leaves) {
+        l.position.y -= l.userData.v;
+        l.position.x += Math.sin(t + l.userData.s) * 0.004;
+        l.rotation.z += l.userData.r;
+        l.rotation.x += l.userData.r * 0.7;
+        if (l.position.y < -5) l.position.y = 5;
+      }
+      camera.position.x += (mx * 0.6 - camera.position.x) * 0.04;
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    if (!reduce) requestAnimationFrame(frame);
+  }
+  if (reduce) {
+    // Ein ruhiges Bild, sobald die Bilder geladen sind
+    THREE.DefaultLoadingManager.onLoad = () => renderer.render(scene, camera);
+    renderer.render(scene, camera);
+  } else {
+    requestAnimationFrame(frame);
+  }
+})();
+</script>
+
+</body>
+</html>

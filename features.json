@@ -1,0 +1,60 @@
+{
+  "updated": "2026-10-15",
+  "launcher": {
+    "version": "2.1.0",
+    "file": "downloads/BambuBay-Launcher-2.1.0.zip",
+    "size": "13,8 MB"
+  },
+  "mod": {
+    "version": "2.0.0",
+    "minecraft": "1.21.11",
+    "file": "downloads/BambuBay-Mod-2.0.0.zip",
+    "size": "10,5 MB"
+  },
+  "items": [
+    {
+      "date": "2026-10-15",
+      "tag": "Neu",
+      "title": "BambuGram",
+      "text": "Screenshots direkt aus dem Spiel teilen. Liken, disliken, kommentieren, Profile ansehen. Nach F2 fragt der Chat, ob du teilen willst.",
+      "image": "assets/game-gram-feed.webp"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Design",
+      "title": "Neues Bambu+-Menü",
+      "text": "Deine Figur mit Namensschild als Live-Vorschau, Farbpaletten, Tempo-Regler, fertige Farbpaare und das Zusatz-Schild zum Eintippen.",
+      "image": "assets/game-plus-menu.webp"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Neu",
+      "title": "Musik-Overlay",
+      "text": "Cover, Titel und Fortschritt des laufenden Lieds oben im Bild. Spotify, Apple Music, YouTube, Amazon Music, SoundCloud, Tidal und Cider.",
+      "image": "assets/game-cosmetics-front.webp",
+      "mock": "music"
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "Neu",
+      "title": "Bambu+ Namens-Stile",
+      "text": "15 animierte Effekte für dein Namensschild und die Tab-Liste, dazu ein zweites Schild mit eigenem Text. Andere BambuBay-Spieler sehen beides.",
+      "image": "assets/game-plus-nametags.webp"
+    },
+    {
+      "date": "",
+      "tag": "Cosmetics",
+      "title": "Bandanas und 13 neue Hüte",
+      "text": "Bandanas in 11 Farben (auch UwU), Piratenhut, Zauberhüte und mehr. Alle 41 Cosmetics sieht jeder mit BambuBay.",
+      "image": "assets/game-cosmetics.webp"
+    },
+    {
+      "date": "",
+      "tag": "Emotes",
+      "title": "26 Emotes",
+      "text": "Salto, Liegestütze, Schlafen und viele mehr. Emote-Rad auf Taste B, Cosmetics bewegen sich mit.",
+      "image": "assets/game-emote-salto.webp"
+    }
+  ],
+  "downloadBase": ""
+}
