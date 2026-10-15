@@ -14,6 +14,13 @@
   "items": [
     {
       "date": "2026-10-15",
+      "tag": "Neu",
+      "title": "Version 2.1.0",
+      "text": "Neues Mod-Menü, 4 neue Module, bessere Suche, 5 neue Bambu+-Effekte, neues Freunde-Menü und Cosmetics über der Rüstung. Jetzt auch auf Modrinth.",
+      "image": "assets/game-new-menu.webp"
+    },
+    {
+      "date": "2026-10-15",
       "tag": "Design",
       "title": "Launcher: Live-Neuigkeiten",
       "text": "Die Startseite des Launchers zeigt jetzt automatisch die neuesten Features von dieser Seite, auch offline aus dem Zwischenspeicher. Dazu neue An/Aus-Schalter mit Haken und Kreuz in Mods, Profilen und Einstellungen.",
