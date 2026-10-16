@@ -4,17 +4,31 @@
     "version": "3.1.4",
     "file": "downloads/BambuBay-Launcher-3.1.4.zip",
     "size": "14,9 MB",
-    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht)."
+    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht). 3.2.0: Kein Einfrieren mehr beim Übernehmen von Einstellungen, der Freunde-Server startet sich bei Ausfall selbst neu, neue Statistik-Seite für die BambuBay-Admins. 3.3.0: Freunde-Menü im Launcher (Freunde, Anfragen, Chat), BambuBay-Server v7 mit „Welt hosten“, der Server wird jetzt zuverlässig aktualisiert."
   },
   "mod": {
-    "version": "2.3.0",
+    "version": "2.5.0",
     "minecraft": "1.21.11",
-    "file": "downloads/BambuBay-Mod-2.3.0.zip",
+    "file": "downloads/BambuBay-Mod-2.5.0.zip",
     "size": "10,6 MB",
     "jar": "downloads/BambuBayClient-2.3.0.jar",
     "sha1": "901293bfaa4657ebf7583d8404928fd0dd6e6928"
   },
   "items": [
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Version 2.5.0: Welt hosten & Freunde im Launcher",
+      "text": "Drück im Spiel Esc › Welt hosten und deine Einzelspieler-Welt ist für deine BambuBay-Freunde offen – ohne Portfreigabe und ohne deine IP zu zeigen. Lade Freunde direkt aus dem Freunde-Menü (Taste O) ein, sie treten mit einem Klick bei. Im BambuBay Launcher 3.3 gibt es oben rechts jetzt ein Freunde-Menü mit Chat, Anfragen und wer gerade online ist.",
+      "image": "assets/game-new-menu.webp"
+    },
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Version 2.4.0: Minecraft 1.21.4 bis 1.21.11",
+      "text": "BambuBay läuft jetzt auf allen Fabric-Versionen von 1.21.4 bis 1.21.11 – mit allen 103 Modulen, Emotes, Cosmetics, Minimap, Weltkarte, Wegpunkten und TNT-Cart-PvP. Der Launcher lädt für jedes Fabric-Profil automatisch die passende Version. Jede Version wurde in einer neuen Welt getestet.",
+      "image": "assets/game-new-menu.webp"
+    },
     {
       "date": "2026-10-16",
       "tag": "Neu",
