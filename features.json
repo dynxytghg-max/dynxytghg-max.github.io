@@ -1,10 +1,10 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "3.0.1",
-    "file": "downloads/BambuBay-Launcher-3.0.1.zip",
-    "size": "14,1 MB",
-    "notes": "Launcher 3.0: 3D-Emotes, Skin-Bibliothek, Mod-Filter und Mod-Updates. 3.0.1: Tastenkürzel (Strg+1 bis 6) und Server-Suche."
+    "version": "3.1.0",
+    "file": "downloads/BambuBay-Launcher-3.1.0.zip",
+    "size": "14,9 MB",
+    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe."
   },
   "mod": {
     "version": "2.3.0",
@@ -15,6 +15,33 @@
     "sha1": "901293bfaa4657ebf7583d8404928fd0dd6e6928"
   },
   "items": [
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Version 2.3.0: TNT-Cart-PvP",
+      "text": "Neues Modul für Cart-PvP (LT bis HT, Idee von LennyLonly): Zündzeit über jedem TNT-Cart, geschätzter Schaden mit Deckung und Rüstung, Spreng- und Todesradius am Boden, große Warnung mit Richtungspfeil, Schienen-Hinweis, Bogen-Spannung und Kit-Zähler. Zeigt nur, was man ohnehin sieht – fair für jeden Server.",
+      "image": "assets/game-tntcart.webp"
+    },
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Weltkarte & Wegpunkte",
+      "text": "Weltkarte mit M: verschieben, zoomen, Rechtsklick setzt einen Wegpunkt. Wegpunkt-Menü mit J (anlegen, bearbeiten, ausblenden, teilen), neuer Wegpunkt mit U, Lichtstrahl und Ankunftszeit. Die Minimap merkt sich besuchtes Gelände, zoomt bis 1/4 und hat Mob-Radar und Chunk-Gitter.",
+      "image": "assets/game-worldmap.webp"
+    },
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Launcher 3.1: Profile übertragen",
+      "text": "Profile aus NoRisk, Modrinth App, CurseForge, Prism, ATLauncher und dem Minecraft-Launcher mit einem Klick übernehmen (Konten und Logs werden nie kopiert), Profile als .mrpack exportieren, Mods auch von CurseForge, Profile mit Forge, NeoForge, Quilt oder Vanilla und 9 neue animierte Hintergründe in deiner Akzentfarbe."
+    },
+    {
+      "date": "2026-10-16",
+      "tag": "Neu",
+      "title": "Emotes 2.0 und 24 neue Module",
+      "text": "Weiche Übergänge, Effekte und Sounds, neues Emote-Rad mit Suche, Numpad-Schnelltasten und /emote. Dazu 24 neue Module wie Hitmarker, Minimap, Item-Physik und Inventar-Suche.",
+      "image": "assets/game-emote-wheel.webp"
+    },
     {
       "date": "2026-10-16",
       "tag": "Design",
