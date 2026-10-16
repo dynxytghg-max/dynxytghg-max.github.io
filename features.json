@@ -1,10 +1,10 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "3.1.3",
-    "file": "downloads/BambuBay-Launcher-3.1.3.zip",
+    "version": "3.1.4",
+    "file": "downloads/BambuBay-Launcher-3.1.4.zip",
     "size": "14,9 MB",
-    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt."
+    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht)."
   },
   "mod": {
     "version": "2.3.0",

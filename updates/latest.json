@@ -1,11 +1,11 @@
 {
-  "version": "3.1.3",
-  "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher \u00fcbernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergr\u00fcnde. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an \u2013 Logo, Seitenleiste, Panels, Hintergr\u00fcnde und Knopf-Schrift. 3.1.3: NoRisk-Import l\u00e4dt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt.",
-  "pub_date": "2026-10-16T14:03:03Z",
+  "version": "3.1.4",
+  "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher \u00fcbernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergr\u00fcnde. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an \u2013 Logo, Seitenleiste, Panels, Hintergr\u00fcnde und Knopf-Schrift. 3.1.3: NoRisk-Import l\u00e4dt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht).",
+  "pub_date": "2026-10-16T14:20:09Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTJjZmt1amE1em50RTMrTTdIWTVndTBRbmlEMzh5T1AvZzhRUEF2UHpNcXVMa01CRjlIdFQ5bmJyeEJkeWZ6Y0s5Wi9wRW9IdW9jbXBqRWh5Rm54TXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTU5MzgzCWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMy4xLjNfeDY0LXNldHVwLmV4ZQpXS3JhVkZvS08vcFRaQlcyNS84RmxKR25jME9jWEV4ZUtVMTF6Z0VzTGMzMjBKSUhLUDNZOVRISHN0N2hBKzQ3cVplYUErWWZMNEg2dGRKOGpoSUJDUT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-3.1.3-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXhmc1ZzK094SVF5UzgwVTd2L2VYbGtTblZKQ3JqTUZtNU1hZU5oajhSNjB3K1BIUzF4ZGpNQ2tTTmNYd08rRU5JQW5yZTF1NklrMjBFS0M0eS9hVHdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTYwNDEwCWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMy4xLjRfeDY0LXNldHVwLmV4ZQpwa3A3VTd0U0dDR2FsVVFIVHFZaU1qbmJLUXZxZXd6RWk1S1FOdXlFOVAzUjZyL2t1bzlrMC82WHk5LzFHMGhOaXVvM0VQTCsrWWJZRE56QUdVbTBEdz09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-3.1.4-setup.exe"
     }
   }
 }
