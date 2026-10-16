@@ -7,12 +7,12 @@
     "notes": "Launcher 3.0: 3D-Emotes, Skin-Bibliothek, Mod-Filter und Mod-Updates. 3.0.1: Tastenkürzel (Strg+1 bis 6) und Server-Suche."
   },
   "mod": {
-    "version": "2.1.0",
+    "version": "2.3.0",
     "minecraft": "1.21.11",
-    "file": "downloads/BambuBay-Mod-2.1.0.zip",
-    "size": "10,5 MB",
-    "jar": "downloads/BambuBayClient-2.1.0.jar",
-    "sha1": "6fb341064127d07ffd6172dbd83558c1b92dc0e0"
+    "file": "downloads/BambuBay-Mod-2.3.0.zip",
+    "size": "10,6 MB",
+    "jar": "downloads/BambuBayClient-2.3.0.jar",
+    "sha1": "bfb9a29ed0f75731feac2b4145ed05482c95aab0"
   },
   "items": [
     {
