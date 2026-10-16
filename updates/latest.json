@@ -1,11 +1,11 @@
 {
-  "version": "3.1.0",
-  "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher \u00fcbernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergr\u00fcnde.",
-  "pub_date": "2026-10-16T13:28:03Z",
+  "version": "3.1.1",
+  "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher \u00fcbernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergr\u00fcnde. 3.1.1: Logo, Bambuswald, Nacht, Bl\u00e4tter und Knopf-Schrift passen sich jetzt deiner Akzentfarbe an.",
+  "pub_date": "2026-10-16T13:42:02Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTV0cDFRSW5zQ2pibTlWUXlOV0hvRmFUSTRyMjBkTkZ4MDVjTWgyUUR3dzkwa2JlZXo4cW9TVlVpbUl2QUphOWRxVUxZa0dwVW9DUUxRcldDaVBWK1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTU3MjgzCWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMy4xLjBfeDY0LXNldHVwLmV4ZQpwZnlyTGdjazNsOWJVRUZSTUZ5aUJLd0xmTzNiSkNKcG5scFhNdEh6c3lRd2Z1bElySW9ERGk2ZTBKQytyS2hETG1YZUloWTI2bVAyS0xoeDUreXRCQT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-3.1.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTRPMS9vRTh0NWxEZDB6T0R2YjEycFA0U3ppcXk4amJDZ2twOEkvODZNT3lRc3c5enhadk1xZlpxU0VmbUU0bDZ6NWpjbjh5cnNaV0tiQlQ5ZU9sNWdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMTU4MTIyCWZpbGU6QmFtYnVCYXkgTGF1bmNoZXJfMy4xLjFfeDY0LXNldHVwLmV4ZQpsL1lvOG4zTGlzd2VWaW5SdlJGYXZQK2I5dkJXWnYzdWFLMnAzSUIvTTBuZkR6cXRxOVVtcmt3ZEJ5T2lvRDlrTjhCRVhUMFo5VE1kd1VCOFZrWGtDZz09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-3.1.1-setup.exe"
     }
   }
 }

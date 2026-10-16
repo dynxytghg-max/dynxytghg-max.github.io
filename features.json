@@ -1,10 +1,10 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "3.1.0",
-    "file": "downloads/BambuBay-Launcher-3.1.0.zip",
+    "version": "3.1.1",
+    "file": "downloads/BambuBay-Launcher-3.1.1.zip",
     "size": "14,9 MB",
-    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe."
+    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1: Logo, Bambuswald, Nacht, Blätter und Knopf-Schrift passen sich jetzt deiner Akzentfarbe an."
   },
   "mod": {
     "version": "2.3.0",
