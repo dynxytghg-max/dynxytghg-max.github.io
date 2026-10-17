@@ -1,10 +1,10 @@
 {
   "updated": "2026-10-15",
   "launcher": {
-    "version": "3.4.1",
-    "file": "downloads/BambuBay-Launcher-3.4.1.zip",
+    "version": "3.4.2",
+    "file": "downloads/BambuBay-Launcher-3.4.2.zip",
     "size": "15,1 MB",
-    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht). 3.2.0: Kein Einfrieren mehr beim Übernehmen von Einstellungen, der Freunde-Server startet sich bei Ausfall selbst neu, neue Statistik-Seite für die BambuBay-Admins. 3.3.0: Freunde-Menü im Launcher (Freunde, Anfragen, Chat), BambuBay-Server v7 mit „Welt hosten“, der Server wird jetzt zuverlässig aktualisiert. 3.4.0: Neuer Look wie bei NoRisk (Seitenleiste über die volle Höhe, eckige Leisten, runde Knöpfe), Hinweis-Glocke, Zurück/Vor, Verbindungen-Fenster und Anmelden auf der Webseite über den Launcher. 3.4.1: Minecraft-Schrift (Minecraftia) im ganzen Launcher, Namensschild im 3D-Raum über deiner Figur (wie bei NoRisk), Logo ohne schwarzen Hintergrund."
+    "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht). 3.2.0: Kein Einfrieren mehr beim Übernehmen von Einstellungen, der Freunde-Server startet sich bei Ausfall selbst neu, neue Statistik-Seite für die BambuBay-Admins. 3.3.0: Freunde-Menü im Launcher (Freunde, Anfragen, Chat), BambuBay-Server v7 mit „Welt hosten“, der Server wird jetzt zuverlässig aktualisiert. 3.4.0: Neuer Look wie bei NoRisk (Seitenleiste über die volle Höhe, eckige Leisten, runde Knöpfe), Hinweis-Glocke, Zurück/Vor, Verbindungen-Fenster und Anmelden auf der Webseite über den Launcher. 3.4.1: Minecraft-Schrift (Minecraftia) im ganzen Launcher, Namensschild im 3D-Raum über deiner Figur (wie bei NoRisk), Logo ohne schwarzen Hintergrund. 3.4.2: Startseite wie bei NoRisk – große Figur, Namensschild über dem Kopf, zuletzt gespielter Server darunter, kompakter Spielen-Knopf und Neuigkeiten als Bild-Kacheln."
   },
   "mod": {
     "version": "2.6.0",
