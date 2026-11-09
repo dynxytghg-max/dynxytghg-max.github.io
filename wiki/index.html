@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>BambuBay Wiki</title>
-<meta name="description" content="Anleitung für den BambuBay Client: Installation, Tasten, alle Module, Cosmetics, Emotes, Bambu+, BambuGram und Hilfe bei Problemen.">
+<title>Rust Client Wiki</title>
+<meta name="description" content="Anleitung für den Rust Client: Installation, Tasten, alle Module, Cosmetics, Emotes, Rust+, RustGram und Hilfe bei Problemen.">
 <link rel="icon" href="../assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,17 @@
 /* Wiki im Stil der Startseite: nächtlicher Bambuswald, links Inhaltsverzeichnis, rechts Text. */
 :root {
   color-scheme: dark;
-  --night: #050d09;
-  --forest: #0a1710;
-  --moss: #11241a;
+  --night: #08090c;
+  --forest: #0f1116;
+  --moss: #161922;
   --line: rgba(160, 230, 190, .12);
   --line-strong: rgba(160, 230, 190, .24);
-  --leaf: #4ade80;
-  --leaf-deep: #15803d;
+  --leaf: #8b9dc3;
+  --leaf-deep: #535e75;
   --sun: #facc15;
-  --text: #e9f5ee;
-  --muted: #9bb5a6;
-  --dim: #64806f;
+  --text: #eef1f6;
+  --muted: #a3abbb;
+  --dim: #6b7385;
   --font-pixel: "Pixelify Sans", "Courier New", monospace;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
@@ -32,7 +32,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 body { margin: 0; background: var(--night); color: var(--text); font: 400 16px/1.65 var(--font-body); overflow-x: hidden; }
 body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
-  background: radial-gradient(900px 500px at 85% -10%, rgba(74, 222, 128, .10), transparent 60%),
+  background: radial-gradient(900px 500px at 85% -10%, rgba(139, 157, 195, .10), transparent 60%),
               radial-gradient(700px 500px at -10% 30%, rgba(21, 128, 61, .10), transparent 60%); }
 a { color: var(--leaf); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 img { max-width: 100%; display: block; }
@@ -54,14 +54,14 @@ kbd { display: inline-block; min-width: 1.9em; text-align: center; padding: 1px 
   color: var(--text); border: 1px solid var(--line-strong); background: var(--forest); }
 .btn:hover { border-color: var(--leaf); }
 .btn-leaf { background: var(--leaf); color: #052e16; border-color: var(--leaf); }
-.btn-leaf:hover { background: #6ee7a0; }
+.btn-leaf:hover { background: #a9b7d6; }
 
 .layout { max-width: 1180px; margin: 0 auto; padding: 32px 20px 80px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; }
 .toc { position: sticky; top: 84px; align-self: start; max-height: calc(100vh - 100px); overflow: auto; padding-right: 6px; }
 .toc p { font: 600 12px var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin: 0 0 10px; }
 .toc a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; font-size: 15px; border-left: 2px solid transparent; }
 .toc a:hover { color: var(--text); background: var(--forest); }
-.toc a.on { color: var(--leaf); border-left-color: var(--leaf); background: rgba(74, 222, 128, .06); }
+.toc a.on { color: var(--leaf); border-left-color: var(--leaf); background: rgba(139, 157, 195, .06); }
 
 .hero { padding: 8px 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--leaf); letter-spacing: .06em; text-transform: uppercase; }
@@ -70,14 +70,14 @@ kbd { display: inline-block; min-width: 1.9em; text-align: center; padding: 1px 
 .search { margin-top: 20px; position: relative; max-width: 460px; }
 .search input { width: 100%; padding: 12px 14px 12px 40px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--forest);
   color: var(--text); font: inherit; }
-.search input:focus { outline: none; border-color: var(--leaf); box-shadow: 0 0 0 3px rgba(74, 222, 128, .15); }
+.search input:focus { outline: none; border-color: var(--leaf); box-shadow: 0 0 0 3px rgba(139, 157, 195, .15); }
 .search svg { position: absolute; left: 13px; top: 50%; translate: 0 -50%; color: var(--dim); }
 .search .hint { font-size: 13px; color: var(--dim); margin-top: 6px; min-height: 1.4em; }
 
 section.doc { padding: 36px 0 8px; }
 section.doc + section.doc { border-top: 1px solid var(--line); }
 section.doc h2 { font: 700 28px var(--font-pixel); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
-section.doc h2 .n { font: 700 13px var(--font-mono); color: var(--leaf); background: rgba(74, 222, 128, .1); border: 1px solid rgba(74, 222, 128, .3);
+section.doc h2 .n { font: 700 13px var(--font-mono); color: var(--leaf); background: rgba(139, 157, 195, .1); border: 1px solid rgba(139, 157, 195, .3);
   padding: 3px 8px; border-radius: 999px; }
 section.doc h3 { font-size: 18px; margin: 24px 0 8px; }
 section.doc p { margin: 0 0 12px; color: #cfe3d7; max-width: 75ch; }
@@ -100,8 +100,8 @@ th { background: var(--forest); color: var(--muted); font-weight: 600; font-size
 tr:last-child td { border-bottom: 0; }
 td:first-child { white-space: nowrap; font-weight: 600; }
 
-.note { display: flex; gap: 12px; padding: 14px 16px; border-radius: 12px; margin: 14px 0 18px; background: rgba(74, 222, 128, .06);
-  border: 1px solid rgba(74, 222, 128, .25); color: #cfe3d7; max-width: 75ch; }
+.note { display: flex; gap: 12px; padding: 14px 16px; border-radius: 12px; margin: 14px 0 18px; background: rgba(139, 157, 195, .06);
+  border: 1px solid rgba(139, 157, 195, .25); color: #cfe3d7; max-width: 75ch; }
 .note.warn { background: rgba(250, 204, 21, .06); border-color: rgba(250, 204, 21, .3); }
 .note b { color: var(--text); }
 .note svg { flex: none; margin-top: 3px; color: var(--leaf); }
@@ -115,7 +115,7 @@ details[open] summary::after { content: "–"; }
 details > div { padding: 0 16px 14px; color: var(--muted); }
 details > div p { color: var(--muted); }
 
-mark { background: rgba(74, 222, 128, .28); color: var(--text); border-radius: 3px; }
+mark { background: rgba(139, 157, 195, .28); color: var(--text); border-radius: 3px; }
 .hidden { display: none !important; }
 footer { border-top: 1px solid var(--line); color: var(--dim); font-size: 14px; }
 footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
@@ -136,7 +136,7 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
 
 <header class="nav">
   <div class="in">
-    <a class="brand" href="../"><img src="../assets/logo.png" alt=""><span>Bambu<b>Bay</b></span><small>Wiki</small></a>
+    <a class="brand" href="../"><img src="../assets/logo.png" alt=""><span>Rust <b>Client</b></span><small>Wiki</small></a>
     <nav class="links" aria-label="Seiten">
       <a class="btn" href="https://github.com/dynxytghg-max/dynxytghg-max.github.io/issues">Fehler melden</a>
       <a class="btn btn-leaf" href="../#download">Download</a>
@@ -153,8 +153,8 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
     <a href="#hud">HUD-Editor</a>
     <a href="#cosmetics">Cosmetics</a>
     <a href="#emotes">Emotes</a>
-    <a href="#bambuplus">Bambu+</a>
-    <a href="#bambugram">BambuGram</a>
+    <a href="#bambuplus">Rust+</a>
+    <a href="#bambugram">RustGram</a>
     <a href="#freunde">Freunde</a>
     <a href="#musik">Musik-Overlay</a>
     <a href="#leistung">Mehr FPS</a>
@@ -166,8 +166,8 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
   <main>
     <div class="hero">
       <span class="eyebrow">Minecraft 1.21.4 – 1.21.11 · Fabric</span>
-      <h1>BambuBay Wiki</h1>
-      <p>Alles, was du über den BambuBay Client wissen musst: installieren, bedienen, alle Module, Cosmetics, Emotes und was du tun kannst, wenn etwas nicht klappt.</p>
+      <h1>Rust Client Wiki</h1>
+      <p>Alles, was du über den Rust Client wissen musst: installieren, bedienen, alle Module, Cosmetics, Emotes und was du tun kannst, wenn etwas nicht klappt.</p>
       <div class="search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input id="q" type="search" placeholder="Im Wiki suchen, z. B. Zoom, Umhang, Emote …" aria-label="Im Wiki suchen" autocomplete="off">
@@ -177,18 +177,18 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
 
     <section class="doc" id="installation">
       <h2><span class="n">01</span>Installation</h2>
-      <h3>Mit dem BambuBay Launcher (empfohlen)</h3>
+      <h3>Mit dem Rust Client Launcher (empfohlen)</h3>
       <ol>
         <li>Lade den Launcher auf der <a href="../#download">Startseite</a> herunter und entpacke die ZIP.</li>
         <li>Starte das Setup. Warnt Windows SmartScreen, klicke auf „Weitere Informationen“ und dann „Trotzdem ausführen“ (der Installer ist nicht signiert).</li>
         <li>Melde dich im Launcher mit deinem Microsoft-Konto an und klicke auf <b>Spielen</b>.</li>
       </ol>
-      <p>Der Launcher lädt Minecraft, Fabric, Fabric API und die BambuBay-Mod automatisch und hält alles aktuell. Dazu kommt auf Wunsch ein Leistungspaket (siehe <a href="#leistung">Mehr FPS</a>).</p>
+      <p>Der Launcher lädt Minecraft, Fabric, Fabric API und die Rust-Client-Mod automatisch und hält alles aktuell. Dazu kommt auf Wunsch ein Leistungspaket (siehe <a href="#leistung">Mehr FPS</a>).</p>
       <h3>Nur die Mod (Modrinth, Prism, CurseForge-App …)</h3>
       <ol>
         <li>Installiere <b>Fabric Loader</b> für deine Minecraft-Version (<b>1.21.4 bis 1.21.11</b>). Im Download-ZIP liegt für jede Version die passende Jar – nimm genau eine.</li>
         <li>Lege <b>Fabric API</b> und die <code>BambuBayClient-….jar</code> in den Ordner <code>mods</code> deines Profils.</li>
-        <li>Starte das Spiel. Die <kbd>Rechte Shift</kbd>-Taste öffnet das BambuBay-Menü.</li>
+        <li>Starte das Spiel. Die <kbd>Rechte Shift</kbd>-Taste öffnet das Rust-Client-Menü.</li>
       </ol>
       <div class="note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
         <span><b>Voraussetzungen:</b> Java 21 (bringt der Launcher selbst mit), Minecraft Java Edition 1.21.4 bis 1.21.11. Die Mod läuft nur auf dem Client; Server brauchen nichts zu installieren.</span></div>
@@ -199,23 +199,23 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
       <div class="table-wrap"><table>
         <thead><tr><th>Taste</th><th>Was passiert</th></tr></thead>
         <tbody>
-          <tr><td><kbd>Rechte Shift</kbd></td><td>Vormenü: Mod-Menü, HUD-Editor, Kosmetik, Bambu+, BambuGram, Freunde und Optionen</td></tr>
+          <tr><td><kbd>Rechte Shift</kbd></td><td>Vormenü: Mod-Menü, HUD-Editor, Kosmetik, Rust+, RustGram, Freunde und Optionen</td></tr>
           <tr><td><kbd>B</kbd> halten</td><td>Emote-Rad: auf ein Emote zeigen und loslassen. Mausrad blättert.</td></tr>
           <tr><td><kbd>C</kbd> halten</td><td>Zoom (Mausrad ändert die Stärke)</td></tr>
           <tr><td><kbd>Links-Alt</kbd> halten</td><td>Schnellansicht: Kamera frei drehen, ohne die Laufrichtung zu ändern</td></tr>
-          <tr><td><kbd>F2</kbd></td><td>Screenshot; danach fragt der Chat, ob du ihn im BambuGram teilen willst</td></tr>
-          <tr><td><code>/bambugram</code></td><td>öffnet BambuGram direkt</td></tr>
+          <tr><td><kbd>F2</kbd></td><td>Screenshot; danach fragt der Chat, ob du ihn im RustGram teilen willst</td></tr>
+          <tr><td><code>/bambugram</code></td><td>öffnet RustGram direkt</td></tr>
         </tbody>
       </table></div>
-      <p>Alle Tasten änderst du unter <i>Optionen → Steuerung → BambuBay</i>.</p>
+      <p>Alle Tasten änderst du unter <i>Optionen → Steuerung → Rust Client</i>.</p>
       <h3>Das Mod-Menü</h3>
       <ul>
-        <li><b>Klick auf eine Karte</b> oder den Schalter schaltet ein Modul an oder aus. Aktive Module sind grün hervorgehoben.</li>
+        <li><b>Klick auf eine Karte</b> oder den Schalter schaltet ein Modul an oder aus. Aktive Module sind weiß hervorgehoben.</li>
         <li><b>Zahnrad oder Rechtsklick</b> öffnet die Einstellungen des Moduls, mit Vorschau bei HUD-Elementen.</li>
         <li><b>Einfach lostippen</b> zum Suchen. Die Suche verzeiht Tippfehler, versteht englische Begriffe (<i>brightness</i>, <i>coords</i>) und findet Module auch über ihre Einstellungen. <kbd>Enter</kbd> öffnet den ersten Treffer.</li>
         <li>Die Menügröße stellst du unter <i>Optionen → Menügröße</i> ein (Klein, Normal, Groß, Wie Minecraft).</li>
       </ul>
-      <figure class="shot"><img src="../assets/game-new-menu.webp" alt="Das BambuBay Mod-Menü mit Modul-Karten und Schaltern" loading="lazy" width="1280" height="720"><figcaption>Das Mod-Menü: Karten mit Schalter, Zahnrad für Einstellungen, Suche oben.</figcaption></figure>
+      <figure class="shot"><img src="../assets/game-new-menu.webp" alt="Das Rust Client Mod-Menü mit Modul-Karten und Schaltern" loading="lazy" width="1280" height="720"><figcaption>Das Mod-Menü: Karten mit Schalter, Zahnrad für Einstellungen, Suche oben.</figcaption></figure>
       <p>Alle Einstellungen liegen in <code>config/bambubay/config.json</code>. Ist die Datei kaputt, sichert die Mod sie als <code>.broken</code> und startet mit Standardwerten.</p>
     </section>
 
@@ -231,7 +231,7 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
           <tr><td>Chat</td><td>Chat-Verbesserungen (Uhrzeit, doppelte zusammenfassen), Auto-GG, Erwähnungen, Namensschutz, Wortfilter</td></tr>
           <tr><td>Komfort</td><td>Zoom, Auto-Reconnect, Trennen bestätigen, Auto-Respawn, Todespunkt, Haltbarkeit im Tooltip</td></tr>
           <tr><td>Leistung</td><td>Entity-Culling, Blockentity-Culling, Partikel-Limit, Hintergrund-FPS, kein Menü-Blur, keine Wolken</td></tr>
-          <tr><td>Client</td><td>Einstellungen, Emotes, Kosmetik, Bambu+</td></tr>
+          <tr><td>Client</td><td>Einstellungen, Emotes, Kosmetik, Rust+</td></tr>
         </tbody>
       </table></div>
       <h3>Neu in 2.0</h3>
@@ -256,13 +256,14 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
 
     <section class="doc" id="cosmetics">
       <h2><span class="n">05</span>Cosmetics</h2>
-      <p>41 Cosmetics: Hüte, Mützen, Bandanas in 11 Farben, Kronen, Flügel, ein Panda-Begleiter und animierte HD-Umhänge. Öffnen über <kbd>Rechte Shift</kbd> → Kosmetik.</p>
+      <p>Über 40 Cosmetics, alle kostenlos: Hüte, Mützen, Bandanas in 11 Farben, Kronen, Flügel, Begleiter (echte Minecraft-Tiere: Panda, Katze, Fuchs, Axolotl, Biene) und animierte HD-Umhänge. Öffnen über <kbd>Rechte Shift</kbd> → Kosmetik.</p>
       <ul>
         <li><b>Klick</b> auf eine Karte legt an oder ab. <b>Darüberfahren</b> zeigt das Cosmetic zur Probe an deiner Figur (mit der Maus drehbar).</li>
         <li>Farbvarianten wählst du über die Punkte unter der Figur.</li>
-        <li><b>Suche und Filter:</b> einfach tippen; Chips oben filtern nach Art, „Angelegt“ zeigt nur, was du trägst.</li>
+        <li><b>Aufbau wie ein Shop:</b> links Empfohlen, Cosmetics (mit Umhängen, Rücken, Hüten, Bandanas, Begleitern), Emotes und Angelegt; rechts deine Figur zum Drehen (ziehen oder Pfeile).</li>
+        <li><b>Suche:</b> einfach tippen. „Angelegt“ zeigt alles, was du trägst, und die Emotes in deinem Rad.</li>
         <li>Hüte und Bandanas sitzen <b>über dem Helm</b> und über 3D-Skin-Layers, Flügel und Begleiter über dem Brustpanzer. Einstellbar im Modul „Kosmetik“ unter „Über 3D-Skin-Layer legen“.</li>
-        <li><b>Andere sehen sie:</b> Alle Spieler mit BambuBay auf demselben Server sehen deine Cosmetics, auch in LAN-Welten.</li>
+        <li><b>Andere sehen sie:</b> Alle Spieler mit Rust Client auf demselben Server sehen deine Cosmetics, auch in LAN-Welten.</li>
       </ul>
       <figure class="shot"><img src="../assets/game-armor-cosmetics.webp" alt="Bandana und Hut über einem Diamanthelm" loading="lazy" width="1280" height="720"><figcaption>Cosmetics über der Rüstung.</figcaption></figure>
       <h3>Eigene Umhänge</h3>
@@ -271,6 +272,13 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
         <li>Klicke im Kosmetik-Menü auf <b>Neu laden</b>.</li>
       </ol>
       <p>Erkannt werden komplette Umhang-Texturen (64×32-Aufteilung), nur der Umhang-Teil (22×17) oder ein normales Bild, das zugeschnitten wird. Eigene Umhänge siehst nur du.</p>
+      <h3>Community-Capes (für alle sichtbar)</h3>
+      <ol>
+        <li>Öffne im Rust Client Launcher den Tab <b>Capes</b>.</li>
+        <li><b>Hochladen</b>: PNG im Minecraft-Cape-Format (64×32, 128×64 …), bis zu 10 Capes pro Spieler.</li>
+        <li>Capes anderer Spieler speicherst du mit dem <b>Herz</b> als Favorit, ein <b>Klick</b> legt ein Cape an.</li>
+      </ol>
+      <p>Angelegte Community-Capes sehen alle Spieler mit Rust Client im Spiel. Unpassende Capes kannst du melden – nach mehreren Meldungen werden sie ausgeblendet.</p>
     </section>
 
     <section class="doc" id="emotes">
@@ -280,7 +288,7 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
         <li><b>26 Emotes</b>, darunter Winken, Tanzen, Floss, Salto, Liegestütze, Schlafen und Dab. Cosmetics bewegen sich mit.</li>
         <li>Was im Rad liegt, legst du im Kosmetik-Menü im Reiter Emotes fest (Rechtsklick auf eine Karte).</li>
         <li>Laufen, Springen oder Angreifen beendet ein Emote. Die Kamera schaut dabei von vorne.</li>
-        <li>Andere BambuBay-Spieler auf demselben Server sehen dein Emote nach etwa 0,15 Sekunden.</li>
+        <li>Andere Rust-Client-Spieler auf demselben Server sehen dein Emote nach etwa 0,15 Sekunden.</li>
       </ul>
       <figure class="shot"><img src="../assets/game-emote-wheel.webp" alt="Das Emote-Rad" loading="lazy" width="1280" height="720"><figcaption>Das Emote-Rad auf Taste B.</figcaption></figure>
       <h3>Eigene Emotes aus Blockbench</h3>
@@ -288,20 +296,20 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
     </section>
 
     <section class="doc" id="bambuplus">
-      <h2><span class="n">07</span>Bambu+</h2>
+      <h2><span class="n">07</span>Rust+</h2>
       <p>Animierte Stile für dein Namensschild und deinen Namen in der Tab-Liste. Öffnen über das Vormenü (Stern) oder die linke Leiste im Mod-Menü.</p>
       <ul>
         <li><b>19 Effekte:</b> Regenbogen, Verlauf, Metallisch, Schimmer, Feuer, Chromatisch, Pulsieren, Leuchten, Tippen, Glitzer, Eis, Gift, Gold, Galaxie, Sunset, Ocean, Sakura, Matrix und Neon.</li>
         <li><b>Farben &amp; Tempo:</b> zwei Farbpaletten, Tempo-Regler, Fett und fertige Farbpaare.</li>
         <li><b>Zusatz-Schild:</b> eine zweite Zeile mit eigenem Text (bis 16 Zeichen) über oder unter dem Namen.</li>
         <li>Links siehst du deine Figur mit Namensschild als Live-Vorschau.</li>
-        <li>Andere BambuBay-Spieler sehen deinen Stil. „Stile anderer Spieler zeigen“ schaltet das für dich ab.</li>
+        <li>Andere Rust-Client-Spieler sehen deinen Stil. „Stile anderer Spieler zeigen“ schaltet das für dich ab.</li>
       </ul>
-      <figure class="shot"><img src="../assets/game-plus-nametags.webp" alt="Spieler mit farbig animierten Namensschildern" loading="lazy" width="1280" height="720"><figcaption>Bambu+ Namens-Stile im Spiel.</figcaption></figure>
+      <figure class="shot"><img src="../assets/game-plus-nametags.webp" alt="Spieler mit farbig animierten Namensschildern" loading="lazy" width="1280" height="720"><figcaption>Rust+ Namens-Stile im Spiel.</figcaption></figure>
     </section>
 
     <section class="doc" id="bambugram">
-      <h2><span class="n">08</span>BambuGram</h2>
+      <h2><span class="n">08</span>RustGram</h2>
       <p>Screenshots direkt aus dem Spiel teilen. Öffnen über das Vormenü (Kamera), die linke Leiste im Mod-Menü oder <code>/bambugram</code>.</p>
       <ul>
         <li><b>Feed:</b> Reiter Freunde, Entdecken und Meine, sortiert nach Neu oder Top.</li>
@@ -310,7 +318,7 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
         <li><b>Löschen und Melden:</b> Eigene Beiträge und Kommentare kannst du löschen (zweimal klicken), fremde Beiträge melden. Nach 3 Meldungen wird ein Beitrag ausgeblendet.</li>
         <li>Grenzen gegen Spam: 15 Beiträge pro Tag, 20 Sekunden zwischen zwei Beiträgen.</li>
       </ul>
-      <figure class="shot"><img src="../assets/game-gram-feed.webp" alt="Der BambuGram-Feed mit Beiträgen" loading="lazy" width="1280" height="720"><figcaption>Der BambuGram-Feed.</figcaption></figure>
+      <figure class="shot"><img src="../assets/game-gram-feed.webp" alt="Der RustGram-Feed mit Beiträgen" loading="lazy" width="1280" height="720"><figcaption>Der RustGram-Feed.</figcaption></figure>
     </section>
 
     <section class="doc" id="freunde">
@@ -318,10 +326,10 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
       <ul>
         <li>Öffnen über <kbd>Rechte Shift</kbd> → Freunde.</li>
         <li>Freund hinzufügen: Minecraft-Namen ins Feld tippen und senden. Eingehende Anfragen sind gelb umrandet.</li>
-        <li>Online-Freunde haben einen grünen Ring und zeigen, auf welchem Server sie spielen.</li>
-        <li>Spieler mit BambuBay haben das BambuBay-Symbol neben dem Namen (abschaltbar unter <i>Optionen → BambuBay-Symbol neben Namen</i>).</li>
+        <li>Online-Freunde haben einen hellen Ring und zeigen, auf welchem Server sie spielen.</li>
+        <li>Spieler mit Rust Client haben das Rust-Client-Symbol neben dem Namen (abschaltbar unter <i>Optionen → Rust-Client-Symbol neben Namen</i>).</li>
       </ul>
-      <figure class="shot"><img src="../assets/game-friends-visible.webp" alt="Zwei Spieler mit BambuBay-Symbol und Cosmetics" loading="lazy" width="1280" height="720"><figcaption>Andere BambuBay-Spieler mit Symbol, Cosmetics und Bambu+.</figcaption></figure>
+      <figure class="shot"><img src="../assets/game-friends-visible.webp" alt="Zwei Spieler mit Rust-Client-Symbol und Cosmetics" loading="lazy" width="1280" height="720"><figcaption>Andere Rust-Client-Spieler mit Symbol, Cosmetics und Rust+.</figcaption></figure>
     </section>
 
     <section class="doc" id="musik">
@@ -335,12 +343,12 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
 
     <section class="doc" id="leistung">
       <h2><span class="n">11</span>Mehr FPS</h2>
-      <p>Die Leistungs-Module greifen sofort, ohne Chunks neu zu laden. Der Launcher installiert dazu auf Wunsch ein Leistungspaket: Sodium, Lithium, FerriteCore, EntityCulling, ImmediatelyFast und MoreCulling.</p>
+      <p>Die Leistungs-Module greifen sofort, ohne Chunks neu zu laden. Der Launcher installiert dazu auf Wunsch ein Leistungspaket: Sodium, Lithium, FerriteCore, EntityCulling, ImmediatelyFast, MoreCulling, BadOptimizations, ScalableLux, ModernFix (schnellerer Spielstart) und C2ME (Welten werden auf allen Prozessorkernen erzeugt). Ab Java 19 legt der Launcher außerdem einen Klassen-Cache an, damit das Spiel ab dem zweiten Start schneller hochfährt.</p>
       <div class="table-wrap"><table>
         <thead><tr><th>Aufbau</th><th>Ø FPS</th><th>Schwächste 5 %</th></tr></thead>
         <tbody>
           <tr><td>Nur Fabric API</td><td>150</td><td>93</td></tr>
-          <tr><td>Mit BambuBay-Mod</td><td>153</td><td>110</td></tr>
+          <tr><td>Mit Rust-Client-Mod</td><td>153</td><td>110</td></tr>
           <tr><td>Mit Mod und Leistungspaket</td><td><b>276</b> (+84 %)</td><td><b>227</b></td></tr>
         </tbody>
       </table></div>
@@ -349,12 +357,12 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
 
     <section class="doc" id="datenschutz">
       <h2><span class="n">12</span>Online-Funktionen &amp; Datenschutz</h2>
-      <p>Freunde, BambuGram und das Anzeigen von Cosmetics, Bambu+, Emotes und Symbol bei anderen Spielern laufen über den BambuBay-Server. Dafür schickt die Mod:</p>
+      <p>Freunde, RustGram und das Anzeigen von Cosmetics, Rust+, Emotes und Symbol bei anderen Spielern laufen über den Rust-Client-Server. Dafür schickt die Mod:</p>
       <ul>
         <li>deine Minecraft-UUID und deinen Namen (Anmeldung über Mojangs Sitzungsprüfung, dein Passwort oder Token verlässt nie deinen PC),</li>
         <li>den Namen des Servers, auf dem du spielst, und die UUIDs der Spieler in der Tab-Liste (damit nur Spieler auf demselben Server deine Cosmetics und Emotes sehen),</li>
-        <li>deine gewählten Cosmetics, deinen Bambu+-Stil und gespielte Emotes,</li>
-        <li>Bilder und Texte, die du selbst im BambuGram hochlädst. Bilder werden neu gespeichert, dabei fallen alle Metadaten weg.</li>
+        <li>deine gewählten Cosmetics, deinen Rust+-Stil und gespielte Emotes,</li>
+        <li>Bilder und Texte, die du selbst im RustGram hochlädst. Bilder werden neu gespeichert, dabei fallen alle Metadaten weg.</li>
       </ul>
       <p>Es gibt keine Werbung, kein Tracking und keine Weitergabe an Dritte. Alle Module funktionieren auch ohne Verbindung zum Server.</p>
     </section>
@@ -362,7 +370,7 @@ footer .in { max-width: 1180px; margin: 0 auto; padding: 28px 20px; display: fle
     <section class="doc" id="probleme">
       <h2><span class="n">13</span>Probleme lösen</h2>
       <details><summary>Das Spiel stürzt beim Start ab</summary><div>
-        <p>Prüfe, ob Fabric Loader und Fabric API für deine Minecraft-Version installiert sind, die BambuBay-Jar zu deiner Version passt und nur eine BambuBay-Jar im mods-Ordner liegt. Schick uns sonst die Datei <code>logs/latest.log</code> (siehe <a href="#melden">Fehler melden</a>).</p></div></details>
+        <p>Prüfe, ob Fabric Loader und Fabric API für deine Minecraft-Version installiert sind, die Rust-Client-Jar zu deiner Version passt und nur eine Rust-Client-Jar im mods-Ordner liegt. Schick uns sonst die Datei <code>logs/latest.log</code> (siehe <a href="#melden">Fehler melden</a>).</p></div></details>
       <details><summary>Ich sehe die Cosmetics meiner Freunde nicht</summary><div>
         <p>Beide brauchen die aktuelle Mod-Version und müssen auf demselben Server oder in derselben LAN-Welt sein. Öffne das Freunde-Menü: Steht dort „Offline“, klicke auf „Erneut verbinden“.</p></div></details>
       <details><summary>Bandana oder Hut verschwindet unter dem Helm</summary><div>

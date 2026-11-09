@@ -6,8 +6,8 @@
 <link rel="icon" href="assets/logo.png">
 </head>
 <body>
-<title>BambuBay Client</title>
-<meta name="description" content="BambuBay: Launcher und Mod für Minecraft 1.21.4 bis 1.21.11 mit Cosmetics, Emotes, BambuGram und Bambu+.">
+<title>Rust Client</title>
+<meta name="description" content="Rust Client: Launcher und Mod für Minecraft 1.21.4 bis 1.21.11 mit Cosmetics, Emotes, RustGram und Rust+.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -16,17 +16,17 @@
    auf einer schmalen Mittelspalte, Bilder in Fenster-Rahmen mit Tiefe. Eine Farbe: Bambusgrün. */
 :root {
   color-scheme: dark;
-  --night: #050d09;        /* Seitengrund */
-  --forest: #0a1710;       /* Flächen */
-  --moss: #11241a;         /* gehobene Flächen */
+  --night: #08090c;        /* Seitengrund */
+  --forest: #0f1116;       /* Flächen */
+  --moss: #161922;         /* gehobene Flächen */
   --line: rgba(160, 230, 190, .12);
   --line-strong: rgba(160, 230, 190, .24);
-  --leaf: #4ade80;         /* Akzent, wie im Launcher */
-  --leaf-deep: #15803d;
+  --leaf: #8b9dc3;         /* Akzent, wie im Launcher */
+  --leaf-deep: #535e75;
   --sun: #facc15;          /* nur fürs "Neu"-Etikett */
-  --text: #e9f5ee;
-  --muted: #9bb5a6;
-  --dim: #64806f;
+  --text: #eef1f6;
+  --muted: #a3abbb;
+  --dim: #6b7385;
   --font-pixel: "Pixelify Sans", "Courier New", monospace;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
@@ -76,10 +76,10 @@ p { margin: 0; }
 }
 .btn svg { width: 18px; height: 18px; flex: none; }
 .btn-leaf {
-  background: var(--leaf); color: #04220f;
-  box-shadow: 0 4px 0 var(--leaf-deep), 0 10px 30px rgba(74, 222, 128, .25);
+  background: var(--leaf); color: #0b0e14;
+  box-shadow: 0 4px 0 var(--leaf-deep), 0 10px 30px rgba(139, 157, 195, .25);
 }
-.btn-leaf:hover { transform: translateY(-1px); background: #6ee7a0; }
+.btn-leaf:hover { transform: translateY(-1px); background: #a9b7d6; }
 .btn-leaf:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--leaf-deep); }
 .btn-ghost { background: transparent; border: 1px solid var(--line-strong); color: var(--text); }
 .btn-ghost:hover { border-color: var(--leaf); }
@@ -91,9 +91,9 @@ p { margin: 0; }
   /* Lichtschein durch das Blätterdach */
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(60% 50% at 72% 42%, rgba(74, 222, 128, .16), transparent 70%),
+    radial-gradient(60% 50% at 72% 42%, rgba(139, 157, 195, .16), transparent 70%),
     radial-gradient(40% 40% at 15% 10%, rgba(163, 230, 53, .07), transparent 70%),
-    linear-gradient(180deg, #071a10 0%, var(--night) 85%);
+    linear-gradient(180deg, #0b0d12 0%, var(--night) 85%);
   pointer-events: none;
 }
 .hero .wrap {
@@ -104,8 +104,8 @@ p { margin: 0; }
   display: inline-flex; align-items: center; gap: 8px;
   font: 500 13px/1 var(--font-mono); color: var(--leaf);
   text-transform: uppercase; letter-spacing: .08em;
-  padding: 7px 11px; border: 1px solid rgba(74, 222, 128, .3); border-radius: 999px;
-  background: rgba(74, 222, 128, .07);
+  padding: 7px 11px; border: 1px solid rgba(139, 157, 195, .3); border-radius: 999px;
+  background: rgba(139, 157, 195, .07);
 }
 .eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 10px var(--leaf); }
 .hero h1 { font: 700 clamp(36px, 4.4vw, 60px)/1.04 var(--font-pixel); margin-top: 22px; }
@@ -125,7 +125,7 @@ p { margin: 0; }
   position: absolute; inset: 12% 4% auto 6%;
   border-radius: 12px; border: 1px solid var(--line-strong);
   transform: perspective(1200px) rotateY(-16deg) rotateX(6deg);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, .6), 0 0 60px rgba(74, 222, 128, .15);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, .6), 0 0 60px rgba(139, 157, 195, .15);
 }
 .stage.gl .fallback { display: none; }
 .drag-hint { position: absolute; bottom: 4px; right: 8px; font: 500 12px var(--font-mono); color: var(--dim); }
@@ -167,7 +167,7 @@ section.block { padding-block: 96px 24px; }
 .frame {
   border-radius: var(--radius); overflow: hidden;
   border: 1px solid var(--line-strong); background: #000;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .4), 0 0 70px rgba(74, 222, 128, .08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .4), 0 0 70px rgba(139, 157, 195, .08);
   transform: rotateY(-7deg) rotateX(3deg);
   transform-style: preserve-3d;
   transition: transform .5s cubic-bezier(.2, .7, .2, 1);
@@ -186,16 +186,16 @@ section.block { padding-block: 96px 24px; }
   position: absolute; top: 4%; left: 50%; transform: translateX(-50%);
   display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; align-items: center;
   width: min(300px, 70%); padding: 8px 12px 8px 8px; border-radius: 6px;
-  background: rgba(26, 32, 30, .82); border-left: 3px solid #b8d8c4;
+  background: rgba(26, 32, 30, .82); border-left: 3px solid #c3cad8;
   font-family: var(--font-pixel); color: #fff;
 }
-.music-mock .cover { width: 52px; height: 52px; border-radius: 3px; background: linear-gradient(135deg, #1f5d38, #4ade80 60%, #d9f99d); display: grid; place-items: center; }
+.music-mock .cover { width: 52px; height: 52px; border-radius: 3px; background: linear-gradient(135deg, #3b445a, #8b9dc3 60%, #dfe5f2); display: grid; place-items: center; }
 .music-mock .cover img { width: 34px; image-rendering: pixelated; }
 .music-mock b { display: block; font-size: 15px; }
-.music-mock span { color: #b6c7bd; font-size: 13px; }
-.music-mock .bar { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #b6c7bd; margin-top: 3px; }
+.music-mock span { color: #b9c0cc; font-size: 13px; }
+.music-mock .bar { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #b9c0cc; margin-top: 3px; }
 .music-mock .bar i { flex: 1; height: 3px; background: rgba(255, 255, 255, .25); position: relative; }
-.music-mock .bar i::after { content: ""; position: absolute; inset: 0 61% 0 0; background: #b8f0cd; }
+.music-mock .bar i::after { content: ""; position: absolute; inset: 0 61% 0 0; background: #d0d8ea; }
 
 /* ---------- Launcher zum Ausprobieren ---------- */
 .try { display: grid; grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); gap: 40px; align-items: center; margin-top: 52px; }
@@ -206,14 +206,14 @@ section.block { padding-block: 96px 24px; }
 }
 .try-item b { font-weight: 600; color: var(--muted); }
 .try-item span { font-size: 14px; color: var(--dim); display: none; }
-.try-item[aria-selected="true"] { border-left-color: var(--leaf); background: linear-gradient(90deg, rgba(74, 222, 128, .09), transparent); }
+.try-item[aria-selected="true"] { border-left-color: var(--leaf); background: linear-gradient(90deg, rgba(139, 157, 195, .09), transparent); }
 .try-item[aria-selected="true"] b { color: var(--text); }
 .try-item[aria-selected="true"] span { display: block; color: var(--muted); }
 .device-wrap { perspective: 1800px; min-width: 0; }
 .device {
-  border-radius: 16px; padding: 8px; background: linear-gradient(160deg, #183526, #0b1711);
+  border-radius: 16px; padding: 8px; background: linear-gradient(160deg, #1a1e28, #0d0f14);
   border: 1px solid var(--line-strong);
-  box-shadow: 0 50px 90px rgba(0, 0, 0, .6), 0 0 90px rgba(74, 222, 128, .12), inset 0 1px 0 rgba(255, 255, 255, .08);
+  box-shadow: 0 50px 90px rgba(0, 0, 0, .6), 0 0 90px rgba(139, 157, 195, .12), inset 0 1px 0 rgba(255, 255, 255, .08);
   transform: rotateY(-9deg) rotateX(4deg);
   transition: transform .4s cubic-bezier(.2, .7, .2, 1);
 }
@@ -226,13 +226,13 @@ section.block { padding-block: 96px 24px; }
   background: linear-gradient(180deg, var(--moss), var(--forest));
   border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
 }
-.news-card .pic { aspect-ratio: 16 / 9; background: #061009; overflow: hidden; }
+.news-card .pic { aspect-ratio: 16 / 9; background: #0a0b0f; overflow: hidden; }
 .news-card .pic img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .news-card:hover .pic img { transform: scale(1.04); }
-.news-card .pic.empty { display: grid; place-items: center; font: 700 44px var(--font-pixel); color: rgba(74, 222, 128, .35); background: radial-gradient(circle at 50% 60%, rgba(74, 222, 128, .14), #061009 70%); }
+.news-card .pic.empty { display: grid; place-items: center; font: 700 44px var(--font-pixel); color: rgba(139, 157, 195, .35); background: radial-gradient(circle at 50% 60%, rgba(139, 157, 195, .14), #0a0b0f 70%); }
 .news-card .body { padding: 18px 20px 20px; display: grid; gap: 8px; align-content: start; }
 .news-card .meta { display: flex; align-items: center; gap: 10px; font: 500 12px var(--font-mono); color: var(--dim); }
-.tag { font: 700 11px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; padding: 4px 7px; border-radius: 5px; color: var(--leaf); background: rgba(74, 222, 128, .1); border: 1px solid rgba(74, 222, 128, .3); }
+.tag { font: 700 11px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; padding: 4px 7px; border-radius: 5px; color: var(--leaf); background: rgba(139, 157, 195, .1); border: 1px solid rgba(139, 157, 195, .3); }
 .tag.neu { color: var(--sun); background: rgba(250, 204, 21, .1); border-color: rgba(250, 204, 21, .35); }
 .news-card h3 { font: 700 21px/1.2 var(--font-pixel); }
 .news-card p { color: var(--muted); font-size: 15px; }
@@ -245,8 +245,8 @@ section.block { padding-block: 96px 24px; }
   background: var(--forest);
 }
 .get-card.main {
-  border-color: rgba(74, 222, 128, .4);
-  background: radial-gradient(120% 120% at 0% 0%, rgba(74, 222, 128, .16), transparent 55%), var(--moss);
+  border-color: rgba(139, 157, 195, .4);
+  background: radial-gradient(120% 120% at 0% 0%, rgba(139, 157, 195, .16), transparent 55%), var(--moss);
 }
 .get-card h3 { font: 700 26px/1.1 var(--font-pixel); }
 .get-card p { color: var(--muted); }
@@ -282,14 +282,66 @@ footer p + p { margin-top: 8px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---------------------------------------------------------------- 3D-Cosmetics */
+.wardrobe { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(280px, 1.1fr); gap: 34px; align-items: center; margin-top: 46px; }
+.wardrobe-stage {
+  position: relative; aspect-ratio: 4 / 5; max-height: 560px; border-radius: 24px; overflow: hidden;
+  background: radial-gradient(70% 55% at 50% 72%, rgba(139, 157, 195, .28), transparent 70%), linear-gradient(180deg, #151923, #0b0d12);
+  border: 1px solid rgba(255, 255, 255, .08); box-shadow: 0 40px 80px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+.wardrobe-stage canvas { width: 100% !important; height: 100% !important; display: block; cursor: grab; }
+.wardrobe-stage canvas:active { cursor: grabbing; }
+.wardrobe-stage .floor { position: absolute; left: 50%; bottom: 9%; width: 46%; height: 18px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(0, 0, 0, .55), transparent); pointer-events: none; }
+.wardrobe-stage .cape-name { position: absolute; left: 0; right: 0; top: 18px; text-align: center; font: 700 22px/1 var(--font-pixel); letter-spacing: .04em; text-shadow: 0 2px 0 rgba(0, 0, 0, .5); }
+.wardrobe-stage .hint { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; color: var(--dim); font: 12px var(--font-mono); }
+.wardrobe-side h3 { font: 700 30px/1.1 var(--font-pixel); }
+.wardrobe-side p { color: var(--muted); margin-top: 10px; }
+.cape-picker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+.cape-btn {
+  position: relative; aspect-ratio: 10 / 16; border-radius: 12px; overflow: hidden; cursor: pointer; padding: 0;
+  border: 2px solid rgba(255, 255, 255, .12); background: #0d0f14 center / cover no-repeat; image-rendering: pixelated;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.cape-btn:hover { transform: translateY(-4px) rotate(-1.5deg); border-color: rgba(255, 255, 255, .45); }
+.cape-btn[aria-pressed="true"] { border-color: #fff; box-shadow: 0 0 0 3px rgba(139, 157, 195, .35), 0 14px 30px rgba(0, 0, 0, .5); }
+.cape-btn canvas { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.wardrobe-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.chip-btn { font: 600 13px var(--font-body, inherit); padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .16); background: rgba(255, 255, 255, .04); color: var(--text); cursor: pointer; transition: background .2s, border-color .2s; }
+.chip-btn:hover, .chip-btn[aria-pressed="true"] { background: rgba(139, 157, 195, .18); border-color: rgba(139, 157, 195, .6); }
+
+/* ---------------------------------------------------------------- Bilder aus dem Spiel */
+.gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 42px; }
+.shot-card { grid-column: span 2; position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .08); background: #0b0d12; cursor: zoom-in; transform-style: preserve-3d; transition: transform .25s ease, box-shadow .25s ease; }
+.shot-card.wide { grid-column: span 3; }
+.shot-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; transition: transform .6s ease; }
+.shot-card:hover { box-shadow: 0 26px 60px rgba(0, 0, 0, .55), 0 0 0 1px rgba(139, 157, 195, .4); }
+.shot-card:hover img { transform: scale(1.04); }
+.shot-card figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 12px; font-weight: 600; font-size: 14px; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); }
+.lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; background: rgba(5, 6, 9, .88); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity .25s; }
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox img { max-width: min(1280px, 100%); max-height: 88vh; border-radius: 14px; box-shadow: 0 30px 90px rgba(0, 0, 0, .7); transform: scale(.96); transition: transform .3s; }
+.lightbox.open img { transform: none; }
+
+/* ---------------------------------------------------------------- Einblenden beim Scrollen */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.delay-1 { transition-delay: .08s; } .reveal.delay-2 { transition-delay: .16s; } .reveal.delay-3 { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 860px) {
+  .wardrobe { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .shot-card, .shot-card.wide { grid-column: span 2; }
+  .cape-picker { grid-template-columns: repeat(4, 1fr); }
+}
 </style>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="BambuBay Startseite"><img src="assets/logo.png" alt=""><span>Bambu<b>Bay</b></span></a>
+    <a class="brand" href="#top" aria-label="Rust Client Startseite"><img src="assets/logo.png" alt=""><span>Rust <b>Client</b></span></a>
     <nav class="nav-links" aria-label="Abschnitte">
       <a href="#features">Features</a>
-      <a href="#launcher">Launcher</a>
+      <a href="#cosmetics">Cosmetics</a><a href="#launcher">Launcher</a>
       <a href="#neu">Neu</a>
       <a href="#download">Download</a>
       <a href="wiki/">Wiki</a>
@@ -303,10 +355,10 @@ footer p + p { margin-top: 8px; }
     <div class="wrap">
       <div>
         <span class="eyebrow"><i></i>Minecraft 1.21.4 – 1.21.11 · Fabric</span>
-        <h1>Der Minecraft-Client <em>aus dem Bambuswald.</em></h1>
-        <p class="lead">Launcher und Mod in einem: mehr FPS, Cosmetics, Emotes, Freunde und BambuGram. Kostenlos für alle.</p>
+        <h1>Der Minecraft-Client, <em>der einfach läuft.</em></h1>
+        <p class="lead">Launcher und Mod in einem: mehr FPS, Cosmetics, Emotes, Freunde und RustGram. Kostenlos für alle.</p>
         <div class="hero-actions">
-          <a class="btn btn-leaf btn-big" href="downloads/BambuBay-Launcher-3.4.3.zip" data-download="launcher">
+          <a class="btn btn-leaf btn-big" href="downloads/BambuBay-Launcher-4.0.0.zip" data-download="launcher">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             Für Windows herunterladen
           </a>
@@ -315,7 +367,7 @@ footer p + p { margin-top: 8px; }
         <p class="hero-meta" id="hero-meta">Launcher 2.1.0 · Mod 2.0.0 · aktualisiert am 15.10.2026</p>
       </div>
       <div class="stage" id="stage">
-        <img class="fallback" src="assets/launcher-play.webp" alt="Der BambuBay Launcher: Spielen-Ansicht mit großem Spielen-Knopf, Neuigkeiten und Servern">
+        <img class="fallback" src="assets/launcher-play.webp" alt="Der Rust Client Launcher: Spielen-Ansicht mit großem Spielen-Knopf, Neuigkeiten und Servern">
         <canvas id="scene" aria-hidden="true"></canvas>
         <span class="drag-hint" id="drag-hint" hidden>Maus bewegen zum Drehen</span>
       </div>
@@ -335,18 +387,64 @@ footer p + p { margin-top: 8px; }
     <div class="wrap">
       <div class="head">
         <h2 class="pixel">Alles im Client. <em>Ohne Extra-Mods.</em></h2>
-        <p>Alles, was andere BambuBay-Spieler betrifft, sehen sie auch: Cosmetics, Emotes, Namens-Stile und deine Beiträge.</p>
+        <p>Alles, was andere Rust-Client-Spieler betrifft, sehen sie auch: Cosmetics, Emotes, Namens-Stile und deine Beiträge.</p>
       </div>
       <div class="tabs" role="tablist" aria-label="Features" id="feature-tabs"></div>
       <div id="feature-panel" role="tabpanel"></div>
     </div>
   </section>
 
+
+  <section class="block" id="cosmetics">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2 class="pixel">Cosmetics in 3D. <em>Alle kostenlos.</em></h2>
+        <p>Umhänge, Flügel, Hüte und echte Minecraft-Tiere als Begleiter – andere Rust-Client-Spieler sehen alles. Probier die Umhänge direkt hier aus.</p>
+      </div>
+      <div class="wardrobe">
+        <div class="wardrobe-stage reveal" id="wardrobe">
+          <div class="floor"></div>
+          <div class="cape-name" id="cape-name">Galaxie</div>
+          <span class="hint">Ziehen zum Drehen</span>
+        </div>
+        <div class="wardrobe-side reveal delay-1">
+          <h3>Such dir deinen Umhang aus.</h3>
+          <p>Animierte HD-Umhänge mit Leucht-Effekten, dazu Community-Capes: Lade im Launcher unter <b>Capes</b> dein eigenes hoch, alle anderen können es speichern und anlegen.</p>
+          <div class="cape-picker" id="cape-picker"></div>
+          <div class="wardrobe-actions" id="wardrobe-actions">
+            <button class="chip-btn" data-anim="idle" aria-pressed="true">Stehen</button>
+            <button class="chip-btn" data-anim="walk" aria-pressed="false">Laufen</button>
+            <button class="chip-btn" data-anim="run" aria-pressed="false">Rennen</button>
+            <button class="chip-btn" data-anim="fly" aria-pressed="false">Fliegen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ingame">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2 class="pixel">So sieht's <em>im Spiel aus.</em></h2>
+        <p>Neues Cosmetics-Menü im Shop-Stil, Emotes mit Vorschau, echte Begleiter-Tiere und ein schlichtes Mod-Menü in Grau.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure class="shot-card wide reveal"><img src="assets/rc-cosmetics-featured.webp" alt="Cosmetics-Menü: Empfohlen" loading="lazy"><figcaption>Cosmetics-Menü – alles kostenlos</figcaption></figure>
+        <figure class="shot-card wide reveal delay-1"><img src="assets/rc-companions.webp" alt="Begleiter: Panda, Fuchs, Katze, Axolotl, Biene" loading="lazy"><figcaption>Echte Minecraft-Tiere als Begleiter</figcaption></figure>
+        <figure class="shot-card reveal"><img src="assets/rc-emotes.webp" alt="Emote-Auswahl mit Posen" loading="lazy"><figcaption>26 Emotes mit Vorschau</figcaption></figure>
+        <figure class="shot-card reveal delay-1"><img src="assets/rc-modmenu.webp" alt="Mod-Menü" loading="lazy"><figcaption>Über 100 Module</figcaption></figure>
+        <figure class="shot-card reveal delay-2"><img src="assets/rc-home.webp" alt="Rust-Client-Menü im Spiel" loading="lazy"><figcaption>Rechte Shift: Rust-Client-Menü</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bild groß"><img alt=""></div>
+
   <section class="block" id="launcher">
     <div class="wrap">
       <div class="head">
         <h2 class="pixel">Der Launcher. <em>Schau rein.</em></h2>
-        <p>Ein Klick auf Spielen: Minecraft, Fabric, die BambuBay-Mod und das Leistungspaket werden automatisch eingerichtet.</p>
+        <p>Ein Klick auf Spielen: Minecraft, Fabric, die Rust-Client-Mod und das Leistungspaket werden automatisch eingerichtet.</p>
       </div>
       <div class="try">
         <div class="try-list" role="tablist" aria-label="Launcher-Ansichten" id="try-list"></div>
@@ -374,17 +472,17 @@ footer p + p { margin-top: 8px; }
       </div>
       <div class="get">
         <div class="get-card main">
-          <h3>BambuBay Launcher</h3>
+          <h3>Rust Client Launcher</h3>
           <p>Für Windows. Installiert Minecraft 1.21.11, Fabric und die Mod, hält alles aktuell und startet mit einem Klick.</p>
           <ol>
             <li>ZIP herunterladen und entpacken.</li>
             <li>Setup starten und installieren.</li>
             <li>Mit deinem Microsoft-Konto anmelden, Spielen klicken.</li>
           </ol>
-          <div><a class="btn btn-leaf btn-big" href="downloads/BambuBay-Launcher-3.4.3.zip" data-download="launcher">
+          <div><a class="btn btn-leaf btn-big" href="downloads/BambuBay-Launcher-4.0.0.zip" data-download="launcher">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             Launcher herunterladen</a></div>
-          <p class="file" data-file="launcher">BambuBay-Launcher-2.1.0.zip · 13,8 MB</p>
+          <p class="file" data-file="launcher">Rust-Client-Launcher-2.1.0.zip · 13,8 MB</p>
           <p class="get-status" data-status="launcher" role="status"></p>
         </div>
         <div class="get-card">
@@ -395,10 +493,10 @@ footer p + p { margin-top: 8px; }
             <li>Die .jar in den Ordner „mods“ legen.</li>
             <li>Im Spiel öffnet Rechte Shift das Menü.</li>
           </ol>
-          <div><a class="btn btn-ghost" href="downloads/BambuBay-Mod-2.6.0.zip" data-download="mod">
+          <div><a class="btn btn-ghost" href="downloads/BambuBay-Mod-3.0.0.zip" data-download="mod">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
             Mod herunterladen</a></div>
-          <p class="file" data-file="mod">BambuBay-Mod-2.0.0.zip · 10,5 MB</p>
+          <p class="file" data-file="mod">Rust-Client-Mod-2.0.0.zip · 10,5 MB</p>
           <p class="get-status" data-status="mod" role="status"></p>
         </div>
       </div>
@@ -410,7 +508,7 @@ footer p + p { margin-top: 8px; }
 <footer>
   <div class="wrap">
     <div>
-      <a class="brand" href="#top"><img src="assets/logo.png" alt=""><span>Bambu<b>Bay</b></span></a>
+      <a class="brand" href="#top"><img src="assets/logo.png" alt=""><span>Rust <b>Client</b></span></a>
       <p style="margin-top:12px">Kein offizielles Minecraft-Produkt. Nicht von Mojang oder Microsoft genehmigt oder mit ihnen verbunden.</p>
       <p style="margin-top:8px">Hilfe: <a href="wiki/">Wiki</a> · <a href="https://github.com/dynxytghg-max/dynxytghg-max.github.io/issues">Fehler melden</a></p>
     </div>
@@ -423,7 +521,7 @@ footer p + p { margin-top: 8px; }
 </footer>
 
 <script type="application/json" id="features-fallback">
-{"updated":"2026-10-15","launcher":{"version":"3.4.3","file":"downloads/BambuBay-Launcher-3.4.3.zip","size":"15,1 MB","notes":"Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht). 3.2.0: Kein Einfrieren mehr beim Übernehmen von Einstellungen, der Freunde-Server startet sich bei Ausfall selbst neu, neue Statistik-Seite für die BambuBay-Admins. 3.3.0: Freunde-Menü im Launcher (Freunde, Anfragen, Chat), BambuBay-Server v7 mit „Welt hosten“, der Server wird jetzt zuverlässig aktualisiert. 3.4.0: Neuer Look wie bei NoRisk (Seitenleiste über die volle Höhe, eckige Leisten, runde Knöpfe), Hinweis-Glocke, Zurück/Vor, Verbindungen-Fenster und Anmelden auf der Webseite über den Launcher. 3.4.1: Minecraft-Schrift (Minecraftia) im ganzen Launcher, Namensschild im 3D-Raum über deiner Figur (wie bei NoRisk), Logo ohne schwarzen Hintergrund. 3.4.2: Startseite wie bei NoRisk – große Figur, Namensschild über dem Kopf, zuletzt gespielter Server darunter, kompakter Spielen-Knopf und Neuigkeiten als Bild-Kacheln. 3.4.3: Runde Reiter beim Entdecken von Mods, Ressourcenpaketen und Shadern (Modrinth und CurseForge)."},"mod":{"version":"2.6.0","minecraft":"1.21.4 – 1.21.11","file":"downloads/BambuBay-Mod-2.6.0.zip","size":"53,7 MB","jar":"downloads/BambuBayClient-2.3.0.jar","sha1":"901293bfaa4657ebf7583d8404928fd0dd6e6928"},"items":[{"date":"2026-10-17","tag":"Neu","title":"Launcher 3.4: Neuer Look & Anmelden auf der Webseite","text":"Der Launcher sieht jetzt aus wie aus einem Guss: Minecraft-Schrift, Seitenleiste über die volle Höhe, eckige Leisten und runde, leuchtende Knöpfe. Auf der Startseite schwebt dein Namensschild jetzt im 3D-Raum über deiner Figur und dreht sich mit. Neu sind die Hinweis-Glocke, Zurück/Vor und das Verbindungen-Fenster. Auf der Webseite meldest du dich jetzt mit einem Klick über den Launcher an – ohne Passwort.","image":"assets/launcher3-play.webp"},{"date":"2026-10-17","tag":"Neu","title":"Version 2.6.0: Neues Mod-Menü & 7 neue Module","text":"Das Mod-Menü ist jetzt clean und eckig – grau mit Grün als Akzent, Kategorien als Reiter, flache Modul-Karten. Neu: Farbsättigung, Randloses Vollbild, Shulker-Vorschau, Rüstung ausblenden, Auto-Text (Chat-Makros auf Tasten), Treffer-Farbe und Eigener Name in F5.","image":"assets/game-new-menu.webp"},{"date":"2026-10-16","tag":"Neu","title":"Version 2.5.0: Welt hosten & Freunde im Launcher","text":"Drück im Spiel Esc › Welt hosten und deine Einzelspieler-Welt ist für deine BambuBay-Freunde offen – ohne Portfreigabe und ohne deine IP zu zeigen. Lade Freunde direkt aus dem Freunde-Menü (Taste O) ein, sie treten mit einem Klick bei. Im BambuBay Launcher 3.3 gibt es oben rechts jetzt ein Freunde-Menü mit Chat, Anfragen und wer gerade online ist.","image":"assets/game-new-menu.webp"},{"date":"2026-10-16","tag":"Neu","title":"Version 2.4.0: Minecraft 1.21.4 bis 1.21.11","text":"BambuBay läuft jetzt auf allen Fabric-Versionen von 1.21.4 bis 1.21.11 – mit allen 103 Modulen, Emotes, Cosmetics, Minimap, Weltkarte, Wegpunkten und TNT-Cart-PvP. Der Launcher lädt für jedes Fabric-Profil automatisch die passende Version. Jede Version wurde in einer neuen Welt getestet.","image":"assets/game-new-menu.webp"},{"date":"2026-10-16","tag":"Neu","title":"Version 2.3.0: TNT-Cart-PvP","text":"Neues Modul für Cart-PvP (LT bis HT, Idee von LennyLonly): Zündzeit über jedem TNT-Cart, geschätzter Schaden mit Deckung und Rüstung, Spreng- und Todesradius am Boden, große Warnung mit Richtungspfeil, Schienen-Hinweis, Bogen-Spannung und Kit-Zähler. Zeigt nur, was man ohnehin sieht – fair für jeden Server.","image":"assets/game-tntcart.webp"},{"date":"2026-10-16","tag":"Neu","title":"Weltkarte & Wegpunkte","text":"Weltkarte mit M: verschieben, zoomen, Rechtsklick setzt einen Wegpunkt. Wegpunkt-Menü mit J (anlegen, bearbeiten, ausblenden, teilen), neuer Wegpunkt mit U, Lichtstrahl und Ankunftszeit. Die Minimap merkt sich besuchtes Gelände, zoomt bis 1/4 und hat Mob-Radar und Chunk-Gitter.","image":"assets/game-worldmap.webp"},{"date":"2026-10-16","tag":"Neu","title":"Launcher 3.1: Profile übertragen","text":"Profile aus NoRisk, Modrinth App, CurseForge, Prism, ATLauncher und dem Minecraft-Launcher mit einem Klick übernehmen (Konten und Logs werden nie kopiert), Profile als .mrpack exportieren, Mods auch von CurseForge, Profile mit Forge, NeoForge, Quilt oder Vanilla und 9 neue animierte Hintergründe in deiner Akzentfarbe."},{"date":"2026-10-16","tag":"Neu","title":"Emotes 2.0 und 24 neue Module","text":"Weiche Übergänge, Effekte und Sounds, neues Emote-Rad mit Suche, Numpad-Schnelltasten und /emote. Dazu 24 neue Module wie Hitmarker, Minimap, Item-Physik und Inventar-Suche.","image":"assets/game-emote-wheel.webp"},{"date":"2026-10-16","tag":"Design","title":"Launcher 3.0","text":"Deine Figur macht jetzt echte BambuBay-Emotes in 3D (abschaltbar, pausiert im Hintergrund). Neue Skin-Bibliothek: Skins speichern, mit einem Klick anlegen, per Spielername, Link oder Datei hinzufügen. Mods mit Filtern für Spielversion, Kategorie, Loader und Umgebung, dazu Mod-Updates mit einem Klick.","image":"assets/launcher3-play.webp"},{"date":"2026-10-16","tag":"Neu","title":"Launcher 2.2.0: Auto-Update","text":"Der Launcher aktualisiert sich ab jetzt beim Start von selbst, und neue Mod-Versionen kommen automatisch ohne neuen Installer. Wer Launcher 2.1.0 hat, lädt 2.2.0 einmal hier herunter, danach nie wieder.","image":"assets/launcher-play.webp"},{"date":"2026-10-15","tag":"Neu","title":"Version 2.1.0","text":"Neues Mod-Menü, 4 neue Module, bessere Suche, 5 neue Bambu+-Effekte, neues Freunde-Menü und Cosmetics über der Rüstung. Jetzt auch auf Modrinth.","image":"assets/game-new-menu.webp"},{"date":"2026-10-15","tag":"Design","title":"Launcher: Live-Neuigkeiten","text":"Die Startseite des Launchers zeigt jetzt automatisch die neuesten Features von dieser Seite, auch offline aus dem Zwischenspeicher. Dazu neue An/Aus-Schalter mit Haken und Kreuz in Mods, Profilen und Einstellungen.","image":"assets/launcher-play.webp"},{"date":"2026-10-15","tag":"Design","title":"Neues Mod-Menü","text":"Neue An/Aus-Schalter, größere Modul-Karten, schönere Einstellungen mit runden Reglern. Dazu ein neues Freunde-Menü, Suche im Kosmetik-Menü und 5 neue Bambu+-Effekte.","image":"assets/game-new-menu.webp"},{"date":"2026-10-15","tag":"Neu","title":"4 neue Module","text":"Blickinfo (Block oder Wesen, auf das du schaust), Inventar-HUD, Nachtsicht ohne Flackern und Hand ausblenden.","image":""},{"date":"2026-10-15","tag":"Fix","title":"Freunde sehen alles","text":"Cosmetics, BambuBay-Symbol, Bambu+ und Emotes von anderen Spielern mit der Mod kommen jetzt überall an: in LAN-Welten, im eigenen Einzelspieler-Host und auf Servern mit verschiedenen Adressen.","image":"assets/game-friends-visible.webp"},{"date":"2026-10-15","tag":"Cosmetics","title":"Über Rüstung und 3D-Skin-Layers","text":"Bandanas, Hüte und Mützen sitzen jetzt über dem Helm und über 3D-Haaren, Flügel und Begleiter über dem Brustpanzer.","image":"assets/game-armor-cosmetics.webp"},{"date":"2026-10-15","tag":"Neu","title":"Bessere Modul-Suche","text":"Findet Module auch bei Tippfehlern, mit englischen Wörtern (brightness, coords) und über Einstellungen. Beste Treffer zuerst, Enter öffnet den ersten.","image":"assets/game-module-search.webp"},{"date":"2026-10-15","tag":"Neu","title":"Die BambuBay-Webseite","text":"Launcher und Mod jetzt direkt hier herunterladen. Jedes neue Feature erscheint automatisch auf dieser Seite. Dazu ein Fix: Emotes fragen den Server nicht mehr ohne Pause ab.","image":"assets/launcher-play.webp"},{"date":"2026-10-15","tag":"Neu","title":"BambuGram","text":"Screenshots direkt aus dem Spiel teilen. Liken, disliken, kommentieren, Profile ansehen. Nach F2 fragt der Chat, ob du teilen willst.","image":"assets/game-gram-feed.webp"},{"date":"2026-10-15","tag":"Design","title":"Neues Bambu+-Menü","text":"Deine Figur mit Namensschild als Live-Vorschau, Farbpaletten, Tempo-Regler, fertige Farbpaare und das Zusatz-Schild zum Eintippen.","image":"assets/game-plus-menu.webp"},{"date":"2026-10-15","tag":"Neu","title":"Musik-Overlay","text":"Cover, Titel und Fortschritt des laufenden Lieds oben im Bild. Spotify, Apple Music, YouTube, Amazon Music, SoundCloud, Tidal und Cider.","image":"assets/game-cosmetics-front.webp","mock":"music"},{"date":"2026-10-15","tag":"Neu","title":"Bambu+ Namens-Stile","text":"15 animierte Effekte für dein Namensschild und die Tab-Liste, dazu ein zweites Schild mit eigenem Text. Andere BambuBay-Spieler sehen beides.","image":"assets/game-plus-nametags.webp"},{"date":"","tag":"Cosmetics","title":"Bandanas und 13 neue Hüte","text":"Bandanas in 11 Farben (auch UwU), Piratenhut, Zauberhüte und mehr. Alle 41 Cosmetics sieht jeder mit BambuBay.","image":"assets/game-cosmetics.webp"},{"date":"","tag":"Emotes","title":"26 Emotes","text":"Salto, Liegestütze, Schlafen und viele mehr. Emote-Rad auf Taste B, Cosmetics bewegen sich mit.","image":"assets/game-emote-salto.webp"}],"downloadBase":"https://dynxytghg-max.github.io/"}
+{"updated":"2026-10-15","launcher":{"version":"4.0.0","file":"downloads/BambuBay-Launcher-4.0.0.zip","size":"15,5 MB","notes":"Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht). 3.2.0: Kein Einfrieren mehr beim Übernehmen von Einstellungen, der Freunde-Server startet sich bei Ausfall selbst neu, neue Statistik-Seite für die Rust-Client-Admins. 3.3.0: Freunde-Menü im Launcher (Freunde, Anfragen, Chat), Rust-Client-Server v7 mit „Welt hosten“, der Server wird jetzt zuverlässig aktualisiert. 3.4.0: Neuer Look wie bei NoRisk (Seitenleiste über die volle Höhe, eckige Leisten, runde Knöpfe), Hinweis-Glocke, Zurück/Vor, Verbindungen-Fenster und Anmelden auf der Webseite über den Launcher. 3.4.1: Minecraft-Schrift (Minecraftia) im ganzen Launcher, Namensschild im 3D-Raum über deiner Figur (wie bei NoRisk), Logo ohne schwarzen Hintergrund. 3.4.2: Startseite wie bei NoRisk – große Figur, Namensschild über dem Kopf, zuletzt gespielter Server darunter, kompakter Spielen-Knopf und Neuigkeiten als Bild-Kacheln. 3.4.3: Runde Reiter beim Entdecken von Mods, Ressourcenpaketen und Shadern (Modrinth und CurseForge). 4.0.0: Aus BambuBay wird Rust Client – neuer Name, neue Farbe (#8B9DC3), graues Logo, neuer Hintergrund „Sternenstaub“, neuer Tab „Capes“ für Community-Capes, schnellerer Spielstart (ModernFix, C2ME, Java-Klassen-Cache), ein Server-Wächter, der den Rust-Client-Server immer am Laufen hält, und ein deutlich schnellerer Launcher-Start (Seiten und 3D-Figur laden erst bei Bedarf), und auf dem Host-PC ein Cloudflare-Tunnel mit eigener, kostenloser Adresse ohne Datenlimit."},"mod":{"version":"3.0.0","minecraft":"1.21.4 – 1.21.11","file":"downloads/BambuBay-Mod-3.0.0.zip","size":"55,1 MB","jar":"downloads/BambuBayClient-2.3.0.jar","sha1":"901293bfaa4657ebf7583d8404928fd0dd6e6928"},"items":[{"date":"2026-11-09","tag":"Neu","title":"Rust Client: neuer Name, neuer Look","text":"Aus BambuBay wird Rust Client. Launcher, Mod und Webseite sind jetzt in Grau-Blau (#8B9DC3) mit grauem Logo. Neu im Launcher: der Tab „Capes“ – lade eigene Capes hoch, speichere die der Community als Favorit und leg sie mit einem Klick an; alle mit Rust Client sehen sie im Spiel. In der Mod gibt es ein neues Cosmetics- und Emote-Menü im Shop-Stil (alles kostenlos), echte Minecraft-Tiere als Begleiter, und Welten laden schneller.","image":"assets/launcher-capes.webp"},{"date":"2026-10-17","tag":"Neu","title":"Launcher 3.4: Neuer Look & Anmelden auf der Webseite","text":"Der Launcher sieht jetzt aus wie aus einem Guss: Minecraft-Schrift, Seitenleiste über die volle Höhe, eckige Leisten und runde, leuchtende Knöpfe. Auf der Startseite schwebt dein Namensschild jetzt im 3D-Raum über deiner Figur und dreht sich mit. Neu sind die Hinweis-Glocke, Zurück/Vor und das Verbindungen-Fenster. Auf der Webseite meldest du dich jetzt mit einem Klick über den Launcher an – ohne Passwort.","image":"assets/launcher3-play.webp"},{"date":"2026-10-17","tag":"Neu","title":"Version 2.6.0: Neues Mod-Menü & 7 neue Module","text":"Das Mod-Menü ist jetzt clean und eckig – grau mit Grün als Akzent, Kategorien als Reiter, flache Modul-Karten. Neu: Farbsättigung, Randloses Vollbild, Shulker-Vorschau, Rüstung ausblenden, Auto-Text (Chat-Makros auf Tasten), Treffer-Farbe und Eigener Name in F5.","image":"assets/game-new-menu.webp"},{"date":"2026-10-16","tag":"Neu","title":"Version 2.5.0: Welt hosten & Freunde im Launcher","text":"Drück im Spiel Esc › Welt hosten und deine Einzelspieler-Welt ist für deine Rust-Client-Freunde offen – ohne Portfreigabe und ohne deine IP zu zeigen. Lade Freunde direkt aus dem Freunde-Menü (Taste O) ein, sie treten mit einem Klick bei. Im Rust Client Launcher 3.3 gibt es oben rechts jetzt ein Freunde-Menü mit Chat, Anfragen und wer gerade online ist.","image":"assets/game-new-menu.webp"},{"date":"2026-10-16","tag":"Neu","title":"Version 2.4.0: Minecraft 1.21.4 bis 1.21.11","text":"Rust Client läuft jetzt auf allen Fabric-Versionen von 1.21.4 bis 1.21.11 – mit allen 103 Modulen, Emotes, Cosmetics, Minimap, Weltkarte, Wegpunkten und TNT-Cart-PvP. Der Launcher lädt für jedes Fabric-Profil automatisch die passende Version. Jede Version wurde in einer neuen Welt getestet.","image":"assets/game-new-menu.webp"},{"date":"2026-10-16","tag":"Neu","title":"Version 2.3.0: TNT-Cart-PvP","text":"Neues Modul für Cart-PvP (LT bis HT, Idee von LennyLonly): Zündzeit über jedem TNT-Cart, geschätzter Schaden mit Deckung und Rüstung, Spreng- und Todesradius am Boden, große Warnung mit Richtungspfeil, Schienen-Hinweis, Bogen-Spannung und Kit-Zähler. Zeigt nur, was man ohnehin sieht – fair für jeden Server.","image":"assets/game-tntcart.webp"},{"date":"2026-10-16","tag":"Neu","title":"Weltkarte & Wegpunkte","text":"Weltkarte mit M: verschieben, zoomen, Rechtsklick setzt einen Wegpunkt. Wegpunkt-Menü mit J (anlegen, bearbeiten, ausblenden, teilen), neuer Wegpunkt mit U, Lichtstrahl und Ankunftszeit. Die Minimap merkt sich besuchtes Gelände, zoomt bis 1/4 und hat Mob-Radar und Chunk-Gitter.","image":"assets/game-worldmap.webp"},{"date":"2026-10-16","tag":"Neu","title":"Launcher 3.1: Profile übertragen","text":"Profile aus NoRisk, Modrinth App, CurseForge, Prism, ATLauncher und dem Minecraft-Launcher mit einem Klick übernehmen (Konten und Logs werden nie kopiert), Profile als .mrpack exportieren, Mods auch von CurseForge, Profile mit Forge, NeoForge, Quilt oder Vanilla und 9 neue animierte Hintergründe in deiner Akzentfarbe."},{"date":"2026-10-16","tag":"Neu","title":"Emotes 2.0 und 24 neue Module","text":"Weiche Übergänge, Effekte und Sounds, neues Emote-Rad mit Suche, Numpad-Schnelltasten und /emote. Dazu 24 neue Module wie Hitmarker, Minimap, Item-Physik und Inventar-Suche.","image":"assets/game-emote-wheel.webp"},{"date":"2026-10-16","tag":"Design","title":"Launcher 3.0","text":"Deine Figur macht jetzt echte Rust-Client-Emotes in 3D (abschaltbar, pausiert im Hintergrund). Neue Skin-Bibliothek: Skins speichern, mit einem Klick anlegen, per Spielername, Link oder Datei hinzufügen. Mods mit Filtern für Spielversion, Kategorie, Loader und Umgebung, dazu Mod-Updates mit einem Klick.","image":"assets/launcher3-play.webp"},{"date":"2026-10-16","tag":"Neu","title":"Launcher 2.2.0: Auto-Update","text":"Der Launcher aktualisiert sich ab jetzt beim Start von selbst, und neue Mod-Versionen kommen automatisch ohne neuen Installer. Wer Launcher 2.1.0 hat, lädt 2.2.0 einmal hier herunter, danach nie wieder.","image":"assets/launcher-play.webp"},{"date":"2026-10-15","tag":"Neu","title":"Version 2.1.0","text":"Neues Mod-Menü, 4 neue Module, bessere Suche, 5 neue Rust+-Effekte, neues Freunde-Menü und Cosmetics über der Rüstung. Jetzt auch auf Modrinth.","image":"assets/game-new-menu.webp"},{"date":"2026-10-15","tag":"Design","title":"Launcher: Live-Neuigkeiten","text":"Die Startseite des Launchers zeigt jetzt automatisch die neuesten Features von dieser Seite, auch offline aus dem Zwischenspeicher. Dazu neue An/Aus-Schalter mit Haken und Kreuz in Mods, Profilen und Einstellungen.","image":"assets/launcher-play.webp"},{"date":"2026-10-15","tag":"Design","title":"Neues Mod-Menü","text":"Neue An/Aus-Schalter, größere Modul-Karten, schönere Einstellungen mit runden Reglern. Dazu ein neues Freunde-Menü, Suche im Kosmetik-Menü und 5 neue Rust+-Effekte.","image":"assets/game-new-menu.webp"},{"date":"2026-10-15","tag":"Neu","title":"4 neue Module","text":"Blickinfo (Block oder Wesen, auf das du schaust), Inventar-HUD, Nachtsicht ohne Flackern und Hand ausblenden.","image":""},{"date":"2026-10-15","tag":"Fix","title":"Freunde sehen alles","text":"Cosmetics, Rust-Client-Symbol, Rust+ und Emotes von anderen Spielern mit der Mod kommen jetzt überall an: in LAN-Welten, im eigenen Einzelspieler-Host und auf Servern mit verschiedenen Adressen.","image":"assets/game-friends-visible.webp"},{"date":"2026-10-15","tag":"Cosmetics","title":"Über Rüstung und 3D-Skin-Layers","text":"Bandanas, Hüte und Mützen sitzen jetzt über dem Helm und über 3D-Haaren, Flügel und Begleiter über dem Brustpanzer.","image":"assets/game-armor-cosmetics.webp"},{"date":"2026-10-15","tag":"Neu","title":"Bessere Modul-Suche","text":"Findet Module auch bei Tippfehlern, mit englischen Wörtern (brightness, coords) und über Einstellungen. Beste Treffer zuerst, Enter öffnet den ersten.","image":"assets/game-module-search.webp"},{"date":"2026-10-15","tag":"Neu","title":"Die Rust-Client-Webseite","text":"Launcher und Mod jetzt direkt hier herunterladen. Jedes neue Feature erscheint automatisch auf dieser Seite. Dazu ein Fix: Emotes fragen den Server nicht mehr ohne Pause ab.","image":"assets/launcher-play.webp"},{"date":"2026-10-15","tag":"Neu","title":"RustGram","text":"Screenshots direkt aus dem Spiel teilen. Liken, disliken, kommentieren, Profile ansehen. Nach F2 fragt der Chat, ob du teilen willst.","image":"assets/game-gram-feed.webp"},{"date":"2026-10-15","tag":"Design","title":"Neues Rust+-Menü","text":"Deine Figur mit Namensschild als Live-Vorschau, Farbpaletten, Tempo-Regler, fertige Farbpaare und das Zusatz-Schild zum Eintippen.","image":"assets/game-plus-menu.webp"},{"date":"2026-10-15","tag":"Neu","title":"Musik-Overlay","text":"Cover, Titel und Fortschritt des laufenden Lieds oben im Bild. Spotify, Apple Music, YouTube, Amazon Music, SoundCloud, Tidal und Cider.","image":"assets/game-cosmetics-front.webp","mock":"music"},{"date":"2026-10-15","tag":"Neu","title":"Rust+ Namens-Stile","text":"15 animierte Effekte für dein Namensschild und die Tab-Liste, dazu ein zweites Schild mit eigenem Text. Andere Rust-Client-Spieler sehen beides.","image":"assets/game-plus-nametags.webp"},{"date":"","tag":"Cosmetics","title":"Bandanas und 13 neue Hüte","text":"Bandanas in 11 Farben (auch UwU), Piratenhut, Zauberhüte und mehr. Alle 41 Cosmetics sieht jeder mit Rust Client.","image":"assets/game-cosmetics.webp"},{"date":"","tag":"Emotes","title":"26 Emotes","text":"Salto, Liegestütze, Schlafen und viele mehr. Emote-Rad auf Taste B, Cosmetics bewegen sich mit.","image":"assets/game-emote-salto.webp"}],"downloadBase":"https://dynxytghg-max.github.io/"}
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
@@ -435,19 +533,19 @@ footer p + p { margin-top: 8px; }
   // ------------------------------------------------------------ Features
   const FEATURES = [
     {
-      id: "gram", name: "BambuGram",
-      title: "BambuGram",
-      text: "Dein Insta im Spiel. Screenshot mit F2 machen, im Chat auf Teilen klicken, fertig. Alle BambuBay-Spieler sehen ihn im Feed.",
+      id: "gram", name: "RustGram",
+      title: "RustGram",
+      text: "Dein Insta im Spiel. Screenshot mit F2 machen, im Chat auf Teilen klicken, fertig. Alle Rust-Client-Spieler sehen ihn im Feed.",
       points: ["Liken (auch per Doppelklick), disliken, kommentieren", "Reiter Freunde, Entdecken und Meine, sortiert nach Neu oder Top", "Profile mit Beiträgen, Likes und Kommentaren", "Hinweis im Spiel, wenn jemand deinen Beitrag mag"],
       key: "Öffnen: Vormenü → Kamera oder /bambugram",
       img: "assets/game-gram-feed.webp", inset: "assets/game-gram-post.webp",
-      alt: "BambuGram-Feed im Spiel mit einem Screenshot, Likes und Kommentaren"
+      alt: "RustGram-Feed im Spiel mit einem Screenshot, Likes und Kommentaren"
     },
     {
-      id: "plus", name: "Bambu+",
-      title: "Bambu+ Namens-Stile",
+      id: "plus", name: "Rust+",
+      title: "Rust+ Namens-Stile",
       text: "19 animierte Effekte für deinen Namen über dem Kopf und in der Tab-Liste: Regenbogen, Feuer, Galaxie, Gold und mehr.",
-      points: ["Live-Vorschau mit deiner Figur", "Eigene Farben, Tempo und Fett", "Zusatz-Schild mit eigenem Text über oder unter dem Namen", "Andere BambuBay-Spieler sehen deinen Stil"],
+      points: ["Live-Vorschau mit deiner Figur", "Eigene Farben, Tempo und Fett", "Zusatz-Schild mit eigenem Text über oder unter dem Namen", "Andere Rust-Client-Spieler sehen deinen Stil"],
       key: "Öffnen: Vormenü → Stern",
       img: "assets/game-plus-nametags.webp", inset: "assets/game-plus-menu.webp",
       alt: "Zwei Spieler mit animierten Namensschildern und Zusatz-Schild"
@@ -455,19 +553,19 @@ footer p + p { margin-top: 8px; }
     {
       id: "cos", name: "Cosmetics",
       title: "41 Cosmetics",
-      text: "Hüte, Tier-Mützen, Bandanas, Flügel, HD-Umhänge mit Animation und ein Panda als Begleiter. Eigene Umhänge legst du einfach in einen Ordner.",
+      text: "Hüte, Tier-Mützen, Bandanas, Flügel, HD-Umhänge mit Animation und echte Minecraft-Tiere als Begleiter (Panda, Katze, Fuchs, Axolotl, Biene) – alles kostenlos im neuen Shop-Menü. Eigene Umhänge legst du einfach in einen Ordner.",
       points: ["70 Varianten, viele davon leuchten im Dunkeln", "3D-Drachenflügel, Engels-, Phönix- und Feenflügel", "Funktionieren auch mit Wavy Capes und in anderen Launchern", "Probieren an der eigenen Figur, mit der Maus drehbar"],
       key: "Öffnen: Vormenü → Kosmetik",
-      img: "assets/game-cosmetics.webp", inset: "assets/game-cosmetics-front.webp",
+      img: "assets/rc-cosmetics-featured.webp", inset: "assets/rc-companions.webp",
       alt: "Kosmetik-Menü mit Hüten und Mützen, links die eigene Figur mit Flügeln"
     },
     {
       id: "emo", name: "Emotes",
       title: "26 Emotes",
-      text: "Winken, tanzen, Salto, Liegestütze oder einschlafen. Freunde mit BambuBay sehen jedes Emote live, und deine Cosmetics bewegen sich mit.",
+      text: "Winken, tanzen, Salto, Liegestütze oder einschlafen. Freunde mit Rust Client sehen jedes Emote live, und deine Cosmetics bewegen sich mit.",
       points: ["Emote-Rad auf Taste B", "Eigene Emotes aus Blockbench laden", "Ganzkörper-Animationen wie bei den Großen"],
       key: "Taste: <kbd>B</kbd>",
-      img: "assets/game-emote-wheel.webp", inset: "assets/game-emote-salto.webp",
+      img: "assets/rc-emotes.webp", inset: "assets/game-emote-salto.webp",
       alt: "Emote-Rad mit acht Emotes in der Spielwelt"
     },
     {
@@ -485,7 +583,7 @@ footer p + p { margin-top: 8px; }
       text: "FPS, Keystrokes, Rüstung, Zielanzeige, Zoom, Fullbright, Crosshair-Editor und vieles mehr. Alles frei verschiebbar im HUD-Editor.",
       points: ["Leistungspaket: im Test 321 statt 150 FPS", "Glas-Design, Größe und Farben einstellbar", "Keine unfairen Vorteile: keine Reichweite, kein Auto-Klicker"],
       key: "Taste: <kbd>Rechte Shift</kbd>",
-      img: "assets/game-mod-menu.webp", inset: "assets/game-hud-editor.webp",
+      img: "assets/rc-modmenu.webp", inset: "assets/rc-home.webp",
       alt: "Mod-Menü mit Modulen wie FPS, CPS, Ping und Koordinaten"
     }
   ];
@@ -493,7 +591,7 @@ footer p + p { margin-top: 8px; }
   // Nachbau des Musik-Overlays mit Beispiel-Lied
   function musicMock() {
     const m = document.createElement("div"); m.className = "music-mock";
-    m.innerHTML = '<div class="cover"><img src="assets/logo.png" alt=""></div><div><b>Bambu Beats</b><span>BambuBay</span><div class="bar">1:12<i></i>3:05</div></div>';
+    m.innerHTML = '<div class="cover"><img src="assets/logo.png" alt=""></div><div><b>Bambu Beats</b><span>Rust Client</span><div class="bar">1:12<i></i>3:05</div></div>';
     return m;
   }
   const tabs = $("#feature-tabs"), panel = $("#feature-panel");
@@ -549,6 +647,7 @@ footer p + p { margin-top: 8px; }
     { id: "play", name: "Spielen", text: "Großer Spielen-Knopf, Neuigkeiten und Server mit einem Klick beitreten." },
     { id: "profiles", name: "Profile", text: "Jede Version mit eigenen Mods, Einstellungen und Welten. Wechseln mit einem Klick." },
     { id: "mods", name: "Mods", text: "Mods, Shader und Ressourcenpakete von Modrinth installieren und an- oder ausschalten." },
+    { id: "capes", name: "Capes", text: "Community-Capes entdecken, als Favorit speichern und eigene hochladen – alle mit Rust Client sehen sie." },
     { id: "servers", name: "Server", text: "Server starten und direkt verbinden, mit Spielerzahl live." },
     { id: "settings", name: "Einstellungen", text: "Akzentfarbe, eigener Hintergrund, Arbeitsspeicher und Verhalten beim Spielen." }
   ];
@@ -556,7 +655,7 @@ footer p + p { margin-top: 8px; }
   function showView(v) {
     for (const b of list.children) b.setAttribute("aria-selected", String(b.dataset.id === v.id));
     dimg.src = `assets/launcher-${v.id}.webp`;
-    dimg.alt = `BambuBay Launcher, Ansicht ${v.name}`;
+    dimg.alt = `Rust Client Launcher, Ansicht ${v.name}`;
   }
   for (const v of VIEWS) {
     const b = document.createElement("button");
@@ -629,7 +728,7 @@ footer p + p { margin-top: 8px; }
         a.rel = "noopener";
       } else {
         a.href = "#download";
-        if (status) status.textContent = "Der Download kommt auf die öffentliche BambuBay-Seite und ist dort gleich verfügbar.";
+        if (status) status.textContent = "Der Download kommt auf die öffentliche Rust-Client-Seite und ist dort gleich verfügbar.";
       }
     });
   }
@@ -650,7 +749,7 @@ footer p + p { margin-top: 8px; }
 
   scene.add(new THREE.AmbientLight(0xcfe9d8, 0.9));
   const key = new THREE.DirectionalLight(0xffffff, 1.6); key.position.set(-4, 5, 8); scene.add(key);
-  const rim = new THREE.PointLight(0x4ade80, 30, 14); rim.position.set(2.5, 1.5, -2.5); scene.add(rim);
+  const rim = new THREE.PointLight(0x8b9dc3, 30, 14); rim.position.set(2.5, 1.5, -2.5); scene.add(rim);
 
   const loader = new THREE.TextureLoader();
   const tex = (url) => { const t = loader.load(url, () => stage.classList.add("gl")); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t; };
@@ -674,7 +773,7 @@ footer p + p { margin-top: 8px; }
     const screen = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex(url), toneMapped: false }));
     screen.position.z = depth / 2 + 0.032;
     // Leuchtkante
-    const edge = new THREE.Mesh(new THREE.PlaneGeometry(w + 0.06, h + 0.06), new THREE.MeshBasicMaterial({ color: 0x4ade80, transparent: true, opacity: 0.18 }));
+    const edge = new THREE.Mesh(new THREE.PlaneGeometry(w + 0.06, h + 0.06), new THREE.MeshBasicMaterial({ color: 0x8b9dc3, transparent: true, opacity: 0.18 }));
     edge.position.z = depth / 2 + 0.031;
     g.add(shell, edge, screen);
     return g;
@@ -691,22 +790,22 @@ footer p + p { margin-top: 8px; }
   const glowCanvas = document.createElement("canvas"); glowCanvas.width = glowCanvas.height = 256;
   const gctx = glowCanvas.getContext("2d");
   const grad = gctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-  grad.addColorStop(0, "rgba(74,222,128,0.55)"); grad.addColorStop(1, "rgba(74,222,128,0)");
+  grad.addColorStop(0, "rgba(139,157,195,0.55)"); grad.addColorStop(1, "rgba(139,157,195,0)");
   gctx.fillStyle = grad; gctx.fillRect(0, 0, 256, 256);
   const glow = new THREE.Mesh(new THREE.PlaneGeometry(11, 8), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(glowCanvas), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
   glow.position.set(0.4, 0.2, -2.2);
   scene.add(glow);
 
   // Bambus aus Blöcken: Segmente, Knoten, ein paar Blätter
-  const greens = [0x2f7d46, 0x3a9152, 0x27683b, 0x4a9e5c];
+  const greens = [0x4a5263, 0x586175, 0x3d4452, 0x66708a];
   const bamboo = [];
   const leafGeo = new THREE.PlaneGeometry(0.7, 0.16);
   function stalk(x, z, height, i) {
     const g = new THREE.Group();
     const segH = 0.85;
     const mat = new THREE.MeshStandardMaterial({ color: greens[i % greens.length], roughness: 0.8 });
-    const node = new THREE.MeshStandardMaterial({ color: 0x1f5130, roughness: 0.9 });
-    const leaf = new THREE.MeshStandardMaterial({ color: 0x3fae5f, roughness: 0.9, side: THREE.DoubleSide });
+    const node = new THREE.MeshStandardMaterial({ color: 0x2a2f3a, roughness: 0.9 });
+    const leaf = new THREE.MeshStandardMaterial({ color: 0x8b9dc3, roughness: 0.9, side: THREE.DoubleSide });
     for (let y = 0; y < height; y += segH) {
       const seg = new THREE.Mesh(new THREE.BoxGeometry(0.26, segH - 0.05, 0.26), mat); seg.position.y = y + segH / 2; g.add(seg);
       const n = new THREE.Mesh(new THREE.BoxGeometry(0.31, 0.07, 0.31), node); n.position.y = y; g.add(n);
@@ -787,6 +886,117 @@ footer p + p { margin-top: 8px; }
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.1.0/bundles/skinview3d.bundle.js" defer></script>
+<script>
+// ---------------------------------------------------------------- 3D-Umhaenge (skinview3d)
+(() => {
+  const CAPES = [
+    ["cape_galaxy", "Galaxie"], ["cape_aurora", "Polarlicht"], ["cape_storm", "Gewitter"], ["cape_sakura", "Kirschblütennacht"],
+    ["cape_lava", "Lava"], ["cape_synthwave", "Synthwave"], ["cape_fireworks", "Feuerwerk"], ["cape_koi", "Koi-Teich"],
+  ];
+  const stage = document.getElementById("wardrobe");
+  const picker = document.getElementById("cape-picker");
+  const nameEl = document.getElementById("cape-name");
+  if (!stage || !picker) return;
+  let viewer = null, current = 0, visible = false;
+
+  // Vorschau-Knoepfe: Vorderseite des Umhangs (Feld 1,1 mit 10x16 im 64x32-Raster)
+  CAPES.forEach(([id, name], i) => {
+    const b = document.createElement("button");
+    b.className = "cape-btn"; b.title = name; b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+    const c = document.createElement("canvas"); c.width = 10; c.height = 16; b.appendChild(c);
+    // In voller Aufloesung des Bildes ausschneiden (HD-Umhaenge bleiben scharf)
+    const img = new Image(); img.onload = () => { const s = img.naturalWidth / 64; c.width = 10 * s; c.height = 16 * s; const g = c.getContext("2d"); g.imageSmoothingEnabled = false; g.drawImage(img, s, s, 10 * s, 16 * s, 0, 0, c.width, c.height); };
+    img.src = `assets/capes/${id}.png`;
+    b.addEventListener("click", () => select(i));
+    picker.appendChild(b);
+  });
+
+  function select(i) {
+    current = i;
+    [...picker.children].forEach((b, k) => b.setAttribute("aria-pressed", k === i ? "true" : "false"));
+    nameEl.textContent = CAPES[i][1];
+    nameEl.animate([{ opacity: 0, transform: "translateY(-6px)" }, { opacity: 1, transform: "none" }], { duration: 300, easing: "ease-out" });
+    if (viewer) viewer.loadCape(`assets/capes/${CAPES[i][0]}.png`);
+  }
+
+  function start() {
+    if (viewer || !window.skinview3d) return;
+    const canvas = document.createElement("canvas");
+    stage.prepend(canvas);
+    const sv = window.skinview3d;
+    const r = stage.getBoundingClientRect();
+    viewer = new sv.SkinViewer({ canvas, width: r.width, height: r.height, skin: "assets/rust-skin.png", cape: `assets/capes/${CAPES[current][0]}.png`, zoom: 0.6, fov: 40 });
+    viewer.background = null;
+    viewer.autoRotate = true;
+    viewer.autoRotateSpeed = 0.55;
+    viewer.playerObject.rotation.y = Math.PI * 0.85;
+    viewer.animation = new sv.IdleAnimation();
+    viewer.globalLight.intensity = 2.6;
+    viewer.cameraLight.intensity = 0.9;
+    new ResizeObserver(() => { const q = stage.getBoundingClientRect(); viewer.setSize(q.width, q.height); }).observe(stage);
+    // Beim Ziehen nicht weiter automatisch drehen
+    canvas.addEventListener("pointerdown", () => { viewer.autoRotate = false; });
+    canvas.addEventListener("pointerup", () => setTimeout(() => { viewer.autoRotate = true; }, 2500));
+    viewer.renderPaused = !visible;
+  }
+
+  document.getElementById("wardrobe-actions").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-anim]"); if (!b || !viewer) return;
+    const sv = window.skinview3d;
+    document.querySelectorAll("#wardrobe-actions [data-anim]").forEach((x) => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+    const kind = b.dataset.anim;
+    viewer.animation = kind === "walk" ? new sv.WalkingAnimation() : kind === "run" ? new sv.RunningAnimation() : kind === "fly" ? new sv.FlyingAnimation() : new sv.IdleAnimation();
+    if (kind === "fly") viewer.loadCape(`assets/capes/${CAPES[current][0]}.png`, { backEquipment: "elytra" });
+    else viewer.loadCape(`assets/capes/${CAPES[current][0]}.png`);
+  });
+
+  // Erst laden, wenn der Bereich in Sicht kommt; ausserhalb anhalten (spart Leistung)
+  new IntersectionObserver(([en]) => {
+    visible = en.isIntersecting;
+    if (visible) { if (!viewer) { const wait = () => (window.skinview3d ? start() : setTimeout(wait, 120)); wait(); } else viewer.renderPaused = false; }
+    else if (viewer) viewer.renderPaused = true;
+  }, { rootMargin: "200px" }).observe(stage);
+})();
+
+// ---------------------------------------------------------------- Bilder gross ansehen, Karten kippen
+(() => {
+  const box = document.getElementById("lightbox");
+  if (!box) return;
+  const big = box.querySelector("img");
+  document.querySelectorAll(".shot-card").forEach((card) => {
+    card.addEventListener("click", () => { big.src = card.querySelector("img").src; big.alt = card.querySelector("img").alt; box.classList.add("open"); });
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateY(-3px)`;
+    });
+    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
+  });
+  box.addEventListener("click", () => box.classList.remove("open"));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") box.classList.remove("open"); });
+})();
+
+// ---------------------------------------------------------------- Einblenden beim Scrollen, Zahlen hochzaehlen
+(() => {
+  document.querySelectorAll(".block .head, .news, .try, .dl-grid, .stats .stat").forEach((el) => el.classList.add("reveal"));
+  const io = new IntersectionObserver((entries) => {
+    for (const en of entries) {
+      if (!en.isIntersecting) continue;
+      en.target.classList.add("in");
+      io.unobserve(en.target);
+      const num = en.target.querySelector && en.target.querySelector("b");
+      if (en.target.classList.contains("stat") && num && /^\d+$/.test(num.textContent)) {
+        const end = +num.textContent, t0 = performance.now();
+        const step = (t) => { const k = Math.min(1, (t - t0) / 900); num.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step);
+      }
+    }
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+})();
+</script>
+
 <!-- ===================== Anmelden ueber den Launcher (eingefuegt von build.py) ===================== -->
 <style>
 .nav-login { margin-left: auto; }
@@ -796,18 +1006,18 @@ footer p + p { margin-top: 8px; }
 .nav-account.on + .nav-cta { margin-left: 0; }
 .acc-chip {
   display: flex; align-items: center; gap: 10px; height: 42px; padding: 4px 16px 4px 4px;
-  border-radius: 999px; border: 1px solid rgba(74, 222, 128, .45); background: rgba(74, 222, 128, .1);
+  border-radius: 999px; border: 1px solid rgba(139, 157, 195, .45); background: rgba(139, 157, 195, .1);
   cursor: pointer; font: 600 13px/1 var(--font-pixel); letter-spacing: .06em; text-transform: uppercase;
 }
 .acc-chip img { width: 32px; height: 32px; border-radius: 50%; image-rendering: pixelated; }
 .acc-menu {
   position: absolute; right: 0; top: calc(100% + 10px); min-width: 220px; display: none;
-  background: #0b1711; border: 1px solid var(--line-strong); box-shadow: 0 20px 50px -10px #000;
+  background: #0d0f14; border: 1px solid var(--line-strong); box-shadow: 0 20px 50px -10px #000;
 }
 .acc-menu.open { display: block; }
 .acc-menu p { padding: 12px 16px; font-size: 13px; color: var(--muted); border-bottom: 1px solid var(--line); }
 .acc-menu button { display: block; width: 100%; text-align: left; padding: 11px 16px; background: none; border: 0; cursor: pointer; font-size: 14px; }
-.acc-menu button:hover { background: rgba(74, 222, 128, .1); }
+.acc-menu button:hover { background: rgba(139, 157, 195, .1); }
 
 .lg-backdrop {
   position: fixed; inset: 0; z-index: 100; display: none; place-items: center; padding: 20px;
@@ -827,10 +1037,10 @@ footer p + p { margin-top: 8px; }
 .lg-art::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, #07120c 0%, rgba(7, 18, 12, .82) 14%, rgba(7, 18, 12, .35) 40%, rgba(7, 18, 12, 0) 75%),
-              radial-gradient(ellipse at 75% 20%, rgba(74, 222, 128, .18), transparent 60%);
+              radial-gradient(ellipse at 75% 20%, rgba(139, 157, 195, .18), transparent 60%);
 }
 .lg-side { position: relative; z-index: 1; display: flex; flex-direction: column; padding: 46px 48px 36px; }
-.lg-logo { width: 30px; height: 30px; image-rendering: pixelated; filter: drop-shadow(0 0 10px rgba(74, 222, 128, .5)); }
+.lg-logo { width: 30px; height: 30px; image-rendering: pixelated; filter: drop-shadow(0 0 10px rgba(139, 157, 195, .5)); }
 .lg-close {
   position: absolute; z-index: 2; top: 22px; right: 22px; width: 36px; height: 36px; border-radius: 10px;
   display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .12); background: rgba(0, 0, 0, .45);
@@ -839,13 +1049,13 @@ footer p + p { margin-top: 8px; }
 .lg-close:hover { border-color: var(--leaf); }
 .lg-body { margin: auto 0; display: flex; flex-direction: column; gap: 16px; }
 .lg-title { font: 700 30px/1.15 var(--font-pixel); margin-bottom: 14px; }
-.lg-title b { color: var(--leaf); font-weight: 700; text-shadow: 0 0 18px rgba(74, 222, 128, .45); }
+.lg-title b { color: var(--leaf); font-weight: 700; text-shadow: 0 0 18px rgba(139, 157, 195, .45); }
 .lg-btn {
   display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 52px;
   border-radius: 10px; cursor: pointer; font: 600 15px/1 var(--font-body); transition: transform .1s, filter .15s, border-color .15s;
 }
 .lg-btn:active { transform: translateY(1px); }
-.lg-primary { border: 1px solid #6ee7a0; background: linear-gradient(180deg, #4ade80, #22c55e); color: #052e16; box-shadow: 0 10px 30px -10px rgba(74, 222, 128, .7), inset 0 1px 0 rgba(255, 255, 255, .45); }
+.lg-primary { border: 1px solid #a9b7d6; background: linear-gradient(180deg, #8b9dc3, #8b9dc3); color: #052e16; box-shadow: 0 10px 30px -10px rgba(139, 157, 195, .7), inset 0 1px 0 rgba(255, 255, 255, .45); }
 .lg-primary:hover { filter: brightness(1.08); }
 .lg-secondary { border: 1px solid rgba(255, 255, 255, .14); background: #0c1611; color: #fff; }
 .lg-secondary:hover { border-color: rgba(255, 255, 255, .3); }
@@ -860,7 +1070,7 @@ footer p + p { margin-top: 8px; }
 .lg-wait { display: none; flex-direction: column; gap: 14px; }
 .lg.waiting .lg-wait { display: flex; }
 .lg.waiting .lg-choose { display: none; }
-.lg-wait .spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid rgba(74, 222, 128, .2); border-top-color: var(--leaf); animation: lg-spin .8s linear infinite; }
+.lg-wait .spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid rgba(139, 157, 195, .2); border-top-color: var(--leaf); animation: lg-spin .8s linear infinite; }
 @keyframes lg-spin { to { transform: rotate(360deg); } }
 .lg-wait p { color: var(--muted); font-size: 14.5px; }
 .lg-wait strong { color: #fff; }
@@ -870,7 +1080,7 @@ footer p + p { margin-top: 8px; }
 .lg-ok { display: none; flex-direction: column; gap: 12px; align-items: flex-start; }
 .lg.done .lg-ok { display: flex; }
 .lg.done .lg-choose, .lg.done .lg-wait { display: none; }
-.lg-ok img { width: 64px; height: 64px; border-radius: 12px; image-rendering: pixelated; box-shadow: 0 0 0 2px var(--leaf), 0 0 30px rgba(74, 222, 128, .5); }
+.lg-ok img { width: 64px; height: 64px; border-radius: 12px; image-rendering: pixelated; box-shadow: 0 0 0 2px var(--leaf), 0 0 30px rgba(139, 157, 195, .5); }
 .lg-err { display: none; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(248, 113, 113, .35); background: rgba(248, 113, 113, .1); color: #fecaca; font-size: 13.5px; }
 .lg-err.show { display: block; }
 @media (max-width: 760px) {
@@ -888,7 +1098,7 @@ footer p + p { margin-top: 8px; }
     <div class="lg-side">
       <img class="lg-logo" src="assets/logo.png" alt="">
       <div class="lg-body">
-        <h2 class="lg-title" id="lg-title">Bei BambuBay <b>anmelden</b></h2>
+        <h2 class="lg-title" id="lg-title">Bei Rust Client <b>anmelden</b></h2>
 
         <div class="lg-choose">
           <button class="lg-btn lg-primary" id="lg-launcher">
@@ -905,7 +1115,7 @@ footer p + p { margin-top: 8px; }
 
         <div class="lg-wait" aria-live="polite">
           <div class="spin" aria-hidden="true"></div>
-          <p><strong>Bestätige die Anmeldung im BambuBay Launcher.</strong><br>Der Launcher öffnet sich gleich und fragt, mit welchem Konto du dich anmeldest.</p>
+          <p><strong>Bestätige die Anmeldung im Rust Client Launcher.</strong><br>Der Launcher öffnet sich gleich und fragt, mit welchem Konto du dich anmeldest.</p>
           <p class="lg-hint" id="lg-hint">Es passiert nichts? Ist der Launcher installiert? <a href="#download" data-close>Herunterladen</a> · <a href="#" id="lg-retry">Nochmal öffnen</a></p>
           <button class="lg-btn lg-secondary" id="lg-cancel" style="height:44px">Abbrechen</button>
         </div>
@@ -913,7 +1123,7 @@ footer p + p { margin-top: 8px; }
         <div class="lg-ok" aria-live="polite">
           <img id="lg-ok-head" src="assets/logo.png" alt="">
           <p class="lg-title" style="font-size:24px;margin:0">Hallo <b id="lg-ok-name"></b>!</p>
-          <p style="color:var(--muted)">Du bist jetzt auf der BambuBay-Webseite angemeldet.</p>
+          <p style="color:var(--muted)">Du bist jetzt auf der Rust-Client-Webseite angemeldet.</p>
         </div>
 
         <p class="lg-err" id="lg-err"></p>
@@ -925,7 +1135,7 @@ footer p + p { margin-top: 8px; }
 
 <script>
 /*
- * Anmelden ueber den Launcher: Code beim BambuBay-Server holen, Launcher per bambubay://-Link
+ * Anmelden ueber den Launcher: Code beim Rust-Client-Server holen, Launcher per bambubay://-Link
  * oeffnen, dort bestaetigt der Spieler, dann holt diese Seite Name und Sitzung ab. Kein Passwort,
  * kein Microsoft-Token im Browser. Der Server wird nur angesprochen, wenn jemand auf "Anmelden"
  * klickt oder schon angemeldet ist.
@@ -1012,7 +1222,7 @@ footer p + p { margin-top: 8px; }
       code = (await call("/v1/web/start")).code;
     } catch (e) {
       setState("choose");
-      error("Der BambuBay-Server ist gerade nicht erreichbar. Versuch es später noch einmal.");
+      error("Der Rust-Client-Server ist gerade nicht erreichbar. Versuch es später noch einmal.");
       return;
     }
     startedAt = Date.now();
@@ -1067,7 +1277,7 @@ footer p + p { margin-top: 8px; }
   acc.className = "nav-account";
   acc.id = "nav-account";
   acc.innerHTML = '<button class="acc-chip" id="acc-chip" aria-haspopup="true"><img id="acc-head" alt=""><span id="acc-name"></span></button>' +
-    '<div class="acc-menu" id="acc-menu"><p>Angemeldet über den BambuBay Launcher</p><button id="acc-logout">Abmelden</button></div>';
+    '<div class="acc-menu" id="acc-menu"><p>Angemeldet über den Rust Client Launcher</p><button id="acc-logout">Abmelden</button></div>';
   nav.insertBefore(acc, cta);
   $("acc-chip").onclick = () => $("acc-menu").classList.toggle("open");
   $("acc-logout").onclick = logout;
