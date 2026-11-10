@@ -10,51 +10,58 @@
     "sha256": "7d1b812bcc7298e284d4fdd6ea860e26260418ab8b088bd6783245688fd413c1"
   },
   "mod": {
-    "version": "3.4.0",
+    "version": "3.5.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.4.0.zip",
-    "size": "63,1 MB",
-    "jar": "downloads/BambuBayClient-3.4.0.jar",
-    "sha1": "1024247a032f9a4a642000b8323b64a8cd3b3da1",
+    "file": "downloads/BambuBay-Mod-3.5.0.zip",
+    "size": "63,6 MB",
+    "jar": "downloads/BambuBayClient-3.5.0.jar",
+    "sha1": "9836165ad8abdd821d2a4631e7b9786d08779a7d",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.4.0+mc1.21.9-1.21.10.jar",
-        "sha1": "8b25d05a77158e33483275bfd0eb0d26642efe6d"
+        "jar": "downloads/BambuBayClient-3.5.0+mc1.21.9-1.21.10.jar",
+        "sha1": "e8a53f471eb781f3baf6bbb6a8879e0cd645f50f"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.4.0+mc1.21.6-1.21.8.jar",
-        "sha1": "fb0196ea9ae0d2def3af4351b1aec9e4ba32fde1"
+        "jar": "downloads/BambuBayClient-3.5.0+mc1.21.6-1.21.8.jar",
+        "sha1": "5ea6bff7d6d42a72dce4703cd5a18deb4f852f4d"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.4.0+mc1.21.5.jar",
-        "sha1": "d9555443d899d0e2118ccf8a40c238eafd43ed28"
+        "jar": "downloads/BambuBayClient-3.5.0+mc1.21.5.jar",
+        "sha1": "cb1a43daeebc19521444901a2ad3b90b85408f6e"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.4.0+mc1.21.4.jar",
-        "sha1": "199210ddd30887228815f0b101f3841b8c10db73"
+        "jar": "downloads/BambuBayClient-3.5.0+mc1.21.4.jar",
+        "sha1": "018289601ff17f0567ffe6beb6836a7f37a378d6"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.4.0+mc1.21.11.jar",
-        "sha1": "4e9c59dd1bf55d30a176eef5b30ac9938d65f6ea"
+        "jar": "downloads/BambuBayClient-3.5.0+mc1.21.11.jar",
+        "sha1": "9836165ad8abdd821d2a4631e7b9786d08779a7d"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-10",
+      "tag": "Neu",
+      "title": "Mod 3.5: 7 neue Haustiere, Bank, Klavier und mehr",
+      "text": "Neue Haustiere: Prismarin-Hai, Mini-Zombie, Wächter, Panda, Mini-Verwüster, Mini-Ghast und Papagei – alle mit eigenen Animationen. Haustiere laufen nicht mehr ständig hinter dich, wenn du sie anschauen willst, sondern bleiben stehen und schauen zurück. Mit G spielst du mit deinem Haustier: Runden, Saltos, Freudensprung mit Feuerwerk. Dazu 5 neue Emotes mit echten 3D-Gegenständen (Bank, Klavier, Snackautomat, Zelt, Hotdog), ein Emote-Menü mit deiner eigenen Figur in jeder Karte und alles in Rust-Grau.",
+      "image": "assets/mod-35-bank.webp"
+    },
     {
       "date": "2026-11-10",
       "tag": "Neu",
