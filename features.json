@@ -7,50 +7,50 @@
     "notes": "Launcher 3.1: Profile aus NoRisk, Modrinth App, CurseForge, Prism und dem Minecraft-Launcher übernehmen, als .mrpack exportieren, CurseForge-Suche, Forge/NeoForge/Quilt-Profile und 9 neue animierte Hintergründe. 3.1.1/3.1.2: Der ganze Launcher passt sich deiner Akzentfarbe an – Logo, Seitenleiste, Panels, Hintergründe und Knopf-Schrift. 3.1.3: NoRisk-Import lädt alle Mods des Profils, zu alte Fabric-Loader werden automatisch ersetzt. 3.1.4: Klarerer Login-Hinweis (einmal anmelden reicht). 3.2.0: Kein Einfrieren mehr beim Übernehmen von Einstellungen, der Freunde-Server startet sich bei Ausfall selbst neu, neue Statistik-Seite für die Rust-Client-Admins. 3.3.0: Freunde-Menü im Launcher (Freunde, Anfragen, Chat), Rust-Client-Server v7 mit „Welt hosten“, der Server wird jetzt zuverlässig aktualisiert. 3.4.0: Neuer Look wie bei NoRisk (Seitenleiste über die volle Höhe, eckige Leisten, runde Knöpfe), Hinweis-Glocke, Zurück/Vor, Verbindungen-Fenster und Anmelden auf der Webseite über den Launcher. 3.4.1: Minecraft-Schrift (Minecraftia) im ganzen Launcher, Namensschild im 3D-Raum über deiner Figur (wie bei NoRisk), Logo ohne schwarzen Hintergrund. 3.4.2: Startseite wie bei NoRisk – große Figur, Namensschild über dem Kopf, zuletzt gespielter Server darunter, kompakter Spielen-Knopf und Neuigkeiten als Bild-Kacheln. 3.4.3: Runde Reiter beim Entdecken von Mods, Ressourcenpaketen und Shadern (Modrinth und CurseForge). 4.0.0: Aus BambuBay wird Rust Client – neuer Name, neue Farbe (#8B9DC3), graues Logo, neuer Hintergrund „Sternenstaub“, neuer Tab „Capes“ für Community-Capes, schnellerer Spielstart (ModernFix, C2ME, Java-Klassen-Cache), ein Server-Wächter, der den Rust-Client-Server immer am Laufen hält, und ein deutlich schnellerer Launcher-Start (Seiten und 3D-Figur laden erst bei Bedarf), und auf dem Host-PC ein Cloudflare-Tunnel mit eigener, kostenloser Adresse ohne Datenlimit. 4.0.1: Der Rust-Client-Server läuft über Cloudflare (api.rustclient.dpdns.org), der Launcher heißt jetzt auch in Startmenü und Taskleiste „Rust Client“, die Rust-Client-Mod wird in jedem Profil automatisch aktuell gehalten, kein Hängenbleiben mehr nach dem Schließen der Einstellungen und weniger Ruckeln beim Spielstart. 4.0.2: Neues, schlichtes Rust-Client-Logo (weißes Zahnrad) und Rust-Client-Server 11 für Rust+ 2.0 (Bewegung, Aura, neue Effekte). 4.0.5: Neuer Installer im Rust-Client-Look, Rust-Client-Server 13 mit Clips auf RustGram. 4.0.6: Die Rust-Client-Mod steckt jetzt in jedem Fabric- und Quilt-Profil (auch alten und übernommenen), immer in der neuesten Version, und ist dort als „Pflicht“ markiert. 4.0.7: Installiert die neue Leistungs-Mod Rust Performance automatisch mit dem Leistungspaket (Chunks im Pausenmenü vorladen, Sichtweite über 32) und hält sie aktuell. 4.0.8: Rust Performance ist jetzt Pflicht und kommt automatisch in jedes Fabric- und Quilt-Profil – passend zur Minecraft-Version und immer aktuell, auch ohne Internet beim ersten Start. 4.0.9: Bereit für den Rust-Client-Server bei Cloudflare – läuft er dort, nutzt der Launcher automatisch die gemeinsame Adresse und der Server auf dem Host-PC wird nicht mehr gebraucht. Community-Capes im kleinen OptiFine-Format (46×22) werden vor dem Hochladen ins normale Format gesetzt.",
     "setup": "downloads/Rust-Client-Setup-4.0.9.exe",
     "setupSize": "17,2 MB",
-    "sha256": "a3c786b8097619c8630e2ff5e02b0e63fc324dec44de24579a9299a3a736b8a9"
+    "sha256": "022f5b5af2e6ac24acf1798a6c7aa5f8c3b2b6807210408d5bf067eedfe29b3d"
   },
   "mod": {
-    "version": "3.5.3",
+    "version": "3.5.4",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.5.3.zip",
+    "file": "downloads/BambuBay-Mod-3.5.4.zip",
     "size": "63,6 MB",
-    "jar": "downloads/BambuBayClient-3.5.3.jar",
-    "sha1": "5bc96f6a7274103014ea24bf0d401ed52eba8aba",
+    "jar": "downloads/BambuBayClient-3.5.4.jar",
+    "sha1": "99cee30ef7e2fe3e87cbe4260e4fefea30b7e2c1",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.5.3+mc1.21.9-1.21.10.jar",
-        "sha1": "59701ce1c336ae6bbcbb1d0007fed66bacf2fc09"
+        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.9-1.21.10.jar",
+        "sha1": "a156c3517c3d5878024c358f6b71ade7fe22bb80"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.5.3+mc1.21.6-1.21.8.jar",
-        "sha1": "762a602c3fce0b5b8b1ac71204744891e93d749c"
+        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.6-1.21.8.jar",
+        "sha1": "439d501c5b96951974383818581b25059d20cb18"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.5.3+mc1.21.5.jar",
-        "sha1": "352278c959f7653ff1c4ede1cadf1640c5ea2289"
+        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.5.jar",
+        "sha1": "b67149b6b91102e4d3a727da1ecd904dadbb2537"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.5.3+mc1.21.4.jar",
-        "sha1": "c4ddf7d54c9942f78291826a4913aec9b201c3c5"
+        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.4.jar",
+        "sha1": "13fa9f712f12c3ef7c3b5d90d4872a1025da26d6"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.5.3+mc1.21.11.jar",
-        "sha1": "5bc96f6a7274103014ea24bf0d401ed52eba8aba"
+        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.11.jar",
+        "sha1": "99cee30ef7e2fe3e87cbe4260e4fefea30b7e2c1"
       }
     ]
   },
@@ -280,43 +280,43 @@
   ],
   "downloadBase": "https://dynxytghg-max.github.io/",
   "perf": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minecraft": "1.21.4 – 1.21.11",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/RustPerformance-1.0.0+mc1.21.9-1.21.10.jar",
-        "sha1": "41f0e2417c7961d9a1138e0845caf96382d13eba"
+        "jar": "downloads/RustPerformance-1.0.1+mc1.21.9-1.21.10.jar",
+        "sha1": "3385f7f2be9acd3a37cb8fa7497cb2010155758a"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/RustPerformance-1.0.0+mc1.21.6-1.21.8.jar",
-        "sha1": "28d78d7e2c9382990371d3ed93eba6106a24603d"
+        "jar": "downloads/RustPerformance-1.0.1+mc1.21.6-1.21.8.jar",
+        "sha1": "57eab2e1fefc798fd61ae75bb43ef672568ee552"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/RustPerformance-1.0.0+mc1.21.5.jar",
-        "sha1": "086c2b37b9a61dd6ccdf686242e275c3bdf72532"
+        "jar": "downloads/RustPerformance-1.0.1+mc1.21.5.jar",
+        "sha1": "c273f7bac3cba28d297a7a276eeccbc9940dd647"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/RustPerformance-1.0.0+mc1.21.4.jar",
-        "sha1": "45b4d20351882acc2c74ea8f90308d27c42a97d3"
+        "jar": "downloads/RustPerformance-1.0.1+mc1.21.4.jar",
+        "sha1": "f705278ff1aee7aa0638f0667b411955d70a7585"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/RustPerformance-1.0.0+mc1.21.11.jar",
-        "sha1": "df4a334c2a94b89af4ffce6d25156da2060f3994"
+        "jar": "downloads/RustPerformance-1.0.1+mc1.21.11.jar",
+        "sha1": "394d4450902baf41cacb4d5938c9108520c61172"
       }
     ]
   }
