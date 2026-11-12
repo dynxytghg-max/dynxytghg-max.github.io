@@ -1,11 +1,11 @@
 {
-  "version": "6.0.0",
-  "notes": "Launcher 6.0: Neues Design wie NoRisk \u2013 Pixel-Schrift \u00fcberall, neue Seitenleiste, Neuigkeiten als Bildkarten, Mods-Suche als gro\u00dfe Liste mit Filtern rechts, Skins als gro\u00dfe Karten, eckige Schalter. Behoben: \u201eMojang hat die Anmeldung nicht best\u00e4tigt\u201c bei Freunden, Rusti und Teilen.",
-  "pub_date": "2026-11-12T21:09:53Z",
+  "version": "6.0.1",
+  "notes": "Launcher 6.0.1: Anmeldung repariert \u2013 \u201eMojang hat die Anmeldung nicht best\u00e4tigt\u201c ist behoben (Freunde, Rusti, Profile teilen). Der Launcher meldet sich jetzt mit dem von Mojang signierten Schl\u00fcssel an; dein Zugangsschl\u00fcssel verl\u00e4sst nie deinen PC. Dazu das neue Design aus 6.0 wie NoRisk.",
+  "pub_date": "2026-11-12T21:34:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXlPckJCNTVMV05HNnZVcUR3SXhYTXM1QVZweDZvODR6dzhONlpaVXp6elA1YXZqMmJYRWhWaDMzWFpOT1ZBMG0vVTVHNk5LTFBaYWRiWlVZYmVRL2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTE3Nzk0CWZpbGU6UnVzdCBDbGllbnRfNi4wLjBfeDY0LXNldHVwLmV4ZQpzQzcwbUx0ekNUZlZ4L0hoeTVqTWFFNVRRZmJFQitTZXhiemxURGtaa3B5M0J5TUN1UEFpVFI2djEwVktCS1JxdnRQRTM2L2p6TWwybyswOHhPUGNBQT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.0.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTlLUGNSU2pFSGFOcTZFcWY4dEgvMEpFQi9FSG4xRXRpSmlSU1VZUDJuVlZZVXBQL250OEgweGcwaU9ZMnAvN3ZQZnE2RFhWSjlha1BTamRJV1BQNHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTE5MjQxCWZpbGU6UnVzdCBDbGllbnRfNi4wLjFfeDY0LXNldHVwLmV4ZQpvZ0JtMVhDSE5yWUxlcXc3d3c1ZjI5R2hnU3FJNWJlaFVTbUpiVTFMeUszU3EzK00zWDRuMGFBMHFGR2lpZEZQbEJLWEVIcmw1Z0NMdEF0N04ySmpEUT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.0.1-setup.exe"
     }
   }
 }

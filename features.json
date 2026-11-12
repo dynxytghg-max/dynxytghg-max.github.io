@@ -1,56 +1,56 @@
 {
   "updated": "2026-11-10",
   "launcher": {
-    "version": "6.0.0",
-    "file": "downloads/BambuBay-Launcher-6.0.0.zip",
-    "size": "17,4 MB",
-    "notes": "Launcher 6.0: Neues Design wie NoRisk – Pixel-Schrift überall, neue Seitenleiste, Neuigkeiten als Bildkarten, Mods-Suche als große Liste mit Filtern rechts, Skins als große Karten, eckige Schalter. Behoben: „Mojang hat die Anmeldung nicht bestätigt“ bei Freunden, Rusti und Teilen.",
-    "setup": "downloads/Rust-Client-Setup-6.0.0.exe",
-    "setupSize": "17,4 MB",
-    "sha256": "db614a6bceb4839f76e99fe3f68b5ce825887a0df408de7a67421e69ee647fa9"
+    "version": "6.0.1",
+    "file": "downloads/BambuBay-Launcher-6.0.1.zip",
+    "size": "17,5 MB",
+    "notes": "Launcher 6.0.1: Anmeldung repariert – „Mojang hat die Anmeldung nicht bestätigt“ ist behoben (Freunde, Rusti, Profile teilen). Der Launcher meldet sich jetzt mit dem von Mojang signierten Schlüssel an; dein Zugangsschlüssel verlässt nie deinen PC. Dazu das neue Design aus 6.0 wie NoRisk.",
+    "setup": "downloads/Rust-Client-Setup-6.0.1.exe",
+    "setupSize": "17,5 MB",
+    "sha256": "36bb7fc715316104eee10c2309076b905513c6eee93e0e105fccb9d4cf6f30ba"
   },
   "mod": {
-    "version": "3.8.1",
+    "version": "3.8.2",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.8.1.zip",
+    "file": "downloads/BambuBay-Mod-3.8.2.zip",
     "size": "64,1 MB",
-    "jar": "downloads/BambuBayClient-3.8.1.jar",
-    "sha1": "fc484e00a7f81d83e8adadaa74da784292fba248",
+    "jar": "downloads/BambuBayClient-3.8.2.jar",
+    "sha1": "236f6c45aee2b6d35200d65d0c1d514d3ea024e6",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.9-1.21.10.jar",
-        "sha1": "5adf7c34036975e01c59b52c5c18cf44c44272db"
+        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.9-1.21.10.jar",
+        "sha1": "129291482c2b04b3ae5af58cfc33bec8f9fa9de8"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.6-1.21.8.jar",
-        "sha1": "1b74c029f815ef3ce39b5e170290063fc8dd2b9d"
+        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.6-1.21.8.jar",
+        "sha1": "034b812522418417266d415e6c41a52fb3219405"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.5.jar",
-        "sha1": "db4eaabc6d59c01e4481aba5ebd818dcf077b646"
+        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.5.jar",
+        "sha1": "c9016dd541254499155a6a2f5c69ec881affd96d"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.4.jar",
-        "sha1": "67ec2d0f75bfdca87d5fb43054a89f8b6f78a41e"
+        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.4.jar",
+        "sha1": "adb99d0fff9ea52bb7f5176978a2817835cd457b"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.11.jar",
-        "sha1": "fc484e00a7f81d83e8adadaa74da784292fba248"
+        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.11.jar",
+        "sha1": "236f6c45aee2b6d35200d65d0c1d514d3ea024e6"
       }
     ]
   },
