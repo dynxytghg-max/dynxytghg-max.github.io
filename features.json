@@ -1,60 +1,67 @@
 {
   "updated": "2026-11-10",
   "launcher": {
-    "version": "5.0.0",
-    "file": "downloads/BambuBay-Launcher-5.0.0.zip",
+    "version": "6.0.0",
+    "file": "downloads/BambuBay-Launcher-6.0.0.zip",
     "size": "17,4 MB",
-    "notes": "Launcher 5.0: Neue Seite „Welten“ mit Backups (automatisch vor jedem Start), Wiederherstellen und Kopieren in andere Profile. Profile per Code mit Freunden teilen. Mod-Check vor dem Start: doppelte, fehlende und unverträgliche Mods mit Lösung per Klick. Akzentfarbe gilt auch im Spiel, ruhigere Spielfigur auf der Startseite, Rusti meldet sich zuverlässiger an.",
-    "setup": "downloads/Rust-Client-Setup-5.0.0.exe",
+    "notes": "Launcher 6.0: Neues Design wie NoRisk – Pixel-Schrift überall, neue Seitenleiste, Neuigkeiten als Bildkarten, Mods-Suche als große Liste mit Filtern rechts, Skins als große Karten, eckige Schalter. Behoben: „Mojang hat die Anmeldung nicht bestätigt“ bei Freunden, Rusti und Teilen.",
+    "setup": "downloads/Rust-Client-Setup-6.0.0.exe",
     "setupSize": "17,4 MB",
-    "sha256": "0a2c43f30b255a5463d69ffb42768733639ec5fe0ef188a68412e0f03ee2ea41"
+    "sha256": "12899439693a091a5600ac65af5dc39288ec361c536252b0b45ebce12a5b9b8f"
   },
   "mod": {
-    "version": "3.8.0",
+    "version": "3.8.1",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.8.0.zip",
+    "file": "downloads/BambuBay-Mod-3.8.1.zip",
     "size": "64,1 MB",
-    "jar": "downloads/BambuBayClient-3.8.0.jar",
-    "sha1": "a58cbd1b80e61e73d9b8f227ed1b5429c9949100",
+    "jar": "downloads/BambuBayClient-3.8.1.jar",
+    "sha1": "fc484e00a7f81d83e8adadaa74da784292fba248",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.9-1.21.10.jar",
-        "sha1": "5646d8b6d9e11b716616756788da53705ecd6e1d"
+        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.9-1.21.10.jar",
+        "sha1": "5adf7c34036975e01c59b52c5c18cf44c44272db"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.6-1.21.8.jar",
-        "sha1": "01c955f301401cc4a04a1b2eb1ee88585cc9eb24"
+        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.6-1.21.8.jar",
+        "sha1": "1b74c029f815ef3ce39b5e170290063fc8dd2b9d"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.5.jar",
-        "sha1": "196acb644c7e99598ed0400213b42c566be66409"
+        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.5.jar",
+        "sha1": "db4eaabc6d59c01e4481aba5ebd818dcf077b646"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.4.jar",
-        "sha1": "4af964958db0e4053255ae89ef3dea1254e37172"
+        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.4.jar",
+        "sha1": "67ec2d0f75bfdca87d5fb43054a89f8b6f78a41e"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.11.jar",
-        "sha1": "a58cbd1b80e61e73d9b8f227ed1b5429c9949100"
+        "jar": "downloads/BambuBayClient-3.8.1+mc1.21.11.jar",
+        "sha1": "fc484e00a7f81d83e8adadaa74da784292fba248"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-12",
+      "tag": "Neu",
+      "title": "Launcher 6.0: neues Design",
+      "text": "Der Launcher sieht jetzt aus wie aus einem Guss: Pixel-Schrift überall, eine neue Seitenleiste, Neuigkeiten als große Bildkarten, die Mods-Suche als übersichtliche Liste mit Downloads und Filtern rechts, Skins als große Karten mit Bearbeiten und Löschen und schlichte eckige Schalter. Dazu behoben: Freunde, Rusti und das Teilen von Profilen meldeten „Mojang hat die Anmeldung nicht bestätigt“, obwohl man angemeldet war.",
+      "image": ""
+    },
     {
       "date": "2026-11-12",
       "tag": "Neu",

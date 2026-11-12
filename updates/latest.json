@@ -1,11 +1,11 @@
 {
-  "version": "5.0.0",
-  "notes": "Launcher 5.0: Neue Seite \u201eWelten\u201c mit Backups (automatisch vor jedem Start), Wiederherstellen und Kopieren in andere Profile. Profile per Code mit Freunden teilen. Mod-Check vor dem Start: doppelte, fehlende und unvertr\u00e4gliche Mods mit L\u00f6sung per Klick. Akzentfarbe gilt auch im Spiel, ruhigere Spielfigur auf der Startseite, Rusti meldet sich zuverl\u00e4ssiger an.",
-  "pub_date": "2026-11-12T17:14:55Z",
+  "version": "6.0.0",
+  "notes": "Launcher 6.0: Neues Design wie NoRisk \u2013 Pixel-Schrift \u00fcberall, neue Seitenleiste, Neuigkeiten als Bildkarten, Mods-Suche als gro\u00dfe Liste mit Filtern rechts, Skins als gro\u00dfe Karten, eckige Schalter. Behoben: \u201eMojang hat die Anmeldung nicht best\u00e4tigt\u201c bei Freunden, Rusti und Teilen.",
+  "pub_date": "2026-11-12T21:05:12Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXpRTFpzVE0vQlhIYk5ldm01b0F6dWNCZHdUTnlJTWIyV3E4L2IydWtqUmkxQnhwUC91anNKdGpFbEVQcUhDQ3N1b2luU1hlQnlabEtLaG00ZkZkUGdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTAzNjk2CWZpbGU6UnVzdCBDbGllbnRfNS4wLjBfeDY0LXNldHVwLmV4ZQoxb3dMVVoxUlBzMGZWbFNYNlppUXRGM2hOamloaTJlRUlCdFdnUlpJZnVRUko2NjBqcDBQYzVGdVlIUVFWL0JOTlBTWmV2TC9tQVRsNDYyamNUdkJEQT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-5.0.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTBXandmQXZOZCtzTDR0a1VFb3ZSN08vL3NIRVVNUmdSQnV5ckpJenBnTzRWbGRXTVRiS3A3ZXJhSVpIZHFQemdvSGl3YjVZa0E4ajlPNmtadFJZeUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTE3NTEzCWZpbGU6UnVzdCBDbGllbnRfNi4wLjBfeDY0LXNldHVwLmV4ZQpsa2VkR2ZJOW9ncVlZaWJnalFsa0hEMjJuNmh1Y0wvOS94Y0wzUU9XV2NlMFlBV2xDUk5oK3RweTJ6ZitLaTk5NnBtTTRXeGdGNG8zcmRUeXRQNkxDUT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.0.0-setup.exe"
     }
   }
 }
