@@ -10,51 +10,86 @@
     "sha256": "b64e9ae632eb3227fd778b66e2f58ad30a2b126f08825411fee67f02f3653421"
   },
   "mod": {
-    "version": "3.5.4",
+    "version": "3.8.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.5.4.zip",
-    "size": "63,6 MB",
-    "jar": "downloads/BambuBayClient-3.5.4.jar",
-    "sha1": "99cee30ef7e2fe3e87cbe4260e4fefea30b7e2c1",
+    "file": "downloads/BambuBay-Mod-3.8.0.zip",
+    "size": "64,1 MB",
+    "jar": "downloads/BambuBayClient-3.8.0.jar",
+    "sha1": "a58cbd1b80e61e73d9b8f227ed1b5429c9949100",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.9-1.21.10.jar",
-        "sha1": "a156c3517c3d5878024c358f6b71ade7fe22bb80"
+        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.9-1.21.10.jar",
+        "sha1": "5646d8b6d9e11b716616756788da53705ecd6e1d"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.6-1.21.8.jar",
-        "sha1": "439d501c5b96951974383818581b25059d20cb18"
+        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.6-1.21.8.jar",
+        "sha1": "01c955f301401cc4a04a1b2eb1ee88585cc9eb24"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.5.jar",
-        "sha1": "b67149b6b91102e4d3a727da1ecd904dadbb2537"
+        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.5.jar",
+        "sha1": "196acb644c7e99598ed0400213b42c566be66409"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.4.jar",
-        "sha1": "13fa9f712f12c3ef7c3b5d90d4872a1025da26d6"
+        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.4.jar",
+        "sha1": "4af964958db0e4053255ae89ef3dea1254e37172"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.5.4+mc1.21.11.jar",
-        "sha1": "99cee30ef7e2fe3e87cbe4260e4fefea30b7e2c1"
+        "jar": "downloads/BambuBayClient-3.8.0+mc1.21.11.jar",
+        "sha1": "a58cbd1b80e61e73d9b8f227ed1b5429c9949100"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-12",
+      "tag": "Neu",
+      "title": "Launcher 5.0: Welten, Profile teilen, Mod-Check",
+      "text": "Neue Seite „Welten“: alle Einzelspielerwelten aus allen Profilen an einem Ort – mit Backup per Klick, automatischer Sicherung vor jedem Start, Wiederherstellen (als neue Welt, nichts wird überschrieben) und Kopieren in ein anderes Profil. Profile teilen per Code: Im Profilmenü „Teilen (Code)“ wählen, Freunde geben den Code (z. B. RUST-7KQ2X) unter Profile › Code eingeben ein und bekommen dasselbe Setup mit allen Mods. Vor dem Start prüft der Launcher deine Mods: doppelte, fehlende und unverträgliche Mods werden gemeldet und mit einem Klick behoben, bevor Minecraft abstürzt. Die Akzentfarbe des Launchers gilt jetzt auch im Spiel, und die Spielfigur auf der Startseite steht ruhiger und natürlicher – die Arme gehen nicht mehr durch den Körper. Rusti meldet sich zuverlässiger an.",
+      "image": ""
+    },
+    {
+      "date": "2026-11-12",
+      "tag": "Neu",
+      "title": "Mod 3.8: neues Design und alle Farben",
+      "text": "Jede Farbe ist jetzt frei wählbar: Ein Farbwähler mit Farbfläche, Farbton, Deckkraft, Hex-Eingabe, zuletzt benutzten Farben und Regenbogen-Modus. Die Akzentfarbe aller Rust-Client-Menüs stellst du selbst ein. Mod-Menü und alle anderen Menüs sind aufgeräumter und komplett eckig wie bei NoRisk – mit eckigen An/Aus-Schaltern direkt auf den Modul-Karten, abgedunkelter Hintergrund. Dazu viel mehr Einstellungen: Jedes HUD-Element bekommt Hintergrundfarbe, Rahmen und Textschatten, alle einzeiligen Anzeigen eigene Beschriftung, Klammern und Großbuchstaben, und viele Module wie Minimap, Uhr, Tab-Ping, TPS, Rüstung, Reittier oder Todespunkt neue Optionen.",
+      "image": ""
+    },
+    {
+      "date": "2026-11-12",
+      "tag": "Neu",
+      "title": "Mod 3.7: fünf neue Module",
+      "text": "Slot-Sperre: Sperre Hotbar-Plätze mit K – Q wirft dort nichts mehr weg, ein kleines Schloss zeigt die Sperre. Werkzeug-Warnung: meldet sich, bevor Schwert, Spitzhacke oder Axt kaputtgehen, und noch einmal bei den letzten Schlägen. Reittier: Leben, Tempo, Höchsttempo und Sprunghöhe von Pferd, Esel, Kamel & Co. – gute Werte leuchten grün. Elytra-Flug: Tempo, Höhe, Neigung, Haltbarkeit und Raketen, solange du gleitest. Eingesammelt: zeigt kurz „+12 Stein“, wenn etwas in dein Inventar kommt.",
+      "image": ""
+    },
+    {
+      "date": "2026-11-12",
+      "tag": "Neu",
+      "title": "Haustiere 2.0: Name, Level und Charakter",
+      "text": "Dein Haustier wird zum echten Begleiter: Gib ihm im neuen Haustier-Menü (Taste H) einen Namen – er schwebt über ihm, und andere Rust-Client-Spieler sehen ihn auch. Es sammelt Erfahrung, wenn ihr zusammen lauft, spielt, es streichelst oder fütterst, und steigt bis Level 30 auf – mit Belohnungen wie Funkelspur, Herzen, goldenem Namen und legendärem Sternenstaub. Jedes Haustier hat seinen eigenen Charakter (verspielt, faul, mutig, schüchtern oder neugierig) und zeigt Stimmungen: Es sorgt sich, wenn du wenig Leben hast, bettelt beim Essen und freut sich, wenn ein Freund online kommt. Dazu viele neue Animationen: Es legt sich zum Schlafen auf die Seite, macht Männchen, verbeugt sich zum Spielen, rollt sich, schüttelt sich nass, schnüffelt und streckt sich – und es macht deine Emotes mit: Tanzt du, tanzt es mit; setzt du dich, setzt es sich; schläfst du, legt es sich hin. Schleichst du daneben, kuschelt es sich an dich, und wirfst du einen Schneeball, apportiert es.",
+      "image": ""
+    },
+    {
+      "date": "2026-11-12",
+      "tag": "Neu",
+      "title": "Rust Performance 2.0: FPS-Ziel und Leistungsanzeige",
+      "text": "Das große Update für die Leistungs-Mod: Mit dem FPS-Ziel stellst du ein, wie viele Bilder pro Sekunde du willst – fällt die Bildrate darunter, holt Rust Performance den Nebel weich näher und Sodium zeichnet weniger Chunks, ganz ohne Neuaufbau und ohne Ruckler. Reicht die Leistung wieder, kommt die volle Sicht zurück. Außerdem behoben: Sichtweiten über 43 Chunks luden die äußeren Chunks nie. Neu ist auch die Anzeige für FPS, 1 % Low und Speicher-Ruckler im Rust-Performance-Menü (Knopf oben links im Pausenmenü). Dazu die Rust-Client-Mod 3.5.5: Die runde Minimap und andere runde Elemente werden jetzt mit einem Zeichenauftrag statt mit Hunderten gemalt – im Test mit eingeschalteten HUD-Modulen stieg die Bildrate im Schnitt von 128 auf 176 FPS (+38 %). Kommt automatisch über den Launcher.",
+      "image": ""
+    },
     {
       "date": "2026-11-11",
       "tag": "Neu",
@@ -287,43 +322,43 @@
   ],
   "downloadBase": "https://dynxytghg-max.github.io/",
   "perf": {
-    "version": "1.0.1",
+    "version": "2.0.0",
     "minecraft": "1.21.4 – 1.21.11",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/RustPerformance-1.0.1+mc1.21.9-1.21.10.jar",
-        "sha1": "3385f7f2be9acd3a37cb8fa7497cb2010155758a"
+        "jar": "downloads/RustPerformance-2.0.0+mc1.21.9-1.21.10.jar",
+        "sha1": "dc247021b6f03580ac9ebf8dad8bd2c42746fb1e"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/RustPerformance-1.0.1+mc1.21.6-1.21.8.jar",
-        "sha1": "57eab2e1fefc798fd61ae75bb43ef672568ee552"
+        "jar": "downloads/RustPerformance-2.0.0+mc1.21.6-1.21.8.jar",
+        "sha1": "d596c982017bce84945e1276b840e980229f57e6"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/RustPerformance-1.0.1+mc1.21.5.jar",
-        "sha1": "c273f7bac3cba28d297a7a276eeccbc9940dd647"
+        "jar": "downloads/RustPerformance-2.0.0+mc1.21.5.jar",
+        "sha1": "346e9e6dd766062ed488f2578a1c54383612c1d6"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/RustPerformance-1.0.1+mc1.21.4.jar",
-        "sha1": "f705278ff1aee7aa0638f0667b411955d70a7585"
+        "jar": "downloads/RustPerformance-2.0.0+mc1.21.4.jar",
+        "sha1": "907786513c2d0ea2d5ba567c9b8d17533684bf7c"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/RustPerformance-1.0.1+mc1.21.11.jar",
-        "sha1": "394d4450902baf41cacb4d5938c9108520c61172"
+        "jar": "downloads/RustPerformance-2.0.0+mc1.21.11.jar",
+        "sha1": "5978bd6ad2b3070704569f57f0265d571ab0550b"
       }
     ]
   }
