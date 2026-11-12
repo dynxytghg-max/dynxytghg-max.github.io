@@ -7,7 +7,7 @@
     "notes": "Launcher 6.0: Neues Design wie NoRisk – Pixel-Schrift überall, neue Seitenleiste, Neuigkeiten als Bildkarten, Mods-Suche als große Liste mit Filtern rechts, Skins als große Karten, eckige Schalter. Behoben: „Mojang hat die Anmeldung nicht bestätigt“ bei Freunden, Rusti und Teilen.",
     "setup": "downloads/Rust-Client-Setup-6.0.0.exe",
     "setupSize": "17,4 MB",
-    "sha256": "12899439693a091a5600ac65af5dc39288ec361c536252b0b45ebce12a5b9b8f"
+    "sha256": "db614a6bceb4839f76e99fe3f68b5ce825887a0df408de7a67421e69ee647fa9"
   },
   "mod": {
     "version": "3.8.1",

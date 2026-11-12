@@ -1,10 +1,10 @@
 {
   "version": "6.0.0",
   "notes": "Launcher 6.0: Neues Design wie NoRisk \u2013 Pixel-Schrift \u00fcberall, neue Seitenleiste, Neuigkeiten als Bildkarten, Mods-Suche als gro\u00dfe Liste mit Filtern rechts, Skins als gro\u00dfe Karten, eckige Schalter. Behoben: \u201eMojang hat die Anmeldung nicht best\u00e4tigt\u201c bei Freunden, Rusti und Teilen.",
-  "pub_date": "2026-11-12T21:05:12Z",
+  "pub_date": "2026-11-12T21:09:53Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTBXandmQXZOZCtzTDR0a1VFb3ZSN08vL3NIRVVNUmdSQnV5ckpJenBnTzRWbGRXTVRiS3A3ZXJhSVpIZHFQemdvSGl3YjVZa0E4ajlPNmtadFJZeUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTE3NTEzCWZpbGU6UnVzdCBDbGllbnRfNi4wLjBfeDY0LXNldHVwLmV4ZQpsa2VkR2ZJOW9ncVlZaWJnalFsa0hEMjJuNmh1Y0wvOS94Y0wzUU9XV2NlMFlBV2xDUk5oK3RweTJ6ZitLaTk5NnBtTTRXeGdGNG8zcmRUeXRQNkxDUT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXlPckJCNTVMV05HNnZVcUR3SXhYTXM1QVZweDZvODR6dzhONlpaVXp6elA1YXZqMmJYRWhWaDMzWFpOT1ZBMG0vVTVHNk5LTFBaYWRiWlVZYmVRL2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTE3Nzk0CWZpbGU6UnVzdCBDbGllbnRfNi4wLjBfeDY0LXNldHVwLmV4ZQpzQzcwbUx0ekNUZlZ4L0hoeTVqTWFFNVRRZmJFQitTZXhiemxURGtaa3B5M0J5TUN1UEFpVFI2djEwVktCS1JxdnRQRTM2L2p6TWwybyswOHhPUGNBQT09Cg==",
       "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.0.0-setup.exe"
     }
   }
