@@ -1,60 +1,74 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-13",
   "launcher": {
-    "version": "6.0.1",
-    "file": "downloads/BambuBay-Launcher-6.0.1.zip",
+    "version": "6.1.0",
+    "file": "downloads/BambuBay-Launcher-6.1.0.zip",
     "size": "17,5 MB",
-    "notes": "Launcher 6.0.1: Anmeldung repariert – „Mojang hat die Anmeldung nicht bestätigt“ ist behoben (Freunde, Rusti, Profile teilen). Der Launcher meldet sich jetzt mit dem von Mojang signierten Schlüssel an; dein Zugangsschlüssel verlässt nie deinen PC. Dazu das neue Design aus 6.0 wie NoRisk.",
-    "setup": "downloads/Rust-Client-Setup-6.0.1.exe",
+    "notes": "Launcher 6.1: Neue Seite „Galerie“ mit allen Screenshots aus allen Profilen. Neu: Stellst du ein Profil auf eine andere Minecraft-Version, stellt der Launcher alle Mods automatisch mit um – auch die Rust-Client-Mod und Rust Performance. Dazu die Mod 3.9 mit Favoriten, Einstellungs-Profilen und „Aussehen übertragen“.",
+    "setup": "downloads/Rust-Client-Setup-6.1.0.exe",
     "setupSize": "17,5 MB",
-    "sha256": "36bb7fc715316104eee10c2309076b905513c6eee93e0e105fccb9d4cf6f30ba"
+    "sha256": "b81b65b726e41c29afaa058f7eb2e6a4d20ea286d09ac74752bb38a9f5771c8e"
   },
   "mod": {
-    "version": "3.8.2",
+    "version": "3.9.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.8.2.zip",
-    "size": "64,1 MB",
-    "jar": "downloads/BambuBayClient-3.8.2.jar",
-    "sha1": "236f6c45aee2b6d35200d65d0c1d514d3ea024e6",
+    "file": "downloads/BambuBay-Mod-3.9.0.zip",
+    "size": "64,2 MB",
+    "jar": "downloads/BambuBayClient-3.9.0.jar",
+    "sha1": "bcf23bad11055bc743ff465f4fb4004b2e045280",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.9-1.21.10.jar",
-        "sha1": "129291482c2b04b3ae5af58cfc33bec8f9fa9de8"
+        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.9-1.21.10.jar",
+        "sha1": "cd13e4e1bade737f0bc1987c81a8a9c1c6d00c3a"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.6-1.21.8.jar",
-        "sha1": "034b812522418417266d415e6c41a52fb3219405"
+        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.6-1.21.8.jar",
+        "sha1": "d81ceffe64d64ff930a2ec9a04517b8a7c69b214"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.5.jar",
-        "sha1": "c9016dd541254499155a6a2f5c69ec881affd96d"
+        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.5.jar",
+        "sha1": "e713f6eb48a79a530dd51d40c69f24efe4ef5c1b"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.4.jar",
-        "sha1": "adb99d0fff9ea52bb7f5176978a2817835cd457b"
+        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.4.jar",
+        "sha1": "961f1ea3ab2382ecfb6695ff8f110a21e10c4dce"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.8.2+mc1.21.11.jar",
-        "sha1": "236f6c45aee2b6d35200d65d0c1d514d3ea024e6"
+        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.11.jar",
+        "sha1": "bcf23bad11055bc743ff465f4fb4004b2e045280"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-13",
+      "tag": "Neu",
+      "title": "Mod 3.9: Favoriten, Profile und einheitliches HUD",
+      "text": "Markiere deine wichtigsten Module mit dem Stern – sie landen im neuen Reiter „Favoriten“. Mit „Profile“ neben der Suche speicherst du alle Einstellungen, Tasten und HUD-Positionen unter einem Namen wie „PvP“ oder „Bauen“ und wechselst mit einem Klick. Per Code teilst du dein Setup mit Freunden. Und in jedem HUD-Element überträgt „Übertragen“ Hintergrund, Rahmen, Farben und Schatten auf alle anderen – ein einheitliches HUD in Sekunden.",
+      "image": "assets/mod-39-profiles.webp"
+    },
+    {
+      "date": "2026-11-13",
+      "tag": "Neu",
+      "title": "Launcher 6.1: Galerie und Mods wechseln mit",
+      "text": "Neue Seite „Galerie“: alle Screenshots aus allen Profilen an einem Ort, nach Tagen sortiert, in drei Größen. Ein Klick öffnet die große Ansicht – mit den Pfeiltasten blätterst du, „Kopieren“ legt das Bild direkt in die Zwischenablage (zum Einfügen in Discord), Entf schiebt es in den Papierkorb. Und: Stellst du ein Profil auf eine andere Minecraft-Version, tauscht der Launcher beim Speichern alle Mods gegen die passende Version – auch die Rust-Client-Mod und Rust Performance. Was es für die neue Version noch nicht gibt, wird nur ausgeschaltet, nicht gelöscht.",
+      "image": "assets/launcher-61-gallery.webp"
+    },
     {
       "date": "2026-11-12",
       "tag": "Neu",

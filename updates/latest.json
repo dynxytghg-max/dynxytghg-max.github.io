@@ -1,11 +1,11 @@
 {
-  "version": "6.0.1",
-  "notes": "Launcher 6.0.1: Anmeldung repariert \u2013 \u201eMojang hat die Anmeldung nicht best\u00e4tigt\u201c ist behoben (Freunde, Rusti, Profile teilen). Der Launcher meldet sich jetzt mit dem von Mojang signierten Schl\u00fcssel an; dein Zugangsschl\u00fcssel verl\u00e4sst nie deinen PC. Dazu das neue Design aus 6.0 wie NoRisk.",
-  "pub_date": "2026-11-12T21:34:00Z",
+  "version": "6.1.0",
+  "notes": "Launcher 6.1: Neue Seite \u201eGalerie\u201c mit allen Screenshots aus allen Profilen. Neu: Stellst du ein Profil auf eine andere Minecraft-Version, stellt der Launcher alle Mods automatisch mit um \u2013 auch die Rust-Client-Mod und Rust Performance. Dazu die Mod 3.9 mit Favoriten, Einstellungs-Profilen und \u201eAussehen \u00fcbertragen\u201c.",
+  "pub_date": "2026-11-13T14:20:26Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTlLUGNSU2pFSGFOcTZFcWY4dEgvMEpFQi9FSG4xRXRpSmlSU1VZUDJuVlZZVXBQL250OEgweGcwaU9ZMnAvN3ZQZnE2RFhWSjlha1BTamRJV1BQNHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTE5MjQxCWZpbGU6UnVzdCBDbGllbnRfNi4wLjFfeDY0LXNldHVwLmV4ZQpvZ0JtMVhDSE5yWUxlcXc3d3c1ZjI5R2hnU3FJNWJlaFVTbUpiVTFMeUszU3EzK00zWDRuMGFBMHFGR2lpZEZQbEJLWEVIcmw1Z0NMdEF0N04ySmpEUT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.0.1-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXhYckMrTkVVRnNjZVNmQlNsSDR3MWd6d0UwcjNkWm90d1E0bWJTWHppeE1QZTJ1eVdqd0MxWHI5MHpGQVdoeURQcDF4VHIwV3owUVZLWW5QVlBINkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTc5NjI2CWZpbGU6UnVzdCBDbGllbnRfNi4xLjBfeDY0LXNldHVwLmV4ZQoyaHF1Rk5va2ZRRVVmWDY5b1kyTm9kZjVTTG9PQWl5UzhoM0V3WHQ4NmU4dTZpMHJKYVpiYzk4MVFUazdFUXlzcmJWcFo3dndQU3RKSHlGQ3IxMzZCQT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.1.0-setup.exe"
     }
   }
 }
