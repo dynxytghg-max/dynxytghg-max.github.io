@@ -1,10 +1,10 @@
 {
   "version": "6.1.1",
   "notes": "Launcher 6.1.1: Beim Wechsel der Minecraft-Version werden die Mods jetzt viel schneller umgestellt \u2013 alle gleichzeitig, und Rust-Client-Mod und Rust Performance werden schon vorgeladen, sobald du eine Version anklickst. Dazu die Mod 3.9.1: Pilz und Baumstamm bewegen ihre Arme jetzt nat\u00fcrlich.",
-  "pub_date": "2026-11-16T12:13:19Z",
+  "pub_date": "2026-11-16T23:23:07Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXd2V0xjcnA0ZWdWWXZEY0tSUWIyNzJkNDhKV2g5WXo0RE1MdnhhTUxIeXp0V05maW9hQXc4Z3FJK3I4YnhrNjNUZy9WRWdIU0JtWThJRW5XejNvdHdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODMxMTk5CWZpbGU6UnVzdCBDbGllbnRfNi4xLjFfeDY0LXNldHVwLmV4ZQoyZkpnT0pUMG5XVUxqaVNleGVVOGlTaVNxTkxyODZoRFZkNU9nd2REUEQ3RW8xY1B6cHFGM3k1QlZmVDJ2RktzVHNNVFVzeURseEZYL2V4UE95YXpBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTThTZHpYMnRhWDU1YmsvWXJTOGl2ci93N0FxSDlxNlB1NXQxSUZ3ZGFFQUtDcGJRQzY1dnljTTdNTXB0VEZxNkJVZ3VPb2dibnV4czZVa1dhdTJzMlFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODcxMzg3CWZpbGU6UnVzdCBDbGllbnRfNi4xLjFfeDY0LXNldHVwLmV4ZQovNW9BYkJSMmw5RFJxS3AvNzZzQkI5bU1KNjRFMTcwQ0FJLzBIY1pXMVNNem8wSU5yb0N2cExLWW8vQnROOEZ0M1M0eE1QSVRmMEMzckV5VjhmRGVEZz09Cg==",
       "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.1.1-setup.exe"
     }
   }
