@@ -1,60 +1,88 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-16",
   "launcher": {
-    "version": "6.1.0",
-    "file": "downloads/BambuBay-Launcher-6.1.0.zip",
-    "size": "17,5 MB",
-    "notes": "Launcher 6.1: Neue Seite „Galerie“ mit allen Screenshots aus allen Profilen. Neu: Stellst du ein Profil auf eine andere Minecraft-Version, stellt der Launcher alle Mods automatisch mit um – auch die Rust-Client-Mod und Rust Performance. Dazu die Mod 3.9 mit Favoriten, Einstellungs-Profilen und „Aussehen übertragen“.",
-    "setup": "downloads/Rust-Client-Setup-6.1.0.exe",
-    "setupSize": "17,5 MB",
-    "sha256": "b81b65b726e41c29afaa058f7eb2e6a4d20ea286d09ac74752bb38a9f5771c8e"
+    "version": "6.1.1",
+    "file": "downloads/BambuBay-Launcher-6.1.1.zip",
+    "size": "17,7 MB",
+    "notes": "Launcher 6.1.1: Beim Wechsel der Minecraft-Version werden die Mods jetzt viel schneller umgestellt – alle gleichzeitig, und Rust-Client-Mod und Rust Performance werden schon vorgeladen, sobald du eine Version anklickst. Dazu die Mod 3.9.1: Pilz und Baumstamm bewegen ihre Arme jetzt natürlich.",
+    "setup": "downloads/Rust-Client-Setup-6.1.1.exe",
+    "setupSize": "17,7 MB",
+    "sha256": "62449206bb7a11d4c0f7a1c99e40b4f9b61cfb4cac4be385dc94190fb744f362"
   },
   "mod": {
-    "version": "3.9.0",
+    "version": "3.11.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.9.0.zip",
-    "size": "64,2 MB",
-    "jar": "downloads/BambuBayClient-3.9.0.jar",
-    "sha1": "bcf23bad11055bc743ff465f4fb4004b2e045280",
+    "file": "downloads/BambuBay-Mod-3.11.0.zip",
+    "size": "64,9 MB",
+    "jar": "downloads/BambuBayClient-3.11.0.jar",
+    "sha1": "ee6240abd9c29f0b1ac4defb3beca6e8c4ebfd4d",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.9-1.21.10.jar",
-        "sha1": "cd13e4e1bade737f0bc1987c81a8a9c1c6d00c3a"
+        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.9-1.21.10.jar",
+        "sha1": "11bea40c53af85f943554c3aa61b18ae5b623a5f"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.6-1.21.8.jar",
-        "sha1": "d81ceffe64d64ff930a2ec9a04517b8a7c69b214"
+        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.6-1.21.8.jar",
+        "sha1": "4e2b3f30d75d5df528406568407dceb8dbb8f492"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.5.jar",
-        "sha1": "e713f6eb48a79a530dd51d40c69f24efe4ef5c1b"
+        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.5.jar",
+        "sha1": "8756dfe8241002ed03b52477ff15f2275a9105ad"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.4.jar",
-        "sha1": "961f1ea3ab2382ecfb6695ff8f110a21e10c4dce"
+        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.4.jar",
+        "sha1": "83c25d9d760077886642cae66d8ea885b307bbe6"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.9.0+mc1.21.11.jar",
-        "sha1": "bcf23bad11055bc743ff465f4fb4004b2e045280"
+        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.11.jar",
+        "sha1": "ee6240abd9c29f0b1ac4defb3beca6e8c4ebfd4d"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-16",
+      "tag": "Neu",
+      "title": "Neues Mod-Design und 5 neue Minispiele",
+      "text": "Das Mod-Menü, Rust+, das Emote-Rad und die Minispiele sind neu gestaltet: Rust+ zeigt jeden Effekt live im Raster, im Pausemenü gibt es den Knopf „Rust Client“ und per Rechtsklick belegst du Plätze im Emote-Rad. Neu zum Spielen: Pong, Flappy Bird, 2048, AA und Schiffe versenken.",
+      "image": "assets/design-311.webp"
+    },
+    {
+      "date": "2026-11-13",
+      "tag": "Neu",
+      "title": "Minispiele als Hologramm",
+      "text": "Im Mod-Menü gibt es jetzt „Spiele“: Tic-Tac-Toe, Vier gewinnt, Schach, Tetris und Snake schweben als leuchtendes Hologramm vor dir, während die Welt weiterläuft. Gegen den Bot in drei Stärken oder gegen Freunde – einfach herausfordern, der Freund nimmt mit einem Klick an.",
+      "image": "assets/games-310.webp"
+    },
+    {
+      "date": "2026-11-13",
+      "tag": "Neu",
+      "title": "Emotes zu zweit: Mitmachen mit N, 3D-Ich-Ansicht, zwei neue",
+      "text": "Bietet jemand neben dir ein Emote zu zweit an, drückst du einfach N und machst mit – kein Suchen im Emote-Rad mehr. Bei Handschlag, High Five, Faust-Check, Schere-Stein-Papier, Selfie und Co. bleibt die Kamera jetzt in der Ich-Ansicht und du siehst deine eigenen Arme in 3D. Neu dazu: Brust-Check (zusammen hochspringen und abklatschen) und Herz zu zweit.",
+      "image": "assets/duo-392.webp"
+    },
+    {
+      "date": "2026-11-13",
+      "tag": "Neu",
+      "title": "Haustiere mit lebendigen Armen, schnellerer Versionswechsel",
+      "text": "Pilz und Baumstamm lassen ihre Arme jetzt locker hängen, pendeln beim Laufen mit und schwingen beim Rennen kräftig – vorher standen die Arme ständig nach oben. Im Launcher geht das Umstellen der Mods beim Versionswechsel deutlich schneller: alle Mods laden gleichzeitig, und die Rust-Client-Mod wird schon geladen, während du noch im Profil-Editor bist.",
+      "image": "assets/pets-391-arms.webp"
+    },
     {
       "date": "2026-11-13",
       "tag": "Neu",

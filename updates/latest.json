@@ -1,11 +1,11 @@
 {
-  "version": "6.1.0",
-  "notes": "Launcher 6.1: Neue Seite \u201eGalerie\u201c mit allen Screenshots aus allen Profilen. Neu: Stellst du ein Profil auf eine andere Minecraft-Version, stellt der Launcher alle Mods automatisch mit um \u2013 auch die Rust-Client-Mod und Rust Performance. Dazu die Mod 3.9 mit Favoriten, Einstellungs-Profilen und \u201eAussehen \u00fcbertragen\u201c.",
-  "pub_date": "2026-11-13T14:20:26Z",
+  "version": "6.1.1",
+  "notes": "Launcher 6.1.1: Beim Wechsel der Minecraft-Version werden die Mods jetzt viel schneller umgestellt \u2013 alle gleichzeitig, und Rust-Client-Mod und Rust Performance werden schon vorgeladen, sobald du eine Version anklickst. Dazu die Mod 3.9.1: Pilz und Baumstamm bewegen ihre Arme jetzt nat\u00fcrlich.",
+  "pub_date": "2026-11-16T12:13:19Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXhYckMrTkVVRnNjZVNmQlNsSDR3MWd6d0UwcjNkWm90d1E0bWJTWHppeE1QZTJ1eVdqd0MxWHI5MHpGQVdoeURQcDF4VHIwV3owUVZLWW5QVlBINkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTc5NjI2CWZpbGU6UnVzdCBDbGllbnRfNi4xLjBfeDY0LXNldHVwLmV4ZQoyaHF1Rk5va2ZRRVVmWDY5b1kyTm9kZjVTTG9PQWl5UzhoM0V3WHQ4NmU4dTZpMHJKYVpiYzk4MVFUazdFUXlzcmJWcFo3dndQU3RKSHlGQ3IxMzZCQT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.1.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXd2V0xjcnA0ZWdWWXZEY0tSUWIyNzJkNDhKV2g5WXo0RE1MdnhhTUxIeXp0V05maW9hQXc4Z3FJK3I4YnhrNjNUZy9WRWdIU0JtWThJRW5XejNvdHdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODMxMTk5CWZpbGU6UnVzdCBDbGllbnRfNi4xLjFfeDY0LXNldHVwLmV4ZQoyZkpnT0pUMG5XVUxqaVNleGVVOGlTaVNxTkxyODZoRFZkNU9nd2REUEQ3RW8xY1B6cHFGM3k1QlZmVDJ2RktzVHNNVFVzeURseEZYL2V4UE95YXpBZz09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.1.1-setup.exe"
     }
   }
 }
