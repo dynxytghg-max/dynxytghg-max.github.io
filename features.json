@@ -10,51 +10,65 @@
     "sha256": "62449206bb7a11d4c0f7a1c99e40b4f9b61cfb4cac4be385dc94190fb744f362"
   },
   "mod": {
-    "version": "3.11.0",
+    "version": "3.14.1",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.11.0.zip",
-    "size": "64,9 MB",
-    "jar": "downloads/BambuBayClient-3.11.0.jar",
-    "sha1": "ee6240abd9c29f0b1ac4defb3beca6e8c4ebfd4d",
+    "file": "downloads/BambuBay-Mod-3.14.1.zip",
+    "size": "68,6 MB",
+    "jar": "downloads/BambuBayClient-3.14.1.jar",
+    "sha1": "37a7e1d9a8dd69bcbd35b636bf2ff4694edc5098",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.9-1.21.10.jar",
-        "sha1": "11bea40c53af85f943554c3aa61b18ae5b623a5f"
+        "jar": "downloads/BambuBayClient-3.14.1+mc1.21.9-1.21.10.jar",
+        "sha1": "881c951b5c9035d24f31284e615a766151d7c225"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.6-1.21.8.jar",
-        "sha1": "4e2b3f30d75d5df528406568407dceb8dbb8f492"
+        "jar": "downloads/BambuBayClient-3.14.1+mc1.21.6-1.21.8.jar",
+        "sha1": "5181b26178ca07e752cd7415d88e6a2f4a692ecb"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.5.jar",
-        "sha1": "8756dfe8241002ed03b52477ff15f2275a9105ad"
+        "jar": "downloads/BambuBayClient-3.14.1+mc1.21.5.jar",
+        "sha1": "e25579f43c4069ea66455e86d3229565baccc847"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.4.jar",
-        "sha1": "83c25d9d760077886642cae66d8ea885b307bbe6"
+        "jar": "downloads/BambuBayClient-3.14.1+mc1.21.4.jar",
+        "sha1": "b32fe2125ac5e8d6b4d4c956dc54aa825f3e7ddf"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.11.0+mc1.21.11.jar",
-        "sha1": "ee6240abd9c29f0b1ac4defb3beca6e8c4ebfd4d"
+        "jar": "downloads/BambuBayClient-3.14.1+mc1.21.11.jar",
+        "sha1": "37a7e1d9a8dd69bcbd35b636bf2ff4694edc5098"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-16",
+      "tag": "Neu",
+      "title": "Graffiti: sprühen wie in echt",
+      "text": "Mit J Farbe wählen, eigene Spraydose in die Hand nehmen und mit gedrückter rechter Maustaste an Wände sprühen – weich wie echte Sprühfarbe, mit Sprühnebel und Farbnasen. Alle Rust-Client-Spieler sehen es, auch wer später kommt.",
+      "image": "assets/graffiti-314.webp"
+    },
+    {
+      "date": "2026-11-16",
+      "tag": "Neu",
+      "title": "Haustiere fliegen mit – und eigene Emotes sehen alle",
+      "text": "Mit der Elytra fliegt dein Haustier jetzt hinter dir her, im Wasser schwimmt es mit, und es reagiert auf alles, was du tust: Bogen spannen, kämpfen, abbauen, angeln, schlafen, Schild hoch. Eigene Emotes aus dem Emote-Editor sehen jetzt alle Rust-Client-Spieler in deiner Nähe.",
+      "image": "assets/design-311.webp"
+    },
     {
       "date": "2026-11-16",
       "tag": "Neu",
