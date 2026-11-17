@@ -4,57 +4,69 @@
     "version": "6.2.0",
     "file": "downloads/BambuBay-Launcher-6.2.0.zip",
     "size": "18,5 MB",
-    "notes": "Launcher 6.2.0: Neue Absturz-Hilfe – stürzt Minecraft ab, sagt der Launcher jetzt immer, woran es lag: zu viele Wesen in der Nähe, Grafiktreiber, Daten vom Server, eine bestimmte Mod oder Java selbst. Mit Knöpfen zum Beheben, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten. Dazu: Xbox-Anmeldung klappt auch, wenn die PC-Uhr falsch geht.",
+    "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit großer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. Überall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter Wänden werden nicht mehr gezeichnet.",
     "setup": "downloads/Rust-Client-Setup-6.2.0.exe",
     "setupSize": "18,5 MB",
     "sha256": "c915c3880ad0c22115102cc1c08062baec2baed4b4c982f38c410796752e1d1d"
   },
   "mod": {
-    "version": "3.16.2",
+    "version": "3.17.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.16.2.zip",
-    "size": "72,0 MB",
-    "jar": "downloads/BambuBayClient-3.16.2.jar",
-    "sha1": "7b191acd6f0dcfae8ad31c378930f01b3f2708a3",
+    "file": "downloads/BambuBay-Mod-3.17.0.zip",
+    "size": "72,1 MB",
+    "jar": "downloads/BambuBayClient-3.17.0.jar",
+    "sha1": "18c89acdce0d18f579ee10b2b635306ca22e0a5e",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.9-1.21.10.jar",
-        "sha1": "a130c29284121f07a57f63533206ecc4981bbfd9"
+        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.9-1.21.10.jar",
+        "sha1": "afb2eefe445c767033e4cfaa84c69a564126ccde"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.6-1.21.8.jar",
-        "sha1": "828877c964463cae9a50677df0923192c290dece"
+        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.6-1.21.8.jar",
+        "sha1": "8b26ecbd20fcf46d37724648b366818d32a11ca1"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.5.jar",
-        "sha1": "9073c445962f48e2f581d3d02b4fec7a6428e7b6"
+        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.5.jar",
+        "sha1": "38d93ecab384878b7b32892ef68037069826b9c0"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.4.jar",
-        "sha1": "f11b47fbf53c2d3175cb59c0b517c4f04f7682f5"
+        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.4.jar",
+        "sha1": "44b0ce975fa94fd4568056f7eeb9a4e9826d4e0e"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.11.jar",
-        "sha1": "7b191acd6f0dcfae8ad31c378930f01b3f2708a3"
+        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.11.jar",
+        "sha1": "18c89acdce0d18f579ee10b2b635306ca22e0a5e"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Watchparty-Leinwand",
+      "text": "Das Video hängt jetzt vor dir in der Welt: an der Wand, auf die du schaust, so groß wie die Wand Platz hat (16:9). Alle mit Rust Client in der Nähe sehen und hören es automatisch, mit Raumklang. Kein Browser nötig."
+    },
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Launcher 7.0: neuer Look",
+      "text": "Leiste unten, jede Seite mit eigenem Charakter: Umkleide für Skins, Radar für Server, Regal für Profile, Werkbank für Mods, Fahnenwand für Capes, Kartentisch für Welten, Kino für Clips. Neue Animationen überall, gleiche Farben, alles eckig."
+    },
     {
       "date": "2026-11-17",
       "tag": "Beta",

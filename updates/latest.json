@@ -1,6 +1,6 @@
 {
   "version": "6.2.0",
-  "notes": "Launcher 6.2.0: Neue Absturz-Hilfe \u2013 st\u00fcrzt Minecraft ab, sagt der Launcher jetzt immer, woran es lag: zu viele Wesen in der N\u00e4he, Grafiktreiber, Daten vom Server, eine bestimmte Mod oder Java selbst. Mit Kn\u00f6pfen zum Beheben, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten. Dazu: Xbox-Anmeldung klappt auch, wenn die PC-Uhr falsch geht.",
+  "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit gro\u00dfer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. \u00dcberall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter W\u00e4nden werden nicht mehr gezeichnet.",
   "pub_date": "2026-11-17T13:25:20Z",
   "platforms": {
     "windows-x86_64": {
