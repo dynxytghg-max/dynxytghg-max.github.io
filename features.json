@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "launcher": {
     "version": "6.2.0",
     "file": "downloads/BambuBay-Launcher-6.2.0.zip",
@@ -10,51 +10,75 @@
     "sha256": "c915c3880ad0c22115102cc1c08062baec2baed4b4c982f38c410796752e1d1d"
   },
   "mod": {
-    "version": "3.15.0",
+    "version": "3.16.2",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.15.0.zip",
-    "size": "71,6 MB",
-    "jar": "downloads/BambuBayClient-3.15.0.jar",
-    "sha1": "495a611a416cacf35ff9c5ed0a1ef34a65a60ad5",
+    "file": "downloads/BambuBay-Mod-3.16.2.zip",
+    "size": "72,0 MB",
+    "jar": "downloads/BambuBayClient-3.16.2.jar",
+    "sha1": "7b191acd6f0dcfae8ad31c378930f01b3f2708a3",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.9-1.21.10.jar",
-        "sha1": "621c143f82b928c76dbddff0e200de5d7670ec99"
+        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.9-1.21.10.jar",
+        "sha1": "a130c29284121f07a57f63533206ecc4981bbfd9"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.6-1.21.8.jar",
-        "sha1": "52ce18cfea06965acf6fee2f6a3061f3fdd1c593"
+        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.6-1.21.8.jar",
+        "sha1": "828877c964463cae9a50677df0923192c290dece"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.5.jar",
-        "sha1": "fca340d081b568652c682ea577a069566ea2ecd7"
+        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.5.jar",
+        "sha1": "9073c445962f48e2f581d3d02b4fec7a6428e7b6"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.4.jar",
-        "sha1": "c8993ed738689ec00b40f40f200bc1808423906e"
+        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.4.jar",
+        "sha1": "f11b47fbf53c2d3175cb59c0b517c4f04f7682f5"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.11.jar",
-        "sha1": "495a611a416cacf35ff9c5ed0a1ef34a65a60ad5"
+        "jar": "downloads/BambuBayClient-3.16.2+mc1.21.11.jar",
+        "sha1": "7b191acd6f0dcfae8ad31c378930f01b3f2708a3"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-17",
+      "tag": "Beta",
+      "title": "Watchparty im Spiel",
+      "text": "Taste Y: YouTube suchen, Twitch-Kanal oder TikTok-Link eingeben und zusammen schauen – bis 1080p Full HD mit Ton. Alle mit Rust Client auf demselben Server sehen dasselbe Video an derselben Stelle, Pause und Vorspulen gelten für alle. Klein oben rechts weiterschauen geht auch."
+    },
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Spieler-Profil",
+      "text": "Im Mod-Menü auf „Profil“: deine Figur, Status-Text und viele Werte wie Spielzeit, Kills, Tode, K/D, Emotes, Graffiti, gelaufene Strecke, Lieblings-Server und Haustier. Klick auf den Kopf eines Freundes zeigt sein Profil."
+    },
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Minecraft-Menüs im Rust-Stil",
+      "text": "Videoeinstellungen, Steuerung, Tastenbelegung und alle anderen Minecraft-Menüs haben jetzt eckige, dunkle Knöpfe und Regler in der Rust-Client-Farbe. Abschaltbar unter Optionen › Hauptmenü."
+    },
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Rust Performance 3.1",
+      "text": "Spieler und Mobs hinter Wänden werden nicht mehr gezeichnet – auf großen Servern viel mehr FPS. Dazu Spar-Bildrate: 60 FPS in Menüs, 30 FPS wenn das Fenster im Hintergrund ist."
+    },
     {
       "date": "2026-11-17",
       "tag": "Beta",
@@ -404,43 +428,43 @@
   ],
   "downloadBase": "https://dynxytghg-max.github.io/",
   "perf": {
-    "version": "3.0.0",
+    "version": "3.1.0",
     "minecraft": "1.21.4 – 1.21.11",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/RustPerformance-3.0.0+mc1.21.9-1.21.10.jar",
-        "sha1": "f118d65afc3a8a38aae1c80207fee5c30081e1f5"
+        "jar": "downloads/RustPerformance-3.1.0+mc1.21.9-1.21.10.jar",
+        "sha1": "21a3a135a3e1a110a7a0de1ae495b04a78caaf23"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/RustPerformance-3.0.0+mc1.21.6-1.21.8.jar",
-        "sha1": "456b3a956defb697ce68f72ee26c989dbd80ee5d"
+        "jar": "downloads/RustPerformance-3.1.0+mc1.21.6-1.21.8.jar",
+        "sha1": "cca6d6549a457f263dec79b6f2973e5f7d5e7b21"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/RustPerformance-3.0.0+mc1.21.5.jar",
-        "sha1": "9bc360933d364f38eb826754fe7f07398299ee28"
+        "jar": "downloads/RustPerformance-3.1.0+mc1.21.5.jar",
+        "sha1": "953e29484416c172e96dbf4007ed48e058ba89d3"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/RustPerformance-3.0.0+mc1.21.4.jar",
-        "sha1": "f159b2eb2143e74dbdb8d697f225a2458e606f29"
+        "jar": "downloads/RustPerformance-3.1.0+mc1.21.4.jar",
+        "sha1": "b8b229a4d576dfb31005147e31d31934f1bdabd8"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/RustPerformance-3.0.0+mc1.21.11.jar",
-        "sha1": "0bd7332e835ecff33cbb6a5a5ad544c2464db49b"
+        "jar": "downloads/RustPerformance-3.1.0+mc1.21.11.jar",
+        "sha1": "feab45b62a75fc33cf9e51230be553a993239779"
       }
     ]
   }
