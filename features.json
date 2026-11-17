@@ -7,7 +7,7 @@
     "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit großer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. Überall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter Wänden werden nicht mehr gezeichnet.",
     "setup": "downloads/Rust-Client-Setup-7.0.0.exe",
     "setupSize": "18,6 MB",
-    "sha256": "65f1f4c61f719cd3311eee65183c9ac20bc674760fedb87c24355e76829c8ddf"
+    "sha256": "09df73f3db35b5850448c9f0ff7c58fda2f3b01280705361043373997f5a830e"
   },
   "mod": {
     "version": "3.17.0",

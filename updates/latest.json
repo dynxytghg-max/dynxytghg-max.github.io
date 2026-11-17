@@ -1,10 +1,10 @@
 {
   "version": "7.0.0",
   "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit gro\u00dfer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. \u00dcberall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter W\u00e4nden werden nicht mehr gezeichnet.",
-  "pub_date": "2026-11-17T17:55:57Z",
+  "pub_date": "2026-11-17T18:03:18Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTThsZjM2b1hVK2VnY2dEQU9NcmJFaDN5cWxsdTYxYWphRk45WEVEWjFULzNyRmFlZHRZNmJ2Uk1LV3h1TVlQREFiNFd2UER1NnJ6c054VFZzMEhnUVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTM4MTU3CWZpbGU6UnVzdCBDbGllbnRfNy4wLjBfeDY0LXNldHVwLmV4ZQppSmxRTzAyT2ViSTZsbVlpblFyeitPeVJKOGJhdlA3ZFh6ZkVSWWlJNUtBQ0ttdE1zMDdRMDZ4RFkvVmRPRWlvODVtdTluOTBVOXNCQUR6ZnNOYVlDdz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTThHTHI3TUQ2aExUL25KRVFBdHdrVHREWkNaQ3V5S0h3Z2p2LzRqWWViMkNjUWxzeW1WYnA2ZHYrNFVOS1BPOTgraHh6Z0tSU0N4TTIzUEl3dUQ0ZEF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTM4NTk4CWZpbGU6UnVzdCBDbGllbnRfNy4wLjBfeDY0LXNldHVwLmV4ZQovK3JyaGpOZE8zQ1BQZlFldzFNVlVweFZ0c1VnVEhuNm5oNHYxdUUxMjU0N1B5MjU1d3Yvemd3UjFKNWptZG1HQ2lKTGUzNWJYWTBtY3BXMXZTQ0lEUT09Cg==",
       "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-7.0.0-setup.exe"
     }
   }
