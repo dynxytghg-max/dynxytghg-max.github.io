@@ -1,13 +1,13 @@
 {
   "updated": "2026-11-17",
   "launcher": {
-    "version": "7.1.0",
-    "file": "downloads/BambuBay-Launcher-7.1.0.zip",
-    "size": "18,8 MB",
-    "notes": "Launcher 7.1: Deine Figur auf der Startseite trägt jetzt dein Rust-Client-Cape, dein Haustier steht daneben, sie winkt beim Drüberfahren und läuft beim Spielen los – dazu eine Startsequenz mit Häkchen. News rechts über die volle Höhe (einklappbar), größeres Dock mittig, Rusti mit eigenem Fach im Dock. Seitenwechsel mit Richtung, Konfetti bei Erfolgen, Pixel-Szenen statt leerer Seiten. Updater zuverlässiger: sucht nach dem Hochfahren nochmal, installiert auch später gefundene Updates und zeigt an, wenn etwas nicht klappt.",
-    "setup": "downloads/Rust-Client-Setup-7.1.0.exe",
-    "setupSize": "18,8 MB",
-    "sha256": "00aff8894b5c88962de31e0eb881ccb66a035d36e3faef66ab215d8caf6e8de5"
+    "version": "7.1.1",
+    "file": "downloads/BambuBay-Launcher-7.1.1.zip",
+    "size": "18,7 MB",
+    "notes": "Launcher 7.1.1: flüssiger – der Hintergrund läuft jetzt mit 60 Bildern pro Sekunde und braucht dabei rund 15-mal weniger Rechenzeit, das Dock ohne teure Unschärfe, die 3D-Figur schont auf hochauflösenden Bildschirmen die Grafikkarte. Das Haustier neben der Figur ist wieder weg.",
+    "setup": "downloads/Rust-Client-Setup-7.1.1.exe",
+    "setupSize": "18,7 MB",
+    "sha256": "4d98dc24a38482a3b17cc9e350afe9a66e1cdf73538e305109df16d42a6b8b51"
   },
   "mod": {
     "version": "3.18.0",
