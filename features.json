@@ -10,47 +10,47 @@
     "sha256": "09df73f3db35b5850448c9f0ff7c58fda2f3b01280705361043373997f5a830e"
   },
   "mod": {
-    "version": "3.17.0",
+    "version": "3.17.1",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.17.0.zip",
+    "file": "downloads/BambuBay-Mod-3.17.1.zip",
     "size": "72,1 MB",
-    "jar": "downloads/BambuBayClient-3.17.0.jar",
-    "sha1": "18c89acdce0d18f579ee10b2b635306ca22e0a5e",
+    "jar": "downloads/BambuBayClient-3.17.1.jar",
+    "sha1": "6f22c69a9312b8932a6a8ffc27eb8be9ed03d8f2",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.9-1.21.10.jar",
-        "sha1": "afb2eefe445c767033e4cfaa84c69a564126ccde"
+        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.9-1.21.10.jar",
+        "sha1": "b9e139fc8df4b185e0674cf4a4c9bd771306a4d6"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.6-1.21.8.jar",
-        "sha1": "8b26ecbd20fcf46d37724648b366818d32a11ca1"
+        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.6-1.21.8.jar",
+        "sha1": "c6a224a2991f1971edee4b957e4ddf6f7b0f1549"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.5.jar",
-        "sha1": "38d93ecab384878b7b32892ef68037069826b9c0"
+        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.5.jar",
+        "sha1": "82a2d9f2fdfe3ea7ab9b80b2b2a2544531134269"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.4.jar",
-        "sha1": "44b0ce975fa94fd4568056f7eeb9a4e9826d4e0e"
+        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.4.jar",
+        "sha1": "7c732bed15fe729ca2dbd33eed56847771baa24d"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.17.0+mc1.21.11.jar",
-        "sha1": "18c89acdce0d18f579ee10b2b635306ca22e0a5e"
+        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.11.jar",
+        "sha1": "6f22c69a9312b8932a6a8ffc27eb8be9ed03d8f2"
       }
     ]
   },
