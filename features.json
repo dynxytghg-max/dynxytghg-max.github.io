@@ -3,11 +3,11 @@
   "launcher": {
     "version": "7.0.0",
     "file": "downloads/BambuBay-Launcher-7.0.0.zip",
-    "size": "18,6 MB",
+    "size": "18,7 MB",
     "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit großer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. Überall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter Wänden werden nicht mehr gezeichnet.",
     "setup": "downloads/Rust-Client-Setup-7.0.0.exe",
-    "setupSize": "18,6 MB",
-    "sha256": "09df73f3db35b5850448c9f0ff7c58fda2f3b01280705361043373997f5a830e"
+    "setupSize": "18,7 MB",
+    "sha256": "29719684a4253039b3b303b02d7031fc2ccc60006792dabee1cb8d54af580ab5"
   },
   "mod": {
     "version": "3.18.0",
