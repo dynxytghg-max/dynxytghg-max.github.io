@@ -1,13 +1,13 @@
 {
   "updated": "2026-11-17",
   "launcher": {
-    "version": "7.0.0",
-    "file": "downloads/BambuBay-Launcher-7.0.0.zip",
-    "size": "18,7 MB",
-    "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit großer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. Überall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter Wänden werden nicht mehr gezeichnet.",
-    "setup": "downloads/Rust-Client-Setup-7.0.0.exe",
-    "setupSize": "18,7 MB",
-    "sha256": "29719684a4253039b3b303b02d7031fc2ccc60006792dabee1cb8d54af580ab5"
+    "version": "7.1.0",
+    "file": "downloads/BambuBay-Launcher-7.1.0.zip",
+    "size": "18,8 MB",
+    "notes": "Launcher 7.1: Deine Figur auf der Startseite trägt jetzt dein Rust-Client-Cape, dein Haustier steht daneben, sie winkt beim Drüberfahren und läuft beim Spielen los – dazu eine Startsequenz mit Häkchen. News rechts über die volle Höhe (einklappbar), größeres Dock mittig, Rusti mit eigenem Fach im Dock. Seitenwechsel mit Richtung, Konfetti bei Erfolgen, Pixel-Szenen statt leerer Seiten. Updater zuverlässiger: sucht nach dem Hochfahren nochmal, installiert auch später gefundene Updates und zeigt an, wenn etwas nicht klappt.",
+    "setup": "downloads/Rust-Client-Setup-7.1.0.exe",
+    "setupSize": "18,8 MB",
+    "sha256": "00aff8894b5c88962de31e0eb881ccb66a035d36e3faef66ab215d8caf6e8de5"
   },
   "mod": {
     "version": "3.18.0",
@@ -15,7 +15,7 @@
     "file": "downloads/BambuBay-Mod-3.18.0.zip",
     "size": "72,2 MB",
     "jar": "downloads/BambuBayClient-3.18.0.jar",
-    "sha1": "b3dfe534d8694465da9795eb47b67e30553f5235",
+    "sha1": "684fb239e5221fccf85f800ba255b22778f48b52",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
@@ -50,11 +50,17 @@
         "min": "1.21.11",
         "max": "1.21.11",
         "jar": "downloads/BambuBayClient-3.18.0+mc1.21.11.jar",
-        "sha1": "b3dfe534d8694465da9795eb47b67e30553f5235"
+        "sha1": "684fb239e5221fccf85f800ba255b22778f48b52"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Launcher 7.1",
+      "text": "Figur mit Cape und Haustier, die winkt und beim Spielen losläuft, Startsequenz, News über die volle Höhe, größeres Dock mit Rusti-Fach, Konfetti und Pixel-Szenen."
+    },
     {
       "date": "2026-11-17",
       "tag": "Beta",

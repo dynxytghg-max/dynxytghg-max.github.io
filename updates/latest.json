@@ -1,11 +1,11 @@
 {
-  "version": "7.0.0",
-  "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit gro\u00dfer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. \u00dcberall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter W\u00e4nden werden nicht mehr gezeichnet.",
-  "pub_date": "2026-11-17T22:05:32Z",
+  "version": "7.1.0",
+  "notes": "Launcher 7.1: Deine Figur auf der Startseite tr\u00e4gt jetzt dein Rust-Client-Cape, dein Haustier steht daneben, sie winkt beim Dr\u00fcberfahren und l\u00e4uft beim Spielen los \u2013 dazu eine Startsequenz mit H\u00e4kchen. News rechts \u00fcber die volle H\u00f6he (einklappbar), gr\u00f6\u00dferes Dock mittig, Rusti mit eigenem Fach im Dock. Seitenwechsel mit Richtung, Konfetti bei Erfolgen, Pixel-Szenen statt leerer Seiten. Updater zuverl\u00e4ssiger: sucht nach dem Hochfahren nochmal, installiert auch sp\u00e4ter gefundene Updates und zeigt an, wenn etwas nicht klappt.",
+  "pub_date": "2026-11-17T22:27:10Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTJDcUdpWi9Bay82R3dSUGtVQWxMRmw3RVpFVEdBckQrWUZQZGh6VmorbVNhZVM3MWViTkhzQ0JabXV3bVkvWXRNaTUzNi9TYVBxeVFzZGM3NkRudVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTUzMTMzCWZpbGU6UnVzdCBDbGllbnRfNy4wLjBfeDY0LXNldHVwLmV4ZQpkdmZJT25vdU9wU2ZVWUFtaVlyUzQ3d0luenVLTTlzb3M4TEZ6RjJHUGplM3FYdVB5bVlmdVkyY2VoMGx2RTY5RWFZWGkva043Wkpyd1ZLUi9KYitDQT09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-7.0.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTNjZnZLMHh2a1Y1T2dOYUxDRWhuOEF6a0FadkM2U3A2RHBGVEh3MW53U2QwMlpPLzNPQXhkb3dibS8zQTJvMU5FZkJBMGF0cldvQlg5bG1GQzhJaUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTU0NDMwCWZpbGU6UnVzdCBDbGllbnRfNy4xLjBfeDY0LXNldHVwLmV4ZQo2N3I5NnAvbmhNNmFTSm1WRHZiNzM1VkQ1NVlOUE9hK05lKzdqcVNFRWZqNk1yR0lMY0tNYmR1NlgrT0dMeGtQNFh1TUpJQXNUN09udmZyemNuazNEQT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-7.1.0-setup.exe"
     }
   }
 }
