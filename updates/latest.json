@@ -1,11 +1,11 @@
 {
-  "version": "6.2.0",
+  "version": "7.0.0",
   "notes": "Launcher 7.0: komplett neuer Rust-Client-Look. Die Leiste ist jetzt unten, und jede Seite hat ihren eigenen Charakter: Skins als Umkleide mit gro\u00dfer 3D-Figur und Kleiderstange, Server als Radar mit allen Servern als Punkte, Profile als Regal, Mods als Werkbank, Capes als Fahnenwand, Welten als Kartentisch, Clips als Kino, Logs als Kontrollraum. \u00dcberall neue Animationen, alles eckig wie gewohnt. Dazu Rust Performance 3.1: Spieler und Mobs hinter W\u00e4nden werden nicht mehr gezeichnet.",
-  "pub_date": "2026-11-17T13:25:20Z",
+  "pub_date": "2026-11-17T17:55:57Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTBJZndJQ0dGWlpvUGNBbGVhM210d3cwdGRFek4vWFpZWERncVlYbXNsRk5HVzlZcTNaZU4rZWQxSTE3enhzQktibncveC90WFF1ZTlYakp4RmRmQUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTIxOTIwCWZpbGU6UnVzdCBDbGllbnRfNi4yLjBfeDY0LXNldHVwLmV4ZQpwalYzZGV2WUx3NDVzcnl6QS9zUjMwSDRUR1JJajNXcjYzc0JFcFUydEppWG5LZmVMeTZLODNpV0kxZ1BFUm1RY1JJS0JOTmhvdG9PVmJrVHJlZExEZz09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.2.0-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTThsZjM2b1hVK2VnY2dEQU9NcmJFaDN5cWxsdTYxYWphRk45WEVEWjFULzNyRmFlZHRZNmJ2Uk1LV3h1TVlQREFiNFd2UER1NnJ6c054VFZzMEhnUVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTM4MTU3CWZpbGU6UnVzdCBDbGllbnRfNy4wLjBfeDY0LXNldHVwLmV4ZQppSmxRTzAyT2ViSTZsbVlpblFyeitPeVJKOGJhdlA3ZFh6ZkVSWWlJNUtBQ0ttdE1zMDdRMDZ4RFkvVmRPRWlvODVtdTluOTBVOXNCQUR6ZnNOYVlDdz09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-7.0.0-setup.exe"
     }
   }
 }
