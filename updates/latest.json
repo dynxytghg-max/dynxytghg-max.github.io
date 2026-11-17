@@ -1,11 +1,11 @@
 {
-  "version": "6.1.1",
-  "notes": "Launcher 6.1.1: Beim Wechsel der Minecraft-Version werden die Mods jetzt viel schneller umgestellt \u2013 alle gleichzeitig, und Rust-Client-Mod und Rust Performance werden schon vorgeladen, sobald du eine Version anklickst. Dazu die Mod 3.9.1: Pilz und Baumstamm bewegen ihre Arme jetzt nat\u00fcrlich.",
-  "pub_date": "2026-11-16T23:23:07Z",
+  "version": "6.2.0",
+  "notes": "Launcher 6.2.0: Neue Absturz-Hilfe \u2013 st\u00fcrzt Minecraft ab, sagt der Launcher jetzt immer, woran es lag: zu viele Wesen in der N\u00e4he, Grafiktreiber, Daten vom Server, eine bestimmte Mod oder Java selbst. Mit Kn\u00f6pfen zum Beheben, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten. Dazu: Xbox-Anmeldung klappt auch, wenn die PC-Uhr falsch geht.",
+  "pub_date": "2026-11-17T12:24:15Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTThTZHpYMnRhWDU1YmsvWXJTOGl2ci93N0FxSDlxNlB1NXQxSUZ3ZGFFQUtDcGJRQzY1dnljTTdNTXB0VEZxNkJVZ3VPb2dibnV4czZVa1dhdTJzMlFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODcxMzg3CWZpbGU6UnVzdCBDbGllbnRfNi4xLjFfeDY0LXNldHVwLmV4ZQovNW9BYkJSMmw5RFJxS3AvNzZzQkI5bU1KNjRFMTcwQ0FJLzBIY1pXMVNNem8wSU5yb0N2cExLWW8vQnROOEZ0M1M0eE1QSVRmMEMzckV5VjhmRGVEZz09Cg==",
-      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.1.1-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTS82SjBFVEJmZnpsMGUycVZ0VjVOU0NkeUwwTUlMV0JzbU9qWHZ2VHRXN1FEKzdTN2w5K1V6NDlPd2k3elVvNk9EclBZYklHRFB1VFVYdFZ2b0QwcWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTE4MjU3CWZpbGU6UnVzdCBDbGllbnRfNi4yLjBfeDY0LXNldHVwLmV4ZQo5b0dMb1Fzb0RxeXRKbU9td1RsTVhwRHYxaDNNNTBFNERqL0M4UU43YmsrQzBzVE96cjNGRkVEdWtZM2tUNmtRN2JJOStOeTd0Zms4L3VJL2pSK3RBQT09Cg==",
+      "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.2.0-setup.exe"
     }
   }
 }

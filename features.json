@@ -1,65 +1,84 @@
 {
   "updated": "2026-11-16",
   "launcher": {
-    "version": "6.1.1",
-    "file": "downloads/BambuBay-Launcher-6.1.1.zip",
-    "size": "18,4 MB",
-    "notes": "Launcher 6.1.1: Beim Wechsel der Minecraft-Version werden die Mods jetzt viel schneller umgestellt – alle gleichzeitig, und Rust-Client-Mod und Rust Performance werden schon vorgeladen, sobald du eine Version anklickst. Dazu die Mod 3.9.1: Pilz und Baumstamm bewegen ihre Arme jetzt natürlich.",
-    "setup": "downloads/Rust-Client-Setup-6.1.1.exe",
-    "setupSize": "18,4 MB",
-    "sha256": "aaa6c26cb386c2bf5cbd9cc1f423c54b729df5737fd2c22aa2cb463d46d4ec9c"
+    "version": "6.2.0",
+    "file": "downloads/BambuBay-Launcher-6.2.0.zip",
+    "size": "18,5 MB",
+    "notes": "Launcher 6.2.0: Neue Absturz-Hilfe – stürzt Minecraft ab, sagt der Launcher jetzt immer, woran es lag: zu viele Wesen in der Nähe, Grafiktreiber, Daten vom Server, eine bestimmte Mod oder Java selbst. Mit Knöpfen zum Beheben, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten. Dazu: Xbox-Anmeldung klappt auch, wenn die PC-Uhr falsch geht.",
+    "setup": "downloads/Rust-Client-Setup-6.2.0.exe",
+    "setupSize": "18,5 MB",
+    "sha256": "9a132ad587a6d5c60c298bb174c86eea457953ef0d7e73525f135f4c8ff09419"
   },
   "mod": {
-    "version": "3.14.3",
-    "minecraft": "1.21.4 – 1.21.10",
-    "file": "downloads/BambuBay-Mod-3.14.3.zip",
-    "size": "57,6 MB",
-    "jar": "downloads/BambuBayClient-3.14.2.jar",
-    "sha1": "5040f4ee7e25dcb40680f654c1869f1be9f58b3f",
+    "version": "3.15.0",
+    "minecraft": "1.21.4 – 1.21.11",
+    "file": "downloads/BambuBay-Mod-3.15.0.zip",
+    "size": "71,6 MB",
+    "jar": "downloads/BambuBayClient-3.15.0.jar",
+    "sha1": "495a611a416cacf35ff9c5ed0a1ef34a65a60ad5",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.14.2+mc1.21.9-1.21.10.jar",
-        "sha1": "7a1a7059fbbf12f34e9c54252835b13c0bfcf3b2"
+        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.9-1.21.10.jar",
+        "sha1": "621c143f82b928c76dbddff0e200de5d7670ec99"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.14.2+mc1.21.6-1.21.8.jar",
-        "sha1": "44fef21e372d75e8dc1edf7ef76dac8d68330f3f"
+        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.6-1.21.8.jar",
+        "sha1": "52ce18cfea06965acf6fee2f6a3061f3fdd1c593"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.14.2+mc1.21.5.jar",
-        "sha1": "62cf5dabf6bffa1432351180f6dd0adaac930bd8"
+        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.5.jar",
+        "sha1": "fca340d081b568652c682ea577a069566ea2ecd7"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.14.2+mc1.21.4.jar",
-        "sha1": "2ca3c36ad2a7aefdfefdf2d089efe224d3a85de0"
+        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.4.jar",
+        "sha1": "c8993ed738689ec00b40f40f200bc1808423906e"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.14.2+mc1.21.11.jar",
-        "sha1": "5040f4ee7e25dcb40680f654c1869f1be9f58b3f"
+        "jar": "downloads/BambuBayClient-3.15.0+mc1.21.11.jar",
+        "sha1": "495a611a416cacf35ff9c5ed0a1ef34a65a60ad5"
       }
     ]
   },
   "items": [
     {
+      "date": "2026-11-17",
+      "tag": "Beta",
+      "title": "Haustier-Kampf",
+      "text": "Rundenkämpfe im Retro-Stil mit deinem Haustier: Textbox, Lebensbalken, eigene 8-Bit-Töne. Sechs Elemente, Skillpunkte pro Level und neue Attacken ab Level 3 bis 30. Gegen wilde Haustiere oder Freunde, Siege bringen XP."
+    },
+    {
+      "date": "2026-11-17",
+      "tag": "Neu",
+      "title": "Absturz-Hilfe 2.0",
+      "text": "Stürzt Minecraft ab, erklärt der Launcher jetzt immer genau, warum: zu viele Wesen auf großen Servern, Grafiktreiber, Server-Daten, eine bestimmte Mod oder Java selbst. Ein Klick behebt es oft direkt, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten."
+    },
+    {
+      "date": "2026-11-17",
+      "tag": "Beta",
+      "title": "Graffiti: Schriftzüge und Schablonen",
+      "text": "Namen oder Crew-Tag eintippen, Schrift, Höhe und Rand wählen und mit einem Rechtsklick an die Wand sprühen. Eigene PNG-Bilder lassen sich als Schablone in Originalfarben sprühen. Alte Graffiti verblassen mit der Zeit.",
+      "image": "assets/graffiti-314.webp"
+    },
+    {
       "date": "2026-11-16",
       "tag": "Neu",
       "title": "Graffiti: sprühen wie in echt",
-      "text": "Mit J Farbe wählen, eigene Spraydose in die Hand nehmen und mit gedrückter rechter Maustaste an Wände sprühen – weich wie echte Sprühfarbe, mit Sprühnebel und Farbnasen. Alle Rust-Client-Spieler sehen es, auch wer später kommt.",
+      "text": "Mit I Farbe wählen, eigene Spraydose in die Hand nehmen und mit gedrückter rechter Maustaste an Wände sprühen – weich wie echte Sprühfarbe, mit Sprühnebel und Farbnasen. Alle Rust-Client-Spieler sehen es, auch wer später kommt.",
       "image": "assets/graffiti-314.webp"
     },
     {
@@ -385,43 +404,43 @@
   ],
   "downloadBase": "https://dynxytghg-max.github.io/",
   "perf": {
-    "version": "2.0.0",
+    "version": "3.0.0",
     "minecraft": "1.21.4 – 1.21.11",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/RustPerformance-2.0.0+mc1.21.9-1.21.10.jar",
-        "sha1": "dc247021b6f03580ac9ebf8dad8bd2c42746fb1e"
+        "jar": "downloads/RustPerformance-3.0.0+mc1.21.9-1.21.10.jar",
+        "sha1": "f118d65afc3a8a38aae1c80207fee5c30081e1f5"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/RustPerformance-2.0.0+mc1.21.6-1.21.8.jar",
-        "sha1": "d596c982017bce84945e1276b840e980229f57e6"
+        "jar": "downloads/RustPerformance-3.0.0+mc1.21.6-1.21.8.jar",
+        "sha1": "456b3a956defb697ce68f72ee26c989dbd80ee5d"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/RustPerformance-2.0.0+mc1.21.5.jar",
-        "sha1": "346e9e6dd766062ed488f2578a1c54383612c1d6"
+        "jar": "downloads/RustPerformance-3.0.0+mc1.21.5.jar",
+        "sha1": "9bc360933d364f38eb826754fe7f07398299ee28"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/RustPerformance-2.0.0+mc1.21.4.jar",
-        "sha1": "907786513c2d0ea2d5ba567c9b8d17533684bf7c"
+        "jar": "downloads/RustPerformance-3.0.0+mc1.21.4.jar",
+        "sha1": "f159b2eb2143e74dbdb8d697f225a2458e606f29"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/RustPerformance-2.0.0+mc1.21.11.jar",
-        "sha1": "5978bd6ad2b3070704569f57f0265d571ab0550b"
+        "jar": "downloads/RustPerformance-3.0.0+mc1.21.11.jar",
+        "sha1": "0bd7332e835ecff33cbb6a5a5ad544c2464db49b"
       }
     ]
   }
