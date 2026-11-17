@@ -7,7 +7,7 @@
     "notes": "Launcher 6.2.0: Neue Absturz-Hilfe – stürzt Minecraft ab, sagt der Launcher jetzt immer, woran es lag: zu viele Wesen in der Nähe, Grafiktreiber, Daten vom Server, eine bestimmte Mod oder Java selbst. Mit Knöpfen zum Beheben, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten. Dazu: Xbox-Anmeldung klappt auch, wenn die PC-Uhr falsch geht.",
     "setup": "downloads/Rust-Client-Setup-6.2.0.exe",
     "setupSize": "18,5 MB",
-    "sha256": "98612a056864379a8967b6d0de85ce81129e0e575a133a6b677364a5300dd128"
+    "sha256": "c915c3880ad0c22115102cc1c08062baec2baed4b4c982f38c410796752e1d1d"
   },
   "mod": {
     "version": "3.15.0",

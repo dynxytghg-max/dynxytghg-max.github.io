@@ -1,10 +1,10 @@
 {
   "version": "6.2.0",
   "notes": "Launcher 6.2.0: Neue Absturz-Hilfe \u2013 st\u00fcrzt Minecraft ab, sagt der Launcher jetzt immer, woran es lag: zu viele Wesen in der N\u00e4he, Grafiktreiber, Daten vom Server, eine bestimmte Mod oder Java selbst. Mit Kn\u00f6pfen zum Beheben, z. B. Wesen-Sichtweite senken oder die schuldige Mod ausschalten. Dazu: Xbox-Anmeldung klappt auch, wenn die PC-Uhr falsch geht.",
-  "pub_date": "2026-11-17T13:06:03Z",
+  "pub_date": "2026-11-17T13:25:20Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXpaL3ZhNXVyc2dyU2dXSkJrcUJubGU3Y0pJSHpXUGR0dkxNbllFNlpsN0llcnFESWFSUk10U05mbHBveDZTQW9tTjQ0YkZlWHNxaWFjSnBkNGdmTndrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTIwNzYzCWZpbGU6UnVzdCBDbGllbnRfNi4yLjBfeDY0LXNldHVwLmV4ZQpQeGVaSWJJY1VUVVVDeTUzZWZob3dJWjE0WDdkOGRlQXVIYWRWNEI4NlJMa3hSY2pRMDdNWjQ3dm9EdFpJQVlRR1JnUHNRamsvaC9wUmZzTFZFRkdDQT09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTBJZndJQ0dGWlpvUGNBbGVhM210d3cwdGRFek4vWFpZWERncVlYbXNsRk5HVzlZcTNaZU4rZWQxSTE3enhzQktibncveC90WFF1ZTlYakp4RmRmQUFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTIxOTIwCWZpbGU6UnVzdCBDbGllbnRfNi4yLjBfeDY0LXNldHVwLmV4ZQpwalYzZGV2WUx3NDVzcnl6QS9zUjMwSDRUR1JJajNXcjYzc0JFcFUydEppWG5LZmVMeTZLODNpV0kxZ1BFUm1RY1JJS0JOTmhvdG9PVmJrVHJlZExEZz09Cg==",
       "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-6.2.0-setup.exe"
     }
   }
