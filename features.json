@@ -10,51 +10,57 @@
     "sha256": "09df73f3db35b5850448c9f0ff7c58fda2f3b01280705361043373997f5a830e"
   },
   "mod": {
-    "version": "3.17.1",
+    "version": "3.18.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.17.1.zip",
-    "size": "72,1 MB",
-    "jar": "downloads/BambuBayClient-3.17.1.jar",
-    "sha1": "6f22c69a9312b8932a6a8ffc27eb8be9ed03d8f2",
+    "file": "downloads/BambuBay-Mod-3.18.0.zip",
+    "size": "72,2 MB",
+    "jar": "downloads/BambuBayClient-3.18.0.jar",
+    "sha1": "b3dfe534d8694465da9795eb47b67e30553f5235",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.9-1.21.10.jar",
-        "sha1": "b9e139fc8df4b185e0674cf4a4c9bd771306a4d6"
+        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.9-1.21.10.jar",
+        "sha1": "125ae4d22b2710d8824328ccf1a214470cbaa2ca"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.6-1.21.8.jar",
-        "sha1": "c6a224a2991f1971edee4b957e4ddf6f7b0f1549"
+        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.6-1.21.8.jar",
+        "sha1": "6fe4d69967670d1ae20c7a2b95274631c59cc2d3"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.5.jar",
-        "sha1": "82a2d9f2fdfe3ea7ab9b80b2b2a2544531134269"
+        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.5.jar",
+        "sha1": "efd29cbd8cd67b7791ca5df85689f43a0d8c055b"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.4.jar",
-        "sha1": "7c732bed15fe729ca2dbd33eed56847771baa24d"
+        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.4.jar",
+        "sha1": "ff08cfebd3c394ae91e2215de9375a92ae00004b"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.17.1+mc1.21.11.jar",
-        "sha1": "6f22c69a9312b8932a6a8ffc27eb8be9ed03d8f2"
+        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.11.jar",
+        "sha1": "b3dfe534d8694465da9795eb47b67e30553f5235"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-17",
+      "tag": "Beta",
+      "title": "Haustier-Kampf 2.0",
+      "text": "Wie in Pokémon: Attacken haben AP, die stärksten einen Haken (aussetzen, aufladen, Rückstoß). Statusprobleme wie Verbrennung, Gift, Paralyse und Schlaf. Über 60 Attacken, jedes Haustier mit eigener Lernliste und zwei Spezial-Attacken. Neue Kampfplätze und Effekte."
+    },
     {
       "date": "2026-11-17",
       "tag": "Neu",
