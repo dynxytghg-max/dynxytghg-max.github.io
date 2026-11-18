@@ -1,10 +1,10 @@
 {
   "version": "7.2.0",
   "notes": "Launcher 7.2: Neuer Bereich Capes \u203a Emote Contest \u2013 eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu fl\u00fcssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unsch\u00e4rfe.",
-  "pub_date": "2026-11-18T02:01:15Z",
+  "pub_date": "2026-11-18T02:09:38Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTXpzYTRHbnRWMWl0QjlHRjZZYU9YdCs5U1h2MnVOakRDNEF1cWFTeFZiRm1LcHUrWURxcEc4N0pCNWJpTlN4Z2NnVUs5RE5LUTcvSEZmZGtVUUVMa3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTY3Mjc2CWZpbGU6UnVzdCBDbGllbnRfNy4yLjBfeDY0LXNldHVwLmV4ZQpnWkdpZjZjVktRbDlXUUJrZktDZnFObTJyVUxwd0xZVzJ1SnpKTGJDQjlYc2Y1R2xsSldHcmJ5ZCt6TmM2Vi9xQnBoTTlWbDlLQkNsaEJTbUx0MlFBZz09Cg==",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSNmp4RE5MbmErTTJlZE80UC9hK3FNWXNtaVNxaS9sUmJVSlhaS1JadUp6TzI2SHkwS0pJTERXaXVGQlB1NDl1NlA5bHA2TFdCUTRtUjVmbFhJU0FScnNIMDJFbWVuRUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTY3Nzc4CWZpbGU6UnVzdCBDbGllbnRfNy4yLjBfeDY0LXNldHVwLmV4ZQpKd08yMVdZWlplMWJyaHh5eVF0aDYyT2VBTDM4Q3ZDdURMNGRQR2dmZnk3QWRaOEM1MnJvcEJVTW56ODRSMFI0aUExUVVkeFN2VTFsVDZKeWxnU2hDQT09Cg==",
       "url": "https://dynxytghg-max.github.io/updates/BambuBay-Launcher-7.2.0-setup.exe"
     }
   }

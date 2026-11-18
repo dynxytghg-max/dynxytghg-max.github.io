@@ -7,7 +7,7 @@
     "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
     "setup": "downloads/Rust-Client-Setup-7.2.0.exe",
     "setupSize": "18,7 MB",
-    "sha256": "288ff5f1a5f22cd694df018fe87cdb9a2992fbf891b162a8c8373e9c8b3f9329"
+    "sha256": "24b07350060b175a5c3cf63ecee892b3c4f4b5ed83a24c7e75cb6032efe2bb70"
   },
   "mod": {
     "version": "3.19.0",
