@@ -1,60 +1,66 @@
 {
   "updated": "2026-11-18",
   "launcher": {
-    "version": "7.2.0",
-    "file": "downloads/BambuBay-Launcher-7.2.0.zip",
+    "version": "7.2.1",
+    "file": "downloads/BambuBay-Launcher-7.2.1.zip",
     "size": "18,8 MB",
     "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
-    "setup": "downloads/Rust-Client-Setup-7.2.0.exe",
+    "setup": "downloads/Rust-Client-Setup-7.2.1.exe",
     "setupSize": "18,8 MB",
-    "sha256": "184263208182ae335118e811d7fa3dcc5f76c80e34541c0db233df5be876cce5"
+    "sha256": "9d8fec151ac0568b69a1b533b6619d9598b9b06493ab3931bb3406a5606cf039"
   },
   "mod": {
-    "version": "3.20.0",
+    "version": "3.20.1",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.20.0.zip",
+    "file": "downloads/BambuBay-Mod-3.20.1.zip",
     "size": "72,7 MB",
-    "jar": "downloads/BambuBayClient-3.20.0.jar",
-    "sha1": "d2e6662a3653f2d2663af2702b853f6a4c36181b",
+    "jar": "downloads/BambuBayClient-3.20.1.jar",
+    "sha1": "9e8f3d3a67e448572b4ed9e41f89543fd20b6bab",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.9-1.21.10.jar",
-        "sha1": "06d9d4e11e527b0bd9667d115746393e091ba9ce"
+        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.9-1.21.10.jar",
+        "sha1": "0ac055e6212d85ed4e39967511cc5a727a15d65c"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.6-1.21.8.jar",
-        "sha1": "624b3c5639375b9721edd907901a2173480729e6"
+        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.6-1.21.8.jar",
+        "sha1": "df0022199ce4bd9b6af5ff20794142ff0a387856"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.5.jar",
-        "sha1": "790d6b1f829a7b2ef94037bd9f44520f8f7b7357"
+        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.5.jar",
+        "sha1": "ebcb86193dd08b31549ce644dd858c443ec197ae"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.4.jar",
-        "sha1": "69df981243c80da1190aa6c54bd2efdb9fc42ebd"
+        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.4.jar",
+        "sha1": "0bec42fd0307bd406bc8c783a4a11ad03c70c4f3"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.11.jar",
-        "sha1": "d2e6662a3653f2d2663af2702b853f6a4c36181b"
+        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.11.jar",
+        "sha1": "9e8f3d3a67e448572b4ed9e41f89543fd20b6bab"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-18",
+      "tag": "Fix",
+      "title": "Java startet wieder",
+      "text": "Bei manchen Spielern brach Java sofort mit „No leading - on line 1 of …jvm.cfg“ (Code -1073740791) ab: Beim Herunterladen konnten zwei Java-Dateien vertauscht werden. Launcher 7.2.1 prüft Java bei jedem Start und repariert kaputte Dateien automatisch."
+    },
     {
       "date": "2026-11-18",
       "tag": "Neu",
