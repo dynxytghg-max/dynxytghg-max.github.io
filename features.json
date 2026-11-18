@@ -1,60 +1,66 @@
 {
   "updated": "2026-11-17",
   "launcher": {
-    "version": "7.1.1",
-    "file": "downloads/BambuBay-Launcher-7.1.1.zip",
+    "version": "7.2.0",
+    "file": "downloads/BambuBay-Launcher-7.2.0.zip",
     "size": "18,7 MB",
-    "notes": "Launcher 7.1.1: flüssiger – der Hintergrund läuft jetzt mit 60 Bildern pro Sekunde und braucht dabei rund 15-mal weniger Rechenzeit, das Dock ohne teure Unschärfe, die 3D-Figur schont auf hochauflösenden Bildschirmen die Grafikkarte. Das Haustier neben der Figur ist wieder weg.",
-    "setup": "downloads/Rust-Client-Setup-7.1.1.exe",
+    "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
+    "setup": "downloads/Rust-Client-Setup-7.2.0.exe",
     "setupSize": "18,7 MB",
-    "sha256": "4d98dc24a38482a3b17cc9e350afe9a66e1cdf73538e305109df16d42a6b8b51"
+    "sha256": "288ff5f1a5f22cd694df018fe87cdb9a2992fbf891b162a8c8373e9c8b3f9329"
   },
   "mod": {
-    "version": "3.18.0",
+    "version": "3.19.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.18.0.zip",
-    "size": "72,2 MB",
-    "jar": "downloads/BambuBayClient-3.18.0.jar",
-    "sha1": "684fb239e5221fccf85f800ba255b22778f48b52",
+    "file": "downloads/BambuBay-Mod-3.19.0.zip",
+    "size": "72,4 MB",
+    "jar": "downloads/BambuBayClient-3.19.0.jar",
+    "sha1": "d8e7652af6e65474eb7f4db46b3dbc61eb44d501",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.9-1.21.10.jar",
-        "sha1": "125ae4d22b2710d8824328ccf1a214470cbaa2ca"
+        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.9-1.21.10.jar",
+        "sha1": "f43ba3a478b9ab66f1e0934a826fc9975e85eed6"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.6-1.21.8.jar",
-        "sha1": "6fe4d69967670d1ae20c7a2b95274631c59cc2d3"
+        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.6-1.21.8.jar",
+        "sha1": "5ae98673354699fc380a0bebacddb7315af32b07"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.5.jar",
-        "sha1": "efd29cbd8cd67b7791ca5df85689f43a0d8c055b"
+        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.5.jar",
+        "sha1": "2c660b76fe5e931d3c052af7a5d1f20aceffaf41"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.4.jar",
-        "sha1": "ff08cfebd3c394ae91e2215de9375a92ae00004b"
+        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.4.jar",
+        "sha1": "7c3700d06f1b7322a43c6b52f18bf864f11db5a6"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.18.0+mc1.21.11.jar",
-        "sha1": "684fb239e5221fccf85f800ba255b22778f48b52"
+        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.11.jar",
+        "sha1": "d8e7652af6e65474eb7f4db46b3dbc61eb44d501"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-18",
+      "tag": "Neu",
+      "title": "Emote-Contest",
+      "text": "Bau im Emote-Editor ein eigenes Emote und reich es beim Contest ein. Alle können es ausprobieren und liken – die besten kommen in den Shop, für jeden unter Emotes › Community. Auch im Launcher unter Capes › Emote Contest."
+    },
     {
       "date": "2026-11-17",
       "tag": "Neu",
