@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "launcher": {
     "version": "7.2.0",
     "file": "downloads/BambuBay-Launcher-7.2.0.zip",
@@ -10,51 +10,69 @@
     "sha256": "24b07350060b175a5c3cf63ecee892b3c4f4b5ed83a24c7e75cb6032efe2bb70"
   },
   "mod": {
-    "version": "3.19.0",
+    "version": "3.20.0",
     "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.19.0.zip",
-    "size": "72,4 MB",
-    "jar": "downloads/BambuBayClient-3.19.0.jar",
-    "sha1": "d8e7652af6e65474eb7f4db46b3dbc61eb44d501",
+    "file": "downloads/BambuBay-Mod-3.20.0.zip",
+    "size": "72,7 MB",
+    "jar": "downloads/BambuBayClient-3.20.0.jar",
+    "sha1": "d2e6662a3653f2d2663af2702b853f6a4c36181b",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.9-1.21.10.jar",
-        "sha1": "f43ba3a478b9ab66f1e0934a826fc9975e85eed6"
+        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.9-1.21.10.jar",
+        "sha1": "06d9d4e11e527b0bd9667d115746393e091ba9ce"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.6-1.21.8.jar",
-        "sha1": "5ae98673354699fc380a0bebacddb7315af32b07"
+        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.6-1.21.8.jar",
+        "sha1": "624b3c5639375b9721edd907901a2173480729e6"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.5.jar",
-        "sha1": "2c660b76fe5e931d3c052af7a5d1f20aceffaf41"
+        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.5.jar",
+        "sha1": "790d6b1f829a7b2ef94037bd9f44520f8f7b7357"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.4.jar",
-        "sha1": "7c3700d06f1b7322a43c6b52f18bf864f11db5a6"
+        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.4.jar",
+        "sha1": "69df981243c80da1190aa6c54bd2efdb9fc42ebd"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.19.0+mc1.21.11.jar",
-        "sha1": "d8e7652af6e65474eb7f4db46b3dbc61eb44d501"
+        "jar": "downloads/BambuBayClient-3.20.0+mc1.21.11.jar",
+        "sha1": "d2e6662a3653f2d2663af2702b853f6a4c36181b"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-18",
+      "tag": "Neu",
+      "title": "Rusti im Spiel",
+      "text": "Rusti schwebt jetzt als kleiner Roboter-Krebs neben dir. Halte R gedrückt und sprich mit ihm – oder schau ihn mit Simple Voice Chat einfach an und rede. Er antwortet mit Roboterstimme, kennt deine Lage im Spiel (Leben, Nacht, Monster), tanzt, winkt oder wartet auf dich."
+    },
+    {
+      "date": "2026-11-18",
+      "tag": "Verbessert",
+      "title": "Watchparty mit 60 FPS",
+      "text": "Videos und Streams laufen jetzt flüssig mit bis zu 60 Bildern pro Sekunde und hängen nicht mehr: YouTube wird in Blöcken geladen, Springen dauert nur noch etwa eine Sekunde, die Farben sind kräftiger."
+    },
+    {
+      "date": "2026-11-18",
+      "tag": "Fix",
+      "title": "Clip-Puffer räumt auf",
+      "text": "Mit AMD- und Intel-Grafik konnte der Puffer der Clip-Aufnahme (F8) immer weiter wachsen und nach einem Absturz liegen bleiben. Jetzt bleibt er klein, alte Puffer werden automatisch gelöscht."
+    },
     {
       "date": "2026-11-18",
       "tag": "Neu",
