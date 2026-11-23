@@ -1,13 +1,13 @@
 {
   "updated": "2026-11-23",
   "launcher": {
-    "version": "7.2.1",
-    "file": "downloads/BambuBay-Launcher-7.2.1.zip",
+    "version": "7.3.0",
+    "file": "downloads/BambuBay-Launcher-7.3.0.zip",
     "size": "18,8 MB",
     "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
-    "setup": "downloads/Rust-Client-Setup-7.2.1.exe",
+    "setup": "downloads/Rust-Client-Setup-7.3.0.exe",
     "setupSize": "18,8 MB",
-    "sha256": "9d8fec151ac0568b69a1b533b6619d9598b9b06493ab3931bb3406a5606cf039"
+    "sha256": "0ffacd87b5cdcbbfae46247ac126065c74587ff415a4e2a9a44084502580104b"
   },
   "mod": {
     "version": "3.20.1",
