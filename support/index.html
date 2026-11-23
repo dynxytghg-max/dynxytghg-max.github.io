@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Logs senden · Rust Client</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Logs mit einem Klick aus dem Rust-Client-Launcher an dein Support-Ticket schicken.">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Seite für den Knopf „Logs senden“ aus einem Discord-Ticket: öffnet den Launcher (bambubay://logs). */
+:root {
+  color-scheme: dark;
+  --night: #08090c;
+  --forest: #0f1116;
+  --moss: #161922;
+  --line: rgba(180, 195, 225, .12);
+  --line-strong: rgba(180, 195, 225, .24);
+  --leaf: #8b9dc3;
+  --text: #eef1f6;
+  --muted: #a3abbb;
+  --dim: #6b7385;
+  --ok: #4ade80;
+  --bad: #f87171;
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--night); color: var(--text); font: 400 16px/1.6 var(--font-body);
+  display: grid; place-items: center; padding: 24px 16px; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background: radial-gradient(900px 500px at 85% -10%, rgba(139, 157, 195, .14), transparent 60%),
+              radial-gradient(700px 500px at -10% 90%, rgba(139, 157, 195, .10), transparent 60%); }
+a { color: var(--leaf); text-underline-offset: 3px; }
+.card { width: min(560px, 100%); background: var(--forest); border: 1px solid var(--line-strong); box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  animation: rise .5s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+.head { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); background: rgba(139,157,195,.07); }
+.head img { width: 34px; height: 34px; image-rendering: pixelated; }
+.head h1 { font: 700 20px/1.2 var(--font-pixel); letter-spacing: .04em; margin: 0; }
+.head span { color: var(--dim); font-size: 13px; }
+.body { padding: 22px 20px 24px; }
+.status { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); background: var(--moss); margin-bottom: 18px; }
+.status .icon { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border: 1px solid rgba(139,157,195,.4); color: var(--leaf); }
+.spin { width: 18px; height: 18px; border: 2px solid rgba(139,157,195,.3); border-top-color: var(--leaf); border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.status b { display: block; font-family: var(--font-pixel); font-size: 17px; font-weight: 600; }
+.status small { color: var(--muted); font-size: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 18px; font: 600 16px var(--font-pixel);
+  letter-spacing: .05em; color: #0b0d12; background: var(--leaf); border: 0; cursor: pointer; text-decoration: none; transition: transform .12s, filter .12s; }
+.btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+.steps { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: s; }
+.steps li { counter-increment: s; position: relative; padding: 0 0 12px 38px; color: var(--muted); }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 26px; height: 26px; display: grid; place-items: center;
+  font: 700 14px var(--font-pixel); color: var(--leaf); border: 1px solid rgba(139,157,195,.4); }
+.steps li b { color: var(--text); font-weight: 600; }
+details { margin-top: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.02); }
+details summary { cursor: pointer; padding: 12px 14px; font-weight: 600; color: var(--text); }
+details div { padding: 0 14px 14px; color: var(--muted); font-size: 15px; }
+code { font: 500 13px var(--font-mono); background: var(--moss); border: 1px solid var(--line); padding: 2px 6px; word-break: break-all; }
+.safe { display: flex; gap: 10px; margin-top: 18px; font-size: 13px; color: var(--dim); }
+.bad .icon { border-color: rgba(248,113,113,.5); color: var(--bad); }
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="head">
+    <img src="../assets/logo.png" alt="">
+    <div>
+      <h1>Logs senden</h1>
+      <span>Rust Client Support</span>
+    </div>
+  </div>
+  <div class="body">
+    <div id="ok">
+      <div class="status">
+        <div class="icon"><div class="spin"></div></div>
+        <div>
+          <b>Launcher wird geöffnet …</b>
+          <small>Erlaube im Browser „Rust Client öffnen“, falls gefragt.</small>
+        </div>
+      </div>
+      <a id="open" class="btn" href="#">Launcher öffnen</a>
+      <ol class="steps">
+        <li>Der <b>Rust-Client-Launcher</b> öffnet sich und zeigt dir, was geschickt wird.</li>
+        <li>Klick dort auf <b>„Senden“</b>.</li>
+        <li>Fertig – die Logs erscheinen in deinem <b>Discord-Ticket</b>.</li>
+      </ol>
+      <details>
+        <summary>Der Launcher öffnet sich nicht?</summary>
+        <div>
+          <p>Hast du den Rust-Client-Launcher installiert? Falls nicht: <a href="../">hier herunterladen</a>, einmal starten und dann noch mal auf „Launcher öffnen“ klicken.</p>
+          <p>Startet der Launcher gar nicht, schick die Logs von Hand: Drück <b>Windows-Taste + R</b>, gib <code>%APPDATA%\.bambubay\profiles</code> ein, öffne den Ordner deines Profils, dann <code>logs</code>, und zieh die Datei <code>latest.log</code> in dein Ticket.</p>
+        </div>
+      </details>
+      <p class="safe">🔒 Dein Windows-Benutzername, E-Mail-Adressen und alle Anmelde-Daten werden vor dem Senden entfernt. Der Link gilt 24 Stunden.</p>
+    </div>
+    <div id="bad" class="hidden">
+      <div class="status bad">
+        <div class="icon">✕</div>
+        <div>
+          <b>Dieser Link ist ungültig</b>
+          <small>Bitte im Discord-Ticket noch mal auf „Logs senden“ klicken oder das Team um einen neuen Link bitten.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+(function () {
+  var code = new URLSearchParams(location.search).get("c") || "";
+  // Nur Codes vom Bot: <Kanal>.<Ablauf>.<Unterschrift>
+  var m = /^(\d{5,25})\.(\d{9,11})\.[A-Za-z0-9_-]{22}$/.exec(code);
+  if (!m || Number(m[2]) * 1000 < Date.now()) {
+    document.getElementById("ok").classList.add("hidden");
+    document.getElementById("bad").classList.remove("hidden");
+    if (m) document.querySelector("#bad b").textContent = "Dieser Link ist abgelaufen";
+    return;
+  }
+  var link = "bambubay://logs?c=" + encodeURIComponent(code);
+  var btn = document.getElementById("open");
+  btn.href = link;
+  // #test: nur ansehen, nicht automatisch öffnen (Vorschau)
+  if (location.hash !== "#test") setTimeout(function () { location.href = link; }, 700);
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-23",
   "launcher": {
     "version": "7.2.1",
     "file": "downloads/BambuBay-Launcher-7.2.1.zip",
@@ -55,6 +55,12 @@
     ]
   },
   "items": [
+    {
+      "date": "2026-11-23",
+      "tag": "Neu",
+      "title": "Logs mit einem Klick",
+      "text": "Hast du ein Support-Ticket im Discord, kann das Team jetzt deine Logs anfordern: Klick auf „Logs senden“, der Launcher öffnet sich, zeigt dir was geschickt wird und schickt es nach deinem OK direkt ins Ticket – ohne Dateien suchen. Benutzername und Anmelde-Daten werden vorher entfernt."
+    },
     {
       "date": "2026-11-18",
       "tag": "Fix",
