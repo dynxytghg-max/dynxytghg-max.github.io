@@ -232,6 +232,7 @@ mark { background: rgba(139,157,195,.45); color: #fff; }
         $("who").classList.remove("hidden");
         return gate("Kein Zugriff", s.name + " ist kein Admin. Der Admin-Bereich ist nur für das Rust-Client-Team.", false);
       }
+      if (e.status === 404) return gate("Server noch nicht aktualisiert", "Der Rust-Client-Server kennt den Admin-Bereich noch nicht. Bitte „py cloud-server/deploy.py --live“ ausführen.", false);
       return gate("Fehler", "Der Server ist gerade nicht erreichbar.", false);
     }
     $("gate").classList.add("hidden");
