@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Admin · Rust Client</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* Admin-Bereich: Support-Logs aus Discord-Tickets ansehen. Daten nur für Admins (prüft der Server). */
+:root {
+  color-scheme: dark;
+  --night: #08090c; --forest: #0f1116; --moss: #161922; --moss2: #1c2029;
+  --line: rgba(180, 195, 225, .12); --line-strong: rgba(180, 195, 225, .24);
+  --leaf: #8b9dc3; --text: #eef1f6; --muted: #a3abbb; --dim: #6b7385;
+  --err: #f87171; --warn: #facc15; --ok: #4ade80;
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Consolas", monospace;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--night); color: var(--text); font: 400 15px/1.55 var(--font-body); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+  background: radial-gradient(900px 500px at 90% -10%, rgba(139,157,195,.12), transparent 60%), radial-gradient(700px 500px at -10% 100%, rgba(139,157,195,.08), transparent 60%); }
+a { color: var(--leaf); }
+button { font: inherit; color: inherit; }
+.hidden { display: none !important; }
+.fade { animation: fade .35s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Kopfzeile */
+.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 14px; padding: 12px 20px;
+  background: rgba(8,9,12,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top img.logo { width: 30px; height: 30px; image-rendering: pixelated; }
+.top h1 { margin: 0; font: 700 19px var(--font-pixel); letter-spacing: .05em; }
+.top h1 span { color: var(--leaf); }
+.top .grow { flex: 1; }
+.who { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.who img { width: 28px; height: 28px; image-rendering: pixelated; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line-strong); background: var(--moss);
+  cursor: pointer; text-decoration: none; color: var(--text); font: 600 14px var(--font-body); transition: background .12s, border-color .12s, transform .12s; }
+.btn:hover { background: var(--moss2); border-color: rgba(139,157,195,.5); }
+.btn:active { transform: translateY(1px); }
+.btn.accent { background: var(--leaf); color: #0b0d12; border-color: var(--leaf); font-family: var(--font-pixel); letter-spacing: .04em; }
+.btn.accent:hover { filter: brightness(1.08); }
+.btn.on { border-color: var(--leaf); color: var(--leaf); }
+
+/* Anmelden */
+.gate { min-height: calc(100vh - 60px); display: grid; place-items: center; padding: 24px 16px; }
+.gate .card { width: min(460px, 100%); background: var(--forest); border: 1px solid var(--line-strong); padding: 26px; text-align: center; }
+.gate h2 { font: 700 22px var(--font-pixel); margin: 0 0 8px; }
+.gate p { color: var(--muted); margin: 0 0 18px; }
+.spin { width: 18px; height: 18px; border: 2px solid rgba(139,157,195,.3); border-top-color: var(--leaf); border-radius: 50%; animation: spin .8s linear infinite; display: inline-block; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.err { color: var(--err); margin-top: 12px; min-height: 1em; }
+
+/* Inhalt */
+main.app { display: grid; grid-template-columns: 360px 1fr; gap: 0; height: calc(100vh - 57px); }
+@media (max-width: 900px) { main.app { grid-template-columns: 1fr; height: auto; } .viewer { min-height: 70vh; } }
+.side { border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+.stat { padding: 14px 12px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font: 700 24px var(--font-pixel); color: var(--leaf); }
+.stat span { font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
+.side h3 { margin: 0; padding: 14px 16px 8px; font: 600 13px var(--font-body); color: var(--dim); text-transform: uppercase; letter-spacing: .08em; display: flex; justify-content: space-between; }
+.list { overflow-y: auto; flex: 1; }
+.item { display: block; width: 100%; text-align: left; padding: 12px 16px; border: 0; border-left: 3px solid transparent; border-bottom: 1px solid var(--line);
+  background: transparent; cursor: pointer; transition: background .12s, border-color .12s; animation: fade .3s both; }
+.item:hover { background: var(--moss); }
+.item.sel { background: var(--moss2); border-left-color: var(--leaf); }
+.item .row { display: flex; align-items: center; gap: 10px; }
+.item img { width: 26px; height: 26px; image-rendering: pixelated; flex: none; }
+.item .name { font-weight: 700; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.item .time { font-size: 12px; color: var(--dim); white-space: nowrap; }
+.item .diag { margin-top: 6px; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.item .chips { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font: 500 11px var(--font-mono); padding: 2px 6px; background: var(--moss); border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.empty { padding: 30px 18px; color: var(--dim); text-align: center; }
+
+.viewer { display: flex; flex-direction: column; min-height: 0; }
+.vhead { padding: 16px 20px; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.vhead img { width: 44px; height: 44px; image-rendering: pixelated; }
+.vhead h2 { margin: 0; font: 700 22px var(--font-pixel); }
+.vhead .sub { color: var(--dim); font-size: 13px; }
+.vhead .grow { flex: 1; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 20px 12px; border-bottom: 1px solid var(--line); }
+.diagbox { margin: 14px 20px 0; padding: 12px 14px; border: 1px solid rgba(139,157,195,.35); background: rgba(139,157,195,.07); }
+.diagbox b { font-family: var(--font-pixel); color: var(--leaf); letter-spacing: .04em; }
+.tools { display: flex; gap: 8px; padding: 12px 20px; align-items: center; flex-wrap: wrap; }
+.tools input { flex: 1; min-width: 160px; padding: 8px 12px; background: var(--moss); border: 1px solid var(--line-strong); color: var(--text); font: 14px var(--font-body); outline: none; }
+.tools input:focus { border-color: var(--leaf); }
+.count { font-size: 13px; color: var(--dim); }
+.sections { flex: 1; overflow-y: auto; padding: 0 20px 30px; }
+details.sec { border: 1px solid var(--line); margin-top: 10px; background: var(--forest); }
+details.sec > summary { cursor: pointer; padding: 10px 14px; font-weight: 600; display: flex; gap: 10px; align-items: center; list-style: none; }
+details.sec > summary::-webkit-details-marker { display: none; }
+details.sec > summary::before { content: "▸"; color: var(--leaf); transition: transform .15s; }
+details.sec[open] > summary::before { transform: rotate(90deg); }
+details.sec .badge { margin-left: auto; font: 500 12px var(--font-mono); }
+.badge .e { color: var(--err); } .badge .w { color: var(--warn); margin-left: 8px; }
+pre.log { margin: 0; padding: 10px 0; max-height: 70vh; overflow: auto; font: 400 12.5px/1.5 var(--font-mono); border-top: 1px solid var(--line); }
+pre.log div { padding: 0 14px 0 60px; position: relative; white-space: pre-wrap; word-break: break-word; }
+pre.log div::before { content: attr(data-n); position: absolute; left: 0; width: 46px; text-align: right; color: #3b4150; }
+pre.log div.e { background: rgba(248,113,113,.10); color: #fecaca; }
+pre.log div.w { background: rgba(250,204,21,.06); color: #fde68a; }
+pre.log div.hit { outline: 1px solid var(--leaf); }
+pre.log div.dimmed { display: none; }
+mark { background: rgba(139,157,195,.45); color: #fff; }
+.placeholder { display: grid; place-items: center; height: 100%; color: var(--dim); text-align: center; padding: 30px; }
+.placeholder b { display: block; font: 700 20px var(--font-pixel); color: var(--muted); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <img class="logo" src="../assets/logo.png" alt="">
+  <h1>Rust Client <span>Admin</span></h1>
+  <div class="grow"></div>
+  <div id="who" class="who hidden"><img id="who-head" alt=""><span id="who-name"></span><button id="logout" class="btn">Abmelden</button></div>
+</header>
+
+<section id="gate" class="gate">
+  <div class="card fade">
+    <h2 id="gate-title">Anmelden</h2>
+    <p id="gate-text">Der Admin-Bereich ist nur für das Rust-Client-Team. Melde dich mit dem Launcher an.</p>
+    <button id="login" class="btn accent">Mit Launcher anmelden</button>
+    <p id="gate-wait" class="hidden" style="margin-top:16px"><span class="spin"></span> Bestätige im Launcher … <a href="#" id="retry">Launcher nochmal öffnen</a></p>
+    <div id="gate-err" class="err"></div>
+  </div>
+</section>
+
+<main id="app" class="app hidden">
+  <aside class="side">
+    <div class="stats">
+      <div class="stat"><b id="st-online">–</b><span>Online</span></div>
+      <div class="stat"><b id="st-logs">–</b><span>Logs (7 Tage)</span></div>
+      <div class="stat"><b id="st-rusti">–</b><span>Rusti heute</span></div>
+    </div>
+    <h3>Support-Logs <button id="reload" class="btn" style="padding:2px 8px;font-size:12px">↻</button></h3>
+    <div id="list" class="list"></div>
+  </aside>
+  <section id="viewer" class="viewer">
+    <div class="placeholder"><div><b>Logs auswählen</b>Links ein Ticket anklicken. Neue Logs kommen per „📋 Logs anfordern“ im Discord-Ticket.</div></div>
+  </section>
+</main>
+
+<script>
+(function () {
+  // Server-Adresse (build.py setzt sie ein; ?server=… nur für Tests auf localhost)
+  var SERVER = "https://api.rustclient.dpdns.org";
+  var q = new URLSearchParams(location.search);
+  if (q.get("server") && /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) SERVER = q.get("server");
+  var KEY = "bambubay.web.session";
+  var GUILD = "1449791419672821843";
+  var $ = function (id) { return document.getElementById(id); };
+  var logs = [], current = null, poll = null, code = null;
+
+  function session() { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { return null; } }
+  function head(x) { return "https://mc-heads.net/avatar/" + encodeURIComponent(x || "Steve") + "/64"; }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function ago(ms) {
+    var s = Math.round((Date.now() - ms) / 1000);
+    if (s < 60) return "gerade eben";
+    if (s < 3600) return "vor " + Math.round(s / 60) + " Min.";
+    if (s < 86400) return "vor " + Math.round(s / 3600) + " Std.";
+    return new Date(ms).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" }) + " " + new Date(ms).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  }
+  async function call(path, body) {
+    var res = await fetch(SERVER + path, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(body || {}) });
+    var data = await res.json().catch(function () { return {}; });
+    if (!res.ok) { var e = new Error(data.error || "HTTP " + res.status); e.status = res.status; throw e; }
+    return data;
+  }
+
+  // ------------------------------------------------------------ Anmelden (wie auf der Startseite)
+  function gate(title, text, showLogin) {
+    $("app").classList.add("hidden");
+    $("gate").classList.remove("hidden");
+    $("gate-title").textContent = title;
+    $("gate-text").textContent = text;
+    $("login").classList.toggle("hidden", !showLogin);
+    $("gate-wait").classList.add("hidden");
+  }
+  function openLauncher() { location.href = "bambubay://web-login?code=" + code; }
+  async function login() {
+    $("gate-err").textContent = "";
+    try { code = (await call("/v1/web/start")).code; } catch (e) { $("gate-err").textContent = "Server nicht erreichbar."; return; }
+    $("login").classList.add("hidden");
+    $("gate-wait").classList.remove("hidden");
+    openLauncher();
+    var started = Date.now();
+    clearInterval(poll);
+    poll = setInterval(async function () {
+      if (Date.now() - started > 180000) { clearInterval(poll); gate("Anmelden", "Die Anmeldung ist abgelaufen. Bitte nochmal.", true); return; }
+      try {
+        var r = await call("/v1/web/poll", { code: code });
+        if (r.status === "approved") {
+          clearInterval(poll);
+          localStorage.setItem(KEY, JSON.stringify({ token: r.token, name: r.name, uuid: r.uuid }));
+          start();
+        } else if (r.status === "expired") { clearInterval(poll); gate("Anmelden", "Die Anmeldung ist abgelaufen. Bitte nochmal.", true); }
+      } catch (e) { /* weiter versuchen */ }
+    }, 1500);
+  }
+  $("login").onclick = login;
+  $("retry").onclick = function (e) { e.preventDefault(); openLauncher(); };
+  $("logout").onclick = async function () {
+    var s = session();
+    localStorage.removeItem(KEY);
+    if (s) call("/v1/web/logout", { token: s.token }).catch(function () {});
+    $("who").classList.add("hidden");
+    gate("Abgemeldet", "Du bist abgemeldet.", true);
+  };
+
+  async function start() {
+    var s = session();
+    if (!s) return gate("Anmelden", "Der Admin-Bereich ist nur für das Rust-Client-Team. Melde dich mit dem Launcher an.", true);
+    try {
+      var me = await call("/v1/web/admin/me", { token: s.token });
+      $("who-head").src = head(me.uuid || me.name);
+      $("who-name").textContent = me.name;
+      $("who").classList.remove("hidden");
+    } catch (e) {
+      if (e.status === 401) { localStorage.removeItem(KEY); return gate("Anmelden", "Bitte neu anmelden.", true); }
+      if (e.status === 403) {
+        $("who-head").src = head(s.uuid || s.name);
+        $("who-name").textContent = s.name;
+        $("who").classList.remove("hidden");
+        return gate("Kein Zugriff", s.name + " ist kein Admin. Der Admin-Bereich ist nur für das Rust-Client-Team.", false);
+      }
+      return gate("Fehler", "Der Server ist gerade nicht erreichbar.", false);
+    }
+    $("gate").classList.add("hidden");
+    $("app").classList.remove("hidden");
+    await loadList();
+    var m = /log=([0-9a-f]{16})/.exec(location.hash);
+    if (m) openLog(m[1]);
+  }
+
+  // ------------------------------------------------------------ Liste
+  async function loadList() {
+    var s = session();
+    try {
+      var d = await call("/v1/web/admin/logs", { token: s.token });
+      logs = d.logs || [];
+      $("st-online").textContent = d.stats.online;
+      $("st-logs").textContent = d.stats.logsWeek;
+      $("st-rusti").textContent = d.stats.rustiToday;
+    } catch (e) { logs = []; }
+    renderList();
+  }
+  function renderList() {
+    var el = $("list");
+    if (!logs.length) { el.innerHTML = '<div class="empty">Noch keine Logs.<br>Im Discord-Ticket auf „📋 Logs anfordern“ drücken.</div>'; return; }
+    el.innerHTML = logs.map(function (l, i) {
+      var m = l.meta || {};
+      return '<button class="item' + (current === l.id ? " sel" : "") + '" data-id="' + l.id + '" style="animation-delay:' + Math.min(i, 15) * 25 + 'ms">' +
+        '<div class="row"><img src="' + head(l.name) + '" alt=""><span class="name">' + esc(l.name || "Spieler") + '</span><span class="time">' + ago(l.created) + '</span></div>' +
+        '<div class="diag">' + esc(l.summary || "Keine eindeutige Ursache gefunden") + '</div>' +
+        '<div class="chips">' + [m.mc, m.launcher && "Launcher " + m.launcher, m.gpu].filter(Boolean).map(function (c) { return '<span class="chip">' + esc(c) + "</span>"; }).join("") + "</div></button>";
+    }).join("");
+    el.querySelectorAll(".item").forEach(function (b) { b.onclick = function () { openLog(b.dataset.id); }; });
+  }
+  $("reload").onclick = loadList;
+
+  // ------------------------------------------------------------ Ansicht
+  function splitSections(text) {
+    var re = /\n?={10,} (.+?) ={10,}\n/g, out = [], last = 0, name = "Überblick", m;
+    while ((m = re.exec(text))) {
+      out.push({ name: name, text: text.slice(last, m.index) });
+      name = m[1];
+      last = re.lastIndex;
+    }
+    out.push({ name: name, text: text.slice(last) });
+    return out.filter(function (s) { return s.text.trim(); });
+  }
+  function kind(line) {
+    if (/(\bERROR\b|\bFATAL\b|Exception|^\s*Caused by|^\s+at [\w$.]+\(|Error:|#\s+A fatal error|crashed|Absturz)/.test(line)) return "e";
+    if (/\bWARN(ING)?\b/.test(line)) return "w";
+    return "";
+  }
+
+  async function openLog(id) {
+    current = id;
+    history.replaceState(null, "", "#log=" + id);
+    renderList();
+    var v = $("viewer");
+    v.innerHTML = '<div class="placeholder"><div><span class="spin"></span></div></div>';
+    var d;
+    try { d = await call("/v1/web/admin/log", { token: session().token, id: id }); }
+    catch (e) { v.innerHTML = '<div class="placeholder"><div><b>Nicht gefunden</b>' + esc(e.message) + "</div></div>"; return; }
+    var m = d.meta || {};
+    var chips = [
+      ["Launcher", m.launcher], ["Profil", m.profile], ["Minecraft", m.mc], ["Loader", m.loader], ["Java", m.java],
+      ["System", m.os], ["RAM", m.ram], ["GPU", m.gpu], ["CPU", m.cpu],
+    ].filter(function (c) { return c[1]; });
+    var secs = splitSections(d.text);
+    v.innerHTML =
+      '<div class="vhead fade"><img src="' + head(d.name) + '" alt=""><div><h2>' + esc(d.name || "Spieler") + '</h2><div class="sub">' + ago(d.created) + " · Logs " + esc(d.id) + "</div></div>" +
+      '<div class="grow"></div>' +
+      '<a class="btn" target="_blank" rel="noopener" href="https://discord.com/channels/' + GUILD + "/" + esc(d.channel) + '">Im Discord öffnen</a>' +
+      '<button class="btn" id="copy">Kopieren</button><button class="btn" id="dl">Herunterladen</button></div>' +
+      '<div class="meta fade">' + chips.map(function (c) { return '<span class="chip">' + esc(c[0]) + ": " + esc(c[1]) + "</span>"; }).join("") + "</div>" +
+      (d.summary ? '<div class="diagbox fade"><b>Diagnose</b> · ' + esc(d.summary) + "</div>" : "") +
+      '<div class="tools"><input id="find" placeholder="In den Logs suchen …"><button class="btn" id="only">Nur Fehler</button><span class="count" id="count"></span></div>' +
+      '<div class="sections" id="secs">' + secs.map(function (s, i) {
+        var lines = s.text.split("\n"), e = 0, w = 0;
+        var body = lines.map(function (l, n) { var k = kind(l); if (k === "e") e++; if (k === "w") w++; return '<div class="' + k + '" data-n="' + (n + 1) + '">' + esc(l) + "</div>"; }).join("");
+        // Wichtiges offen (Absturz, Minecraft-Log); „Überblick“ steht schon oben
+        var important = secs.some(function (x) { return /latest\.log|Absturzbericht|hs_err/.test(x.name); });
+        var open = /latest\.log|Absturzbericht|hs_err/.test(s.name) || (!important && i === 0);
+        return '<details class="sec fade"' + (open ? " open" : "") + ' style="animation-delay:' + i * 40 + 'ms"><summary>' + esc(s.name) +
+          '<span class="badge">' + (e ? '<span class="e">' + e + " Fehler</span>" : "") + (w ? '<span class="w">' + w + " Warn.</span>" : "") + "</span></summary>" +
+          '<pre class="log">' + body + "</pre></details>";
+      }).join("") + "</div>";
+
+    var onlyErr = false;
+    function apply() {
+      var term = $("find").value.trim().toLowerCase(), hits = 0;
+      v.querySelectorAll("pre.log div").forEach(function (row) {
+        var t = row.textContent.toLowerCase();
+        var match = term && t.indexOf(term) >= 0;
+        if (match) hits++;
+        row.classList.toggle("hit", !!match);
+        row.classList.toggle("dimmed", (onlyErr && !row.classList.contains("e") && !row.classList.contains("w")) || (!!term && !match && onlyErr));
+      });
+      $("count").textContent = term ? hits + " Treffer" : "";
+      if (term || onlyErr) v.querySelectorAll("details.sec").forEach(function (dd) { dd.open = true; });
+      var first = v.querySelector("pre.log div.hit");
+      if (first && term) first.scrollIntoView({ block: "center" });
+    }
+    $("find").oninput = apply;
+    $("only").onclick = function () { onlyErr = !onlyErr; this.classList.toggle("on", onlyErr); apply(); };
+    $("copy").onclick = function () { navigator.clipboard.writeText(d.text); this.textContent = "Kopiert ✓"; };
+    $("dl").onclick = function () {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([d.text], { type: "text/plain" }));
+      a.download = "rustclient-logs-" + (d.name || "spieler") + "-" + d.id.slice(0, 6) + ".txt";
+      a.click();
+    };
+  }
+
+  window.addEventListener("hashchange", function () { var m = /log=([0-9a-f]{16})/.exec(location.hash); if (m && m[1] !== current && session()) openLog(m[1]); });
+  start();
+})();
+</script>
+</body>
+</html>
