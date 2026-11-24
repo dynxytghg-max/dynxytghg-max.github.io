@@ -1,67 +1,91 @@
 {
   "updated": "2026-11-23",
   "launcher": {
-    "version": "7.6.0",
-    "file": "downloads/BambuBay-Launcher-7.6.0.zip",
-    "size": "18,8 MB",
+    "version": "7.7.0",
+    "file": "downloads/BambuBay-Launcher-7.7.0.zip",
+    "size": "18,9 MB",
     "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
-    "setup": "downloads/Rust-Client-Setup-7.6.0.exe",
-    "setupSize": "18,8 MB",
-    "sha256": "d91f181e9d3b64e28edc1c258e65db885cc60c77d6e9f2a13bf3d3745116c732"
+    "setup": "downloads/Rust-Client-Setup-7.7.0.exe",
+    "setupSize": "18,9 MB",
+    "sha256": "8482e80438b76dcc464800b2337acd61ac75d9105d2d5407003b4d37778bbb84"
   },
   "mod": {
-    "version": "3.22.0",
+    "version": "3.24.0",
     "minecraft": "1.21.4 – 26.3",
-    "file": "downloads/BambuBay-Mod-3.22.0.zip",
-    "size": "88,2 MB",
-    "jar": "downloads/BambuBayClient-3.22.0.jar",
-    "sha1": "c4da34e2734054b69a0bee39dc4a1dbd056e0733",
+    "file": "downloads/BambuBay-Mod-3.24.0.zip",
+    "size": "88,4 MB",
+    "jar": "downloads/BambuBayClient-3.24.0.jar",
+    "sha1": "2e4176d42103e5a8d96ff28193e4bae5c897f913",
     "versions": [
       {
         "minecraft": "26.3",
         "min": "26.3",
         "max": "26.3",
-        "jar": "downloads/BambuBayClient-3.22.0+mc26.3.jar",
-        "sha1": "525cdc44112c78daaa5278b0539ad51b04df6e90"
+        "jar": "downloads/BambuBayClient-3.24.0+mc26.3.jar",
+        "sha1": "3dba20910bde61fcbfa8d53952b0c7e6aea8be68"
       },
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.9-1.21.10.jar",
-        "sha1": "248de5aa17754dfc33f5dd93535ba5c50cf559a9"
+        "jar": "downloads/BambuBayClient-3.24.0+mc1.21.9-1.21.10.jar",
+        "sha1": "fb2f6b43201ca7e7feeeece64267ceb37d75d0f6"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.6-1.21.8.jar",
-        "sha1": "24bda71584c7a72e6beeb1dfc421fb105fa0b770"
+        "jar": "downloads/BambuBayClient-3.24.0+mc1.21.6-1.21.8.jar",
+        "sha1": "03182dd64380d3353fc759529465159c80d80fcb"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.5.jar",
-        "sha1": "c4dd66c97f87d4952098d88a59df38bbd7ffa52d"
+        "jar": "downloads/BambuBayClient-3.24.0+mc1.21.5.jar",
+        "sha1": "9cfa1e3b456edf5c956d6abdb76e3fab93cf1b2b"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.4.jar",
-        "sha1": "266c69b3ac8171d933d8e0a191a525f923b30008"
+        "jar": "downloads/BambuBayClient-3.24.0+mc1.21.4.jar",
+        "sha1": "19ac1401ba827dcc41e31cc2397bdff9fa9a71cf"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.11.jar",
-        "sha1": "c4da34e2734054b69a0bee39dc4a1dbd056e0733"
+        "jar": "downloads/BambuBayClient-3.24.0+mc1.21.11.jar",
+        "sha1": "2e4176d42103e5a8d96ff28193e4bae5c897f913"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "Tägliche Truhe",
+      "text": "Im Rust-Menü (Knopf „Rust“ im Hauptmenü) wartet jeden Tag eine Truhe mit einem Titel zum Sammeln – 19 Stück, von gewöhnlich bis legendär. Wer jeden Tag kommt, baut eine Serie auf: an Tag 7 gibt es sicher einen epischen oder legendären Titel. Deinen Titel sehen auch deine Freunde."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "„Heute“ im Rust-Menü",
+      "text": "Oben im Rust-Menü siehst du jetzt, welche Freunde online sind – ein Klick und du bist auf ihrem Server. Dazu die neueste Neuigkeit und ein Hinweis, wenn es ein Update gibt."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Verbessert",
+      "title": "Launcher 7.7: Einrichtung in einer Minute",
+      "text": "Neue Spieler werden Schritt für Schritt durch Anmelden, Grafik (Sodium oder Vulkan), Akzentfarbe und Skin geführt – mit kurzem Rundgang am Ende. Fehlermeldungen sind jetzt verständlich und sagen, was hilft."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Verbessert",
+      "title": "Schneller auf „Spielen“",
+      "text": "Der Launcher bereitet den Start jetzt schon im Hintergrund vor, während du noch im Launcher bist: Anmeldung, Mods und Spieldateien. Nach dem Klick dauert es bis Minecraft startet nur noch Bruchteile einer Sekunde statt bisher 2 bis 5 Sekunden – Anmeldung, Mod-Prüfung und Dateien laufen gleichzeitig statt nacheinander."
+    },
     {
       "date": "2026-11-24",
       "tag": "Neu",
