@@ -7,7 +7,7 @@
     "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
     "setup": "downloads/Rust-Client-Setup-7.6.0.exe",
     "setupSize": "18,8 MB",
-    "sha256": "a9d07d76b52bb40907232c562f7418c1a194c79732aebe1d043b554604f0d2da"
+    "sha256": "d91f181e9d3b64e28edc1c258e65db885cc60c77d6e9f2a13bf3d3745116c732"
   },
   "mod": {
     "version": "3.22.0",
@@ -85,12 +85,6 @@
       "tag": "Neu",
       "title": "Spieler-Profile zum Teilen",
       "text": "Jeder Rust-Client-Spieler hat jetzt eine eigene Profilseite mit 3D-Figur, Cape, eigenen Capes und Shop-Emotes. Angemeldet siehst du auch RustGram-Beiträge, Freunde sehen zusätzlich Spielzeit, Haustier und mehr. Link kopieren und teilen!"
-    },
-    {
-      "date": "2026-11-24",
-      "tag": "Neu",
-      "title": "Launcher 7.5: Lebendige 3D-Welt",
-      "text": "Hinter deiner Figur liegt jetzt eine kleine Block-Insel: echte Tageszeit mit Sonne, Mond und Sternen, ziehende Wolken, an manchen Tagen Regen, im Winter Schnee – und Rusti krabbelt herum. Oben links auf „Spielen“ ein- und ausschaltbar."
     },
     {
       "date": "2026-11-24",
