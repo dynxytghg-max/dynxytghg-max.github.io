@@ -1,60 +1,103 @@
 {
   "updated": "2026-11-23",
   "launcher": {
-    "version": "7.4.0",
-    "file": "downloads/BambuBay-Launcher-7.4.0.zip",
+    "version": "7.6.0",
+    "file": "downloads/BambuBay-Launcher-7.6.0.zip",
     "size": "18,8 MB",
     "notes": "Launcher 7.2: Neuer Bereich Capes › Emote Contest – eigene Emotes anderer Spieler an deiner 3D-Figur ansehen und liken; das Team entscheidet, was in den Shop kommt. Dazu flüssiger: Hintergrund mit 60 FPS bei viel weniger Rechenzeit, Dock ohne teure Unschärfe.",
-    "setup": "downloads/Rust-Client-Setup-7.4.0.exe",
+    "setup": "downloads/Rust-Client-Setup-7.6.0.exe",
     "setupSize": "18,8 MB",
-    "sha256": "64ceb68921614687b1d14e94773c1901a367b67474b13560e4d71d87144c5612"
+    "sha256": "a9d07d76b52bb40907232c562f7418c1a194c79732aebe1d043b554604f0d2da"
   },
   "mod": {
-    "version": "3.20.1",
-    "minecraft": "1.21.4 – 1.21.11",
-    "file": "downloads/BambuBay-Mod-3.20.1.zip",
-    "size": "72,7 MB",
-    "jar": "downloads/BambuBayClient-3.20.1.jar",
-    "sha1": "9e8f3d3a67e448572b4ed9e41f89543fd20b6bab",
+    "version": "3.22.0",
+    "minecraft": "1.21.4 – 26.3",
+    "file": "downloads/BambuBay-Mod-3.22.0.zip",
+    "size": "88,2 MB",
+    "jar": "downloads/BambuBayClient-3.22.0.jar",
+    "sha1": "c4da34e2734054b69a0bee39dc4a1dbd056e0733",
     "versions": [
+      {
+        "minecraft": "26.3",
+        "min": "26.3",
+        "max": "26.3",
+        "jar": "downloads/BambuBayClient-3.22.0+mc26.3.jar",
+        "sha1": "525cdc44112c78daaa5278b0539ad51b04df6e90"
+      },
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.9-1.21.10.jar",
-        "sha1": "0ac055e6212d85ed4e39967511cc5a727a15d65c"
+        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.9-1.21.10.jar",
+        "sha1": "248de5aa17754dfc33f5dd93535ba5c50cf559a9"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.6-1.21.8.jar",
-        "sha1": "df0022199ce4bd9b6af5ff20794142ff0a387856"
+        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.6-1.21.8.jar",
+        "sha1": "24bda71584c7a72e6beeb1dfc421fb105fa0b770"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.5.jar",
-        "sha1": "ebcb86193dd08b31549ce644dd858c443ec197ae"
+        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.5.jar",
+        "sha1": "c4dd66c97f87d4952098d88a59df38bbd7ffa52d"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.4.jar",
-        "sha1": "0bec42fd0307bd406bc8c783a4a11ad03c70c4f3"
+        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.4.jar",
+        "sha1": "266c69b3ac8171d933d8e0a191a525f923b30008"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/BambuBayClient-3.20.1+mc1.21.11.jar",
-        "sha1": "9e8f3d3a67e448572b4ed9e41f89543fd20b6bab"
+        "jar": "downloads/BambuBayClient-3.22.0+mc1.21.11.jar",
+        "sha1": "c4da34e2734054b69a0bee39dc4a1dbd056e0733"
       }
     ]
   },
   "items": [
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "Sodium oder Vulkan?",
+      "text": "Der Launcher fragt dich jetzt, womit du spielen willst: Sodium (alle Mods, Iris-Shader) oder Vulkan (VulkanMod, auf vielen PCs mehr FPS). Bei Vulkan richtet er VulkanMod ein, schaltet Mods aus, die damit nicht laufen, und zeigt dir bei den Mods, welche nicht passen. Zurück zu Sodium geht mit einem Klick in den Einstellungen."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Verbessert",
+      "title": "Weniger Ruckler, weniger Speicher",
+      "text": "Rust Client 3.22 und Rust Performance 3.2 erzeugen pro Bild deutlich weniger Müll für den Garbage Collector: Text im HUD und in Menüs wird schneller gezeichnet, HUD-Werte nur noch einmal pro Bild berechnet, die Minimap nur bei Bewegung neu gemalt und die Wesen-Bremse kommt ohne Objekte pro Wesen aus."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "Webseite 2.0: Mein Bereich",
+      "text": "Melde dich auf der Webseite an und öffne „Mein Bereich“: Cosmetics an- und ablegen (mit Farben), Emote-Rad belegen, Capes wechseln, eigene Emotes beim Contest einreichen – deine 3D-Figur dreht sich dabei mit. Änderungen landen innerhalb einer Minute im Spiel (Mod 3.21)."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "Spieler-Profile zum Teilen",
+      "text": "Jeder Rust-Client-Spieler hat jetzt eine eigene Profilseite mit 3D-Figur, Cape, eigenen Capes und Shop-Emotes. Angemeldet siehst du auch RustGram-Beiträge, Freunde sehen zusätzlich Spielzeit, Haustier und mehr. Link kopieren und teilen!"
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "Launcher 7.5: Lebendige 3D-Welt",
+      "text": "Hinter deiner Figur liegt jetzt eine kleine Block-Insel: echte Tageszeit mit Sonne, Mond und Sternen, ziehende Wolken, an manchen Tagen Regen, im Winter Schnee – und Rusti krabbelt herum. Oben links auf „Spielen“ ein- und ausschaltbar."
+    },
+    {
+      "date": "2026-11-24",
+      "tag": "Neu",
+      "title": "Launcher 7.5: Strg+K für alles",
+      "text": "Drück Strg+K (oder oben auf „Suchen“) und tipp los: Profil starten oder bearbeiten, jede Seite, jede Einstellung, Rusti fragen, Problem finden oder den Profil-Ordner öffnen – mit Pfeiltasten wählen, Enter, fertig. Außerdem läuft deine Figur beim Start jetzt ohne Portal einfach los."
+    },
     {
       "date": "2026-11-23",
       "tag": "Neu",
@@ -494,43 +537,43 @@
   ],
   "downloadBase": "https://dynxytghg-max.github.io/",
   "perf": {
-    "version": "3.1.0",
+    "version": "3.2.0",
     "minecraft": "1.21.4 – 1.21.11",
     "versions": [
       {
         "minecraft": "1.21.9-1.21.10",
         "min": "1.21.9",
         "max": "1.21.10",
-        "jar": "downloads/RustPerformance-3.1.0+mc1.21.9-1.21.10.jar",
-        "sha1": "21a3a135a3e1a110a7a0de1ae495b04a78caaf23"
+        "jar": "downloads/RustPerformance-3.2.0+mc1.21.9-1.21.10.jar",
+        "sha1": "bf83bd076eeecc39f017dbe2cdfed0cb9d1b0aa2"
       },
       {
         "minecraft": "1.21.6-1.21.8",
         "min": "1.21.6",
         "max": "1.21.8",
-        "jar": "downloads/RustPerformance-3.1.0+mc1.21.6-1.21.8.jar",
-        "sha1": "cca6d6549a457f263dec79b6f2973e5f7d5e7b21"
+        "jar": "downloads/RustPerformance-3.2.0+mc1.21.6-1.21.8.jar",
+        "sha1": "87a9934c575fd4723120615d2a11c277dec496b3"
       },
       {
         "minecraft": "1.21.5",
         "min": "1.21.5",
         "max": "1.21.5",
-        "jar": "downloads/RustPerformance-3.1.0+mc1.21.5.jar",
-        "sha1": "953e29484416c172e96dbf4007ed48e058ba89d3"
+        "jar": "downloads/RustPerformance-3.2.0+mc1.21.5.jar",
+        "sha1": "d1b7a1e1d015201fe05a9e81a3853836ff1f8f30"
       },
       {
         "minecraft": "1.21.4",
         "min": "1.21.4",
         "max": "1.21.4",
-        "jar": "downloads/RustPerformance-3.1.0+mc1.21.4.jar",
-        "sha1": "b8b229a4d576dfb31005147e31d31934f1bdabd8"
+        "jar": "downloads/RustPerformance-3.2.0+mc1.21.4.jar",
+        "sha1": "6bda13819887f4cae471cdade2ecc6c3ce8e57f1"
       },
       {
         "minecraft": "1.21.11",
         "min": "1.21.11",
         "max": "1.21.11",
-        "jar": "downloads/RustPerformance-3.1.0+mc1.21.11.jar",
-        "sha1": "feab45b62a75fc33cf9e51230be553a993239779"
+        "jar": "downloads/RustPerformance-3.2.0+mc1.21.11.jar",
+        "sha1": "64441de7e7e00cbb3d365310f969cfef47b36443"
       }
     ]
   }

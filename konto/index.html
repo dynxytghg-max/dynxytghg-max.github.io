@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mein Bereich · Rust Client</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/account.css">
+</head>
+<body>
+<header class="top">
+  <a class="home" href="../"><img class="logo" src="../assets/logo.png" alt=""><b class="brand">Rust <span>Client</span></b></a>
+  <span class="grow"></span>
+  <a class="btn small hidden" id="my-profile" href="#">Öffentliches Profil</a>
+  <button class="btn small hidden" id="logout">Abmelden</button>
+</header>
+
+<main class="page">
+  <!-- Nicht angemeldet -->
+  <section class="gate hidden" id="gate">
+    <div class="card pop">
+      <img src="../assets/logo.png" alt="" width="48" height="48" style="image-rendering:pixelated">
+      <h2>Mein Bereich</h2>
+      <p>Melde dich über den Rust Client Launcher an, um deine Cosmetics, dein Emote-Rad und deine Capes hier zu bearbeiten.</p>
+      <a class="btn accent" href="../?next=konto#anmelden">Anmelden</a>
+    </div>
+  </section>
+
+  <section id="loading" class="gate"><span class="spin"></span></section>
+
+  <section id="app" class="hidden">
+    <div class="hero rise">
+      <div class="stage" id="stage"></div>
+      <div class="info">
+        <span class="eyebrow">Mein Bereich</span>
+        <h1 id="name"></h1>
+        <span class="status" id="status"><i></i><span></span></span>
+        <p class="bio hidden" id="bio"></p>
+        <div class="quick" id="quick"></div>
+        <div class="actions">
+          <button class="btn" id="copy-link">Profil-Link kopieren</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="tabs" id="tabs">
+      <button data-tab="uebersicht">Übersicht</button>
+      <button data-tab="kosmetik">Kosmetik</button>
+      <button data-tab="emotes">Emote-Rad</button>
+      <button data-tab="capes">Capes<span class="count" id="cape-count"></span></button>
+      <button data-tab="eigene">Eigene Emotes</button>
+    </nav>
+
+    <!-- Übersicht -->
+    <section data-pane="uebersicht">
+      <div class="grid" style="--min:170px" id="stats"></div>
+      <div id="pet-wrap"></div>
+      <div class="section-title"><h2>Freunde</h2><small id="friends-info"></small></div>
+      <div class="grid" style="--min:230px" id="friends"></div>
+      <div class="section-title"><h2>Deine RustGram-Beiträge</h2></div>
+      <div class="grid" style="--min:230px" id="posts"></div>
+    </section>
+
+    <!-- Kosmetik -->
+    <section data-pane="kosmetik" class="hidden">
+      <div id="cos-missing" class="empty hidden"><b>Noch nichts zum Bearbeiten</b>Starte einmal Minecraft mit Rust Client (Mod 3.21 oder neuer). Danach erscheinen hier alle Cosmetics.</div>
+      <div id="cos-wrap">
+        <p class="note" id="cos-note"></p>
+        <div class="section-title" style="margin-top:18px">
+          <div class="filters" id="cos-filters" style="margin:0"></div>
+          <input class="search" id="cos-search" placeholder="Suchen …">
+        </div>
+        <div class="grid" style="--min:190px" id="cos-grid"></div>
+      </div>
+    </section>
+
+    <!-- Emote-Rad -->
+    <section data-pane="emotes" class="hidden">
+      <div id="wheel-missing" class="empty hidden"><b>Noch nichts zum Bearbeiten</b>Starte einmal Minecraft mit Rust Client (Mod 3.21 oder neuer).</div>
+      <div class="wheel-wrap" id="wheel-wrap">
+        <div>
+          <div class="wheel" id="wheel"><div class="hub" id="wheel-hub">Platz wählen</div></div>
+          <p class="note" style="margin-top:16px">Klick auf einen Platz und dann rechts auf ein Emote. Nochmal auf denselben Platz: leeren.</p>
+        </div>
+        <div>
+          <input class="search" id="emote-search" placeholder="Emote suchen …" style="max-width:none;margin-bottom:12px">
+          <div class="emote-list" id="emote-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capes -->
+    <section data-pane="capes" class="hidden">
+      <p class="note">Das angelegte Cape siehst du sofort im Spiel und im Launcher – und alle anderen Rust-Client-Spieler auch. Neue Capes lädst du im Launcher unter „Capes“ hoch.</p>
+      <div class="grid" style="--min:200px;margin-top:16px" id="capes"></div>
+    </section>
+
+    <!-- Eigene Emotes -->
+    <section data-pane="eigene" class="hidden">
+      <p class="note">Eigene Emotes (aus dem Emote-Editor im Spiel), die du schon einmal benutzt hast. Reich sie beim <b>Emote-Contest</b> ein – die beliebtesten kommen in den Shop für alle.</p>
+      <div class="grid" style="--min:260px;margin-top:16px" id="customs"></div>
+    </section>
+  </section>
+</main>
+
+<div class="savebar" id="savebar">
+  <p><b id="save-text">Ungespeicherte Änderungen</b><small id="save-sub"></small></p>
+  <button class="btn" id="save-undo">Verwerfen</button>
+  <button class="btn accent" id="save-go">Speichern</button>
+</div>
+
+<script>window.RC_SERVER = "https://api.rustclient.dpdns.org";</script>
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.1.0/bundles/skinview3d.bundle.js"></script>
+<script src="../assets/account.js"></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const { esc, call } = RC;
+  const s = RC.session();
+  if (!s) {
+    $("loading").classList.add("hidden");
+    $("gate").classList.remove("hidden");
+    return;
+  }
+
+  const SLOT_LABEL = { hat: "Hüte", bandana: "Bandanas", back: "Rücken", shoulder: "Begleiter", cape: "Umhänge", pet: "Haustiere", pet_hat: "Haustier-Hüte", shield: "Schilde" };
+  const SLOT_ICON = { hat: "🎩", bandana: "🧣", back: "🪽", shoulder: "🦜", cape: "🧥", pet: "🐾", pet_hat: "👒", shield: "🛡️" };
+  const RARITY = { common: ["Gewöhnlich", "var(--common)"], uncommon: ["Ungewöhnlich", "var(--uncommon)"], rare: ["Selten", "var(--rare)"], epic: ["Episch", "var(--epic)"], legendary: ["Legendär", "var(--legendary)"], custom: ["Eigener", "#7fd4ff"] };
+
+  let data = null;
+  let catalog = [], emotes = [];
+  let saved = { equipped: "", wheel: "" };
+  let draft = { equipped: new Map(), wheel: [] };
+  let slotFilter = "alle", query = "", selSlot = -1;
+
+  // ---------- Laden
+  async function load() {
+    try {
+      data = await call("/v1/web/account", { token: s.token });
+    } catch (e) {
+      if (e.status === 401) {
+        RC.dropSession();
+        location.href = "../?next=konto#anmelden";
+        return;
+      }
+      $("loading").innerHTML = '<div class="card pop"><h2>Fehler</h2><p>Der Rust-Client-Server ist gerade nicht erreichbar.</p><button class="btn" onclick="location.reload()">Nochmal</button></div>';
+      return;
+    }
+    $("loading").classList.add("hidden");
+    $("app").classList.remove("hidden");
+    $("logout").classList.remove("hidden");
+    $("my-profile").classList.remove("hidden");
+    $("my-profile").href = "../spieler/?n=" + encodeURIComponent(data.name);
+    renderHero();
+    renderOverview();
+    parseOutfit();
+    renderCosmetics();
+    renderWheel();
+    renderCapes();
+    renderCustoms();
+    const select = RC.tabs($("tabs"), (tab) => document.querySelectorAll("[data-pane]").forEach((p) => p.classList.toggle("hidden", p.dataset.pane !== tab)));
+    select((location.hash || "#uebersicht").slice(1), false);
+  }
+
+  // ---------- Kopf
+  let viewer = null;
+  function renderHero() {
+    $("name").textContent = data.name;
+    const st = $("status");
+    st.classList.toggle("on", data.online);
+    st.querySelector("span").textContent = data.online ? "Gerade im Spiel" : "Gerade nicht im Spiel";
+    const p = data.profile || {};
+    if (p.bio) {
+      $("bio").textContent = "„" + p.bio + "“";
+      $("bio").classList.remove("hidden");
+    }
+    const sel = data.capes.list.find((c) => c.id === data.capes.selected);
+    if (!viewer) viewer = RC.figure($("stage"), data.uuid, sel ? sel.image : null);
+    else if (sel) viewer.loadCape(RC.abs(sel.image)).catch(() => {});
+    else viewer.resetCape();
+    const quick = [
+      [Math.round((p.playSeconds || 0) / 3600), "Std. gespielt"],
+      [data.friends.length, "Freunde"],
+      [p.emotes || 0, "Emotes getanzt"],
+      [p.pet ? p.pet.level : 0, p.pet ? "Haustier-Level" : "Kein Haustier"],
+    ];
+    $("quick").innerHTML = quick.map(([v, l]) => `<div><b data-n="${v}">0</b><span>${esc(l)}</span></div>`).join("");
+    $("quick").querySelectorAll("b").forEach((b) => RC.countUp(b, Number(b.dataset.n)));
+    $("cape-count").textContent = data.capes.list.length ? data.capes.list.length : "";
+  }
+
+  // ---------- Übersicht
+  function renderOverview() {
+    const p = data.profile;
+    const stats = p
+      ? [
+          [RC.hours(p.playSeconds), "Spielzeit"],
+          [(p.kills || 0).toLocaleString("de-DE"), "Kills"],
+          [(p.deaths || 0).toLocaleString("de-DE"), "Tode"],
+          [RC.km(p.walked), "gelaufen"],
+          [(p.emotes || 0).toLocaleString("de-DE"), "Emotes"],
+          [`${p.wins || 0} : ${p.losses || 0}`, "Haustier-Kämpfe"],
+          [p.topServer || "–", "Lieblings-Server"],
+          [p.mod ? "v" + p.mod : "–", "Mod-Version"],
+        ]
+      : [];
+    $("stats").innerHTML = stats.length
+      ? stats.map(([v, l], i) => `<div class="card stat-card rise" style="--i:${i}"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("")
+      : '<div class="empty" style="grid-column:1/-1"><b>Noch keine Statistik</b>Spiel eine Runde mit Rust Client – dann erscheint hier deine Statistik.</div>';
+    if (p && p.pet) {
+      $("pet-wrap").innerHTML = `<div class="section-title"><h2>Dein Haustier</h2></div>
+        <div class="card pet rise"><div class="lvl">${esc(p.pet.level)}</div><div><b style="font:700 20px var(--font-pixel)">${esc(p.pet.name)}</b>
+        <div style="color:var(--dim);font-size:13px">${esc(p.pet.kind || "Haustier")} · Level ${esc(p.pet.level)} · ${p.wins || 0} Siege</div></div></div>`;
+    }
+    const online = data.friends.filter((f) => f.online).length;
+    $("friends-info").textContent = data.friends.length ? `${online} von ${data.friends.length} online` : "";
+    $("friends").innerHTML = data.friends.length
+      ? data.friends
+          .map((f, i) => `<a class="card friend rise" style="--i:${i}" href="../spieler/?n=${encodeURIComponent(f.name)}"><img src="${RC.head(f.uuid, 34)}" alt="">
+            <span>${esc(f.name)}</span><small class="${f.online ? "on" : ""}">${f.online ? "● online" : RC.ago(f.lastSeen)}</small></a>`)
+          .join("")
+      : '<div class="empty" style="grid-column:1/-1"><b>Noch keine Freunde</b>Füge im Spiel oder im Launcher Freunde hinzu.</div>';
+    renderPosts($("posts"), data.posts);
+  }
+
+  function renderPosts(el, posts) {
+    if (!posts || !posts.length) {
+      el.innerHTML = '<div class="empty" style="grid-column:1/-1"><b>Noch keine Beiträge</b>Teile Screenshots und Clips im Spiel auf RustGram.</div>';
+      return;
+    }
+    el.innerHTML = posts
+      .map((p, i) => `<div class="card post rise" style="--i:${i}"><div class="img loading" data-id="${esc(p.id)}">${p.video ? '<span class="vid">▶ Clip</span>' : ""}</div>
+        <div class="body">${esc(p.caption || "Ohne Text")}<small>♥ ${p.likes} · 💬 ${p.comments} · ${RC.ago(p.time)}</small></div></div>`)
+      .join("");
+    el.querySelectorAll(".img[data-id]").forEach(async (d) => {
+      try {
+        d.style.backgroundImage = `url(${await RC.postImage(s.token, d.dataset.id)})`;
+      } catch {}
+      d.classList.remove("loading");
+    });
+  }
+
+  // ---------- Kosmetik
+  function parseOutfit() {
+    const o = data.outfit;
+    const has = o && o.catalog;
+    $("cos-missing").classList.toggle("hidden", !!has);
+    $("cos-wrap").classList.toggle("hidden", !has);
+    $("wheel-missing").classList.toggle("hidden", !!(o && o.emotes));
+    $("wheel-wrap").classList.toggle("hidden", !(o && o.emotes));
+    if (!o) return;
+    catalog = (o.catalog || "").split("\n").filter(Boolean).map((line) => {
+      const [id, name, slot, rarity, vars] = line.split("|");
+      const variants = (vars || "").split(";").filter(Boolean).map((v) => {
+        const [vid, vname, color] = v.split(":");
+        return { id: vid, name: vname, color: "#" + (color || "888888") };
+      });
+      return { id, name, slot, rarity, variants };
+    });
+    emotes = (o.emotes || "").split("\n").filter(Boolean).map((line) => {
+      const [id, name, cat] = line.split("|");
+      return { id, name, cat };
+    });
+    saved = { equipped: o.equipped || "", wheel: o.wheel || "" };
+    resetDraft();
+    updateNote();
+  }
+
+  function resetDraft() {
+    draft.equipped = new Map();
+    for (const part of saved.equipped.split(",").filter(Boolean)) {
+      const [id, variant] = part.split(":");
+      const c = catalog.find((x) => x.id === id);
+      if (c) draft.equipped.set(c.slot, { id, variant: variant || "" });
+    }
+    draft.wheel = saved.wheel.split(",");
+    while (draft.wheel.length < 8) draft.wheel.push("");
+    draft.wheel = draft.wheel.slice(0, 8);
+  }
+
+  const equippedText = () =>
+    [...draft.equipped.values()].map((e) => (e.variant ? `${e.id}:${e.variant}` : e.id)).join(",");
+  const wheelText = () => draft.wheel.join(",");
+  const norm = (t) => t.split(",").filter(Boolean).sort().join(",");
+  const dirty = () => norm(equippedText()) !== norm(saved.equipped) || wheelText() !== draftWheelSaved();
+  const draftWheelSaved = () => {
+    const w = saved.wheel.split(",");
+    while (w.length < 8) w.push("");
+    return w.slice(0, 8).join(",");
+  };
+
+  function updateNote() {
+    const o = data.outfit;
+    if (!o) return;
+    $("cos-note").innerHTML = o.pending
+      ? "<b>Wird gerade ins Spiel übertragen …</b> Sobald Minecraft mit Rust Client läuft, wird deine Änderung innerhalb einer Minute übernommen."
+      : `Zuletzt mit dem Spiel abgeglichen: <b>${RC.ago(o.synced)}</b> – Änderungen landen innerhalb einer Minute im Spiel (oder beim nächsten Start).`;
+  }
+
+  function renderCosmetics() {
+    if (!catalog.length) return;
+    const slots = ["alle", "angelegt", ...Object.keys(SLOT_LABEL).filter((k) => catalog.some((c) => c.slot === k))];
+    $("cos-filters").innerHTML = slots
+      .map((k) => `<button data-slot="${k}" class="${k === slotFilter ? "on" : ""}">${k === "alle" ? "Alle" : k === "angelegt" ? "Angelegt" : SLOT_ICON[k] + " " + SLOT_LABEL[k]}</button>`)
+      .join("");
+    $("cos-filters").querySelectorAll("button").forEach((b) => (b.onclick = () => ((slotFilter = b.dataset.slot), renderCosmetics())));
+    const q = query.toLowerCase();
+    const list = catalog.filter((c) => {
+      if (slotFilter === "angelegt") return (draft.equipped.get(c.slot) || {}).id === c.id;
+      if (slotFilter !== "alle" && c.slot !== slotFilter) return false;
+      return !q || c.name.toLowerCase().includes(q);
+    });
+    $("cos-grid").innerHTML = list.length
+      ? list
+          .map((c, i) => {
+            const eq = draft.equipped.get(c.slot);
+            const on = eq && eq.id === c.id;
+            const [rl, rc] = RARITY[c.rarity] || RARITY.common;
+            const cur = on ? eq.variant || (c.variants[0] || {}).id : "";
+            const dots = c.variants.length > 1
+              ? `<div class="dots">${c.variants.map((v) => `<button title="${esc(v.name)}" data-v="${esc(v.id)}" class="${on && cur === v.id ? "on" : ""}" style="background:${esc(v.color)}"></button>`).join("")}</div>`
+              : "";
+            return `<div class="card cos rise ${on ? "on" : ""}" style="--i:${Math.min(i, 24)};--r:${rc}" data-id="${esc(c.id)}">
+              <span class="icon">${SLOT_ICON[c.slot] || "✨"}</span><span class="name">${esc(c.name)}</span>
+              <span class="meta">${esc(rl)} · ${esc(SLOT_LABEL[c.slot] || c.slot)}</span>${dots}</div>`;
+          })
+          .join("")
+      : '<div class="empty" style="grid-column:1/-1"><b>Nichts gefunden</b></div>';
+    $("cos-grid").querySelectorAll(".cos").forEach((el) => {
+      el.onclick = (ev) => {
+        const c = catalog.find((x) => x.id === el.dataset.id);
+        const dot = ev.target.closest("button[data-v]");
+        const eq = draft.equipped.get(c.slot);
+        if (dot) draft.equipped.set(c.slot, { id: c.id, variant: dot.dataset.v === (c.variants[0] || {}).id ? "" : dot.dataset.v });
+        else if (eq && eq.id === c.id) draft.equipped.delete(c.slot);
+        else draft.equipped.set(c.slot, { id: c.id, variant: "" });
+        renderCosmetics();
+        syncBar();
+      };
+    });
+  }
+  $("cos-search").oninput = (e) => ((query = e.target.value), renderCosmetics());
+
+  // ---------- Emote-Rad
+  function emoteName(id) {
+    if (!id) return "";
+    const e = emotes.find((x) => x.id === id);
+    return e ? e.name : id;
+  }
+  let animateWheel = true;
+  function renderWheel() {
+    const wheel = $("wheel");
+    wheel.querySelectorAll(".slot").forEach((x) => x.remove());
+    const R = 124;
+    draft.wheel.forEach((id, i) => {
+      const a = (i / 8) * Math.PI * 2 - Math.PI / 2;
+      const el = document.createElement("button");
+      el.className = "slot" + (animateWheel ? " in" : "") + (id ? "" : " empty-slot") + (i === selSlot ? " sel" : "");
+      el.style.left = 180 + Math.cos(a) * R + "px";
+      el.style.top = 180 + Math.sin(a) * R + "px";
+      el.style.animationDelay = i * 40 + "ms";
+      el.innerHTML = `<span class="n">${i + 1}</span>${id ? esc(emoteName(id)) : "leer"}`;
+      el.onclick = () => {
+        if (selSlot === i && draft.wheel[i]) {
+          draft.wheel[i] = "";
+          syncBar();
+        }
+        selSlot = selSlot === i ? -1 : i;
+        renderWheel();
+      };
+      wheel.appendChild(el);
+    });
+    animateWheel = false;
+    $("wheel-hub").textContent = selSlot >= 0 ? `Platz ${selSlot + 1}: Emote rechts wählen` : "Platz wählen";
+    renderEmoteList();
+  }
+  function renderEmoteList() {
+    const q = ($("emote-search").value || "").toLowerCase();
+    const list = emotes.filter((e) => !q || e.name.toLowerCase().includes(q) || (e.cat || "").toLowerCase().includes(q));
+    $("emote-list").innerHTML = list
+      .map((e) => `<button data-id="${esc(e.id)}" class="${draft.wheel.includes(e.id) ? "in" : ""}">${esc(e.name)}<small>${esc(e.cat || "Emote")}</small></button>`)
+      .join("") || '<div class="empty">Nichts gefunden</div>';
+    $("emote-list").querySelectorAll("button").forEach((b) => {
+      b.onclick = () => {
+        let i = selSlot >= 0 ? selSlot : draft.wheel.indexOf("");
+        if (i < 0) {
+          RC.toast("Wähle zuerst einen Platz im Rad.");
+          return;
+        }
+        const old = draft.wheel.indexOf(b.dataset.id);
+        if (old >= 0) draft.wheel[old] = "";
+        draft.wheel[i] = b.dataset.id;
+        selSlot = -1;
+        renderWheel();
+        syncBar();
+      };
+    });
+  }
+  $("emote-search").oninput = renderEmoteList;
+
+  // ---------- Speichern
+  function syncBar() {
+    const d = dirty();
+    $("savebar").classList.toggle("show", d);
+    $("save-sub").textContent = data.online ? "Wird innerhalb einer Minute im Spiel übernommen." : "Wird beim nächsten Spielstart übernommen.";
+  }
+  $("save-undo").onclick = () => {
+    resetDraft();
+    renderCosmetics();
+    renderWheel();
+    syncBar();
+  };
+  $("save-go").onclick = async () => {
+    const btn = $("save-go");
+    btn.disabled = true;
+    try {
+      const body = { token: s.token };
+      if (norm(equippedText()) !== norm(saved.equipped)) body.equipped = equippedText();
+      if (wheelText() !== draftWheelSaved()) body.wheel = wheelText();
+      const r = await call("/v1/web/outfit", body);
+      saved = { equipped: body.equipped ?? saved.equipped, wheel: body.wheel ?? saved.wheel };
+      data.outfit.pending = true;
+      updateNote();
+      syncBar();
+      RC.toast(r.online ? "Gespeichert – in einer Minute im Spiel ✓" : "Gespeichert – wird beim nächsten Spielstart übernommen ✓");
+    } catch (e) {
+      RC.toast(e.message || "Speichern ging nicht", true);
+    }
+    btn.disabled = false;
+  };
+  window.addEventListener("beforeunload", (e) => {
+    if (dirty()) e.preventDefault();
+  });
+
+  // ---------- Capes
+  function renderCapes() {
+    const sel = data.capes.selected;
+    const list = data.capes.list;
+    const none = `<div class="card cape rise ${!sel ? "on" : ""}" style="--i:0"><div class="pic" style="font:700 15px var(--font-pixel);color:var(--dim)">Kein Cape</div>
+      <div class="body"><b>Ohne Cape</b><small>Nur die Cosmetics</small><div class="row"><button class="btn small" data-act="select" data-id="" ${!sel ? "disabled" : ""}>${!sel ? "Angelegt" : "Ablegen"}</button></div></div></div>`;
+    $("capes").innerHTML = none + list
+      .map((c, i) => `<div class="card cape rise ${c.id === sel ? "on" : ""}" style="--i:${i + 1}"><div class="pic" data-img="${esc(c.image)}"></div>
+        <div class="body"><b title="${esc(c.title)}">${esc(c.title)}</b><small>von ${esc(c.owner)} · ${c.uses} nutzen es</small>
+        <div class="row"><button class="btn small ${c.id === sel ? "" : "accent"}" data-act="select" data-id="${esc(c.id)}" ${c.id === sel ? "disabled" : ""}>${c.id === sel ? "Angelegt" : "Anlegen"}</button>
+        <button class="btn small" data-act="${c.favorite ? "unfavorite" : "favorite"}" data-id="${esc(c.id)}" title="Favorit">${c.favorite ? "★" : "☆"}</button>
+        ${c.mine ? `<button class="btn small danger" data-act="delete" data-id="${esc(c.id)}">Löschen</button>` : ""}</div></div></div>`)
+      .join("");
+    $("capes").querySelectorAll(".pic[data-img]").forEach((p) => p.appendChild(RC.capeFront(p.dataset.img)));
+    $("capes").querySelectorAll("button[data-act]").forEach((b) => {
+      b.onclick = async () => {
+        const act = b.dataset.act, id = b.dataset.id;
+        if (act === "delete" && !confirm("Dieses Cape endgültig löschen? Es verschwindet auch bei allen, die es tragen.")) return;
+        b.disabled = true;
+        try {
+          await call("/v1/web/cape", { token: s.token, action: act, id });
+          if (act === "select") {
+            data.capes.selected = id;
+            const c = list.find((x) => x.id === id);
+            if (viewer) c ? viewer.loadCape(RC.abs(c.image)).catch(() => {}) : viewer.resetCape();
+            RC.toast(id ? "Cape angelegt – sofort im Spiel sichtbar ✓" : "Cape abgelegt ✓");
+          } else if (act === "delete") {
+            data.capes.list = list.filter((x) => x.id !== id);
+            if (data.capes.selected === id) data.capes.selected = "";
+            RC.toast("Cape gelöscht");
+          } else {
+            const c = list.find((x) => x.id === id);
+            if (c) c.favorite = act === "favorite";
+          }
+          renderCapes();
+          $("cape-count").textContent = data.capes.list.length || "";
+        } catch (e) {
+          RC.toast(e.message || "Ging nicht", true);
+          b.disabled = false;
+        }
+      };
+    });
+  }
+
+  // ---------- Eigene Emotes
+  function renderCustoms() {
+    const list = data.customEmotes;
+    $("customs").innerHTML = list.length
+      ? list
+          .map((c, i) => {
+            const st = c.contest;
+            const badge = !st ? "" : st.status === "shop" ? '<span style="color:var(--legendary)">★ Im Shop</span>' : st.status === "open" ? `<span style="color:var(--leaf)">Im Contest · ♥ ${st.likes}</span>` : '<span style="color:var(--dim)">Abgelehnt</span>';
+            return `<div class="card rise" style="--i:${i}"><b style="font:700 15px var(--font-pixel)">${esc(st ? st.title : "Eigenes Emote")}</b>
+              <div style="color:var(--dim);font-size:12px;margin:2px 0 12px">#${esc(c.hash.slice(0, 8))} · ${RC.ago(c.time)} ${badge ? "· " + badge : ""}</div>
+              ${st ? "" : `<div style="display:flex;gap:8px"><input class="search" placeholder="Titel fürs Contest" maxlength="32" data-title="${esc(c.hash)}" style="flex:1;max-width:none">
+              <button class="btn small accent" data-submit="${esc(c.hash)}">Einreichen</button></div>`}</div>`;
+          })
+          .join("")
+      : '<div class="empty" style="grid-column:1/-1"><b>Noch keine eigenen Emotes</b>Bau dir im Spiel im Emote-Editor ein eigenes Emote und spiel es einmal ab.</div>';
+    $("customs").querySelectorAll("button[data-submit]").forEach((b) => {
+      b.onclick = async () => {
+        const hash = b.dataset.submit;
+        const title = $("customs").querySelector(`input[data-title="${hash}"]`).value.trim();
+        if (!title) return RC.toast("Gib deinem Emote einen Titel.", true);
+        b.disabled = true;
+        try {
+          await call("/v1/web/emote/submit", { token: s.token, hash, title });
+          const c = data.customEmotes.find((x) => x.hash === hash);
+          c.contest = { title, status: "open", likes: 0 };
+          renderCustoms();
+          RC.toast("Eingereicht! Jetzt können alle dafür stimmen ✓");
+        } catch (e) {
+          RC.toast(e.message || "Ging nicht", true);
+          b.disabled = false;
+        }
+      };
+    });
+  }
+
+  // ---------- Sonstiges
+  $("copy-link").onclick = async () => {
+    const url = new URL("../spieler/?n=" + encodeURIComponent(data.name), location.href).href;
+    try {
+      await navigator.clipboard.writeText(url);
+      RC.toast("Link kopiert ✓");
+    } catch {
+      prompt("Link zu deinem Profil:", url);
+    }
+  };
+  $("logout").onclick = () => {
+    RC.dropSession();
+    call("/v1/web/logout", { token: s.token }).catch(() => {});
+    location.href = "../";
+  };
+
+  load();
+})();
+</script>
+</body>
+</html>

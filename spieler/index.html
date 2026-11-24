@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Spieler · Rust Client</title>
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/account.css">
+</head>
+<body>
+<header class="top">
+  <a class="home" href="../"><img class="logo" src="../assets/logo.png" alt=""><b class="brand">Rust <span>Client</span></b></a>
+  <span class="grow"></span>
+  <form id="find" style="display:flex;gap:8px"><input class="search" id="find-name" placeholder="Spieler suchen …" maxlength="16" style="width:180px"><button class="btn small">Los</button></form>
+  <a class="chip hidden" id="me" href="../konto/"><img alt=""><span></span></a>
+</header>
+
+<main class="page">
+  <section id="loading" class="gate"><span class="spin"></span></section>
+  <section id="missing" class="gate hidden">
+    <div class="card pop"><h2>Nicht gefunden</h2><p id="missing-text">Diesen Spieler kennt Rust Client nicht.</p><a class="btn accent" href="../">Zur Startseite</a></div>
+  </section>
+
+  <section id="app" class="hidden">
+    <div class="hero rise">
+      <div class="stage" id="stage"></div>
+      <div class="info">
+        <span class="eyebrow">Rust-Client-Spieler</span>
+        <h1 id="name"></h1>
+        <span class="status hidden" id="status"><i></i><span></span></span>
+        <p class="bio hidden" id="bio"></p>
+        <div class="quick hidden" id="quick"></div>
+        <div class="actions">
+          <button class="btn" id="copy-link">Link kopieren</button>
+          <a class="btn accent hidden" id="edit" href="../konto/">Bearbeiten</a>
+          <a class="btn accent hidden" id="get" href="../#download">Rust Client holen</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note hidden rise" id="hint" style="margin-top:20px"></p>
+
+    <div id="stats-wrap" class="hidden">
+      <div class="section-title"><h2>Statistik</h2><small>nur für Freunde sichtbar</small></div>
+      <div class="grid" style="--min:170px" id="stats"></div>
+      <div id="pet-wrap"></div>
+    </div>
+
+    <div id="posts-wrap" class="hidden">
+      <div class="section-title"><h2>RustGram</h2><small id="posts-info"></small></div>
+      <div class="grid" style="--min:230px" id="posts"></div>
+    </div>
+
+    <div id="capes-wrap" class="hidden">
+      <div class="section-title"><h2>Eigene Capes</h2><small>hochgeladen im Launcher</small></div>
+      <div class="grid" style="--min:180px" id="capes"></div>
+    </div>
+
+    <div id="emotes-wrap" class="hidden">
+      <div class="section-title"><h2>Emotes im Shop</h2><small>gewonnen beim Emote-Contest</small></div>
+      <div class="grid" style="--min:200px" id="emotes"></div>
+    </div>
+  </section>
+</main>
+
+<script>window.RC_SERVER = "https://api.rustclient.dpdns.org";</script>
+<script src="https://cdn.jsdelivr.net/npm/skinview3d@3.1.0/bundles/skinview3d.bundle.js"></script>
+<script src="../assets/account.js"></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const { esc } = RC;
+  const s = RC.session();
+  const name = (new URLSearchParams(location.search).get("n") || "").trim();
+
+  $("find").onsubmit = (e) => {
+    e.preventDefault();
+    const n = $("find-name").value.trim();
+    if (n) location.href = "?n=" + encodeURIComponent(n);
+  };
+  if (s) {
+    $("me").classList.remove("hidden");
+    $("me").querySelector("img").src = RC.head(s.uuid || s.name, 30);
+    $("me").querySelector("span").textContent = s.name;
+  }
+  if (!name) {
+    if (s) location.replace("?n=" + encodeURIComponent(s.name));
+    else {
+      $("loading").classList.add("hidden");
+      $("missing").classList.remove("hidden");
+      $("missing-text").textContent = "Gib oben einen Spielernamen ein.";
+    }
+    return;
+  }
+
+  (async () => {
+    let p;
+    try {
+      p = await RC.call("/v1/web/player", { name, token: s ? s.token : undefined });
+    } catch (e) {
+      $("loading").classList.add("hidden");
+      $("missing").classList.remove("hidden");
+      $("missing-text").textContent = e.status === 404 || e.status === 400 ? `„${name}“ hat noch nie mit Rust Client gespielt.` : "Der Rust-Client-Server ist gerade nicht erreichbar.";
+      return;
+    }
+    document.title = p.name + " · Rust Client";
+    $("loading").classList.add("hidden");
+    $("app").classList.remove("hidden");
+    $("name").textContent = p.name;
+    RC.figure($("stage"), p.uuid, p.cape);
+    const me = p.viewer && p.viewer.self;
+    $("edit").classList.toggle("hidden", !me);
+    $("get").classList.toggle("hidden", !!p.viewer);
+
+    if (p.viewer) {
+      const st = $("status");
+      st.classList.remove("hidden");
+      st.classList.toggle("on", p.online);
+      st.querySelector("span").textContent = p.online ? "Gerade im Spiel" : "Zuletzt online " + RC.ago(p.lastSeen);
+    }
+    if (!p.viewer) {
+      $("hint").innerHTML = 'Melde dich an, um RustGram-Beiträge und (bei Freunden) die Statistik zu sehen. <a href="../?next=' + encodeURIComponent("spieler/?n=" + p.name) + '#anmelden">Anmelden</a>';
+      $("hint").classList.remove("hidden");
+    } else if (!p.profile && !me) {
+      $("hint").textContent = `Spielzeit, Haustier und mehr sieht nur, wer mit ${p.name} befreundet ist.`;
+      $("hint").classList.remove("hidden");
+    }
+
+    const pr = p.profile;
+    if (pr) {
+      if (pr.bio) {
+        $("bio").textContent = "„" + pr.bio + "“";
+        $("bio").classList.remove("hidden");
+      }
+      const quick = [
+        [Math.round((pr.playSeconds || 0) / 3600), "Std. gespielt"],
+        [pr.kills || 0, "Kills"],
+        [pr.emotes || 0, "Emotes"],
+        [pr.friends || 0, "Freunde"],
+      ];
+      $("quick").innerHTML = quick.map(([v, l]) => `<div><b data-n="${v}">0</b><span>${esc(l)}</span></div>`).join("");
+      $("quick").classList.remove("hidden");
+      $("quick").querySelectorAll("b").forEach((b) => RC.countUp(b, Number(b.dataset.n)));
+      const stats = [
+        [RC.hours(pr.playSeconds), "Spielzeit"],
+        [(pr.deaths || 0).toLocaleString("de-DE"), "Tode"],
+        [RC.km(pr.walked), "gelaufen"],
+        [`${pr.wins || 0} : ${pr.losses || 0}`, "Haustier-Kämpfe"],
+        [pr.topServer || "–", "Lieblings-Server"],
+        [(pr.cosmetics || []).length, "Cosmetics angelegt"],
+      ];
+      $("stats").innerHTML = stats.map(([v, l], i) => `<div class="card stat-card rise" style="--i:${i}"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("");
+      if (pr.pet) {
+        $("pet-wrap").innerHTML = `<div class="section-title"><h2>Haustier</h2></div><div class="card pet rise"><div class="lvl">${esc(pr.pet.level)}</div>
+          <div><b style="font:700 20px var(--font-pixel)">${esc(pr.pet.name)}</b><div style="color:var(--dim);font-size:13px">${esc(pr.pet.kind || "Haustier")} · Level ${esc(pr.pet.level)}</div></div></div>`;
+      }
+      $("stats-wrap").classList.remove("hidden");
+    }
+
+    if (p.posts) {
+      $("posts-wrap").classList.remove("hidden");
+      $("posts-info").textContent = p.stats ? `${p.stats.posts} Beiträge · ♥ ${p.stats.likes}` : "";
+      $("posts").innerHTML = p.posts.length
+        ? p.posts.map((x, i) => `<div class="card post rise" style="--i:${i}"><div class="img loading" data-id="${esc(x.id)}">${x.video ? '<span class="vid">▶ Clip</span>' : ""}</div>
+            <div class="body">${esc(x.caption || "Ohne Text")}<small>♥ ${x.likes} · 💬 ${x.comments} · ${RC.ago(x.time)}</small></div></div>`).join("")
+        : '<div class="empty" style="grid-column:1/-1"><b>Noch keine Beiträge</b></div>';
+      $("posts").querySelectorAll(".img[data-id]").forEach(async (d) => {
+        try {
+          d.style.backgroundImage = `url(${await RC.postImage(s.token, d.dataset.id)})`;
+        } catch {}
+        d.classList.remove("loading");
+      });
+    }
+
+    if (p.capes.length) {
+      $("capes-wrap").classList.remove("hidden");
+      $("capes").innerHTML = p.capes.map((c, i) => `<div class="card cape rise" style="--i:${i}"><div class="pic" data-img="${esc(c.image)}"></div>
+        <div class="body"><b title="${esc(c.title)}">${esc(c.title)}</b><small>${c.uses} tragen es</small></div></div>`).join("");
+      $("capes").querySelectorAll(".pic[data-img]").forEach((x) => x.appendChild(RC.capeFront(x.dataset.img)));
+    }
+    if (p.emotes.length) {
+      $("emotes-wrap").classList.remove("hidden");
+      $("emotes").innerHTML = p.emotes.map((e, i) => `<div class="card rise" style="--i:${i}"><b style="font:700 15px var(--font-pixel)">${esc(e.title)}</b>
+        <div style="color:var(--dim);font-size:12px">♥ ${e.likes} · ${e.status === "shop" ? '<span style="color:var(--legendary)">★ Im Shop</span>' : "Im Contest"}</div></div>`).join("");
+    }
+
+    $("copy-link").onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        RC.toast("Link kopiert ✓");
+      } catch {
+        prompt("Link:", location.href);
+      }
+    };
+  })();
+})();
+</script>
+</body>
+</html>
